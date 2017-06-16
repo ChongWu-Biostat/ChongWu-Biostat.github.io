@@ -1,0 +1,257 @@
+# jemdoc: menu{MENU}{software.html}, nofooter
+
+== Glmtlp Vignette
+
+=== Introduction
+
+Glmtlp is a package that makes it incredibly easy to fit a generalized linear model via penalized maximum likelihood. The regularization path is computed for the truncated lasso at a grid of values for the regularization parameter lambda. The algorithm is fast, and can exploit sparsity in the input matrix x. It fits linear, logistic and multinomial, poisson, and Cox regression models. Most supporting functions used in a popular R package /glmnet/ can be directly used with output of /glmtlp/. We try our best to mimic the format of input and output in /glmnet/ to decrease the learning curve of our package.
+
+The authors of /glmtlp/ are Chong Wu and Wei Pan, and is maintained by [http://www.tc.umn.edu/~wuxx0845/ Chong Wu].
+
+/glmtlp/ solves the following problem
+
+\(
+\min_{\beta_0,\beta}\frac{1}{N}\sum_{i=1}^{N}w_i l(y_i,\beta_0 + \beta'x_i) + \lambda \sum_{j=1}^{p} \min(|\beta_j|/\tau,1)
+\)
+
+over a grid of values of $\lambda$ covering the entire range. Here $l(y,\eta)$ is the negative log-likelihood contribution for observation $i$; e.g. for the Gaussian case it is $1/2 (y-\eta)^2$. The truncated lasso penalty is controlled by $\tau$, and partly solves the biased issues in lasso penalty. The tuning parameter $\lambda$ controls the overall strength of the penalty.
+
+
+=== Installation
+
+To install the stable version from CRAN, simply run the following from an R console (not available now):
+
+~~~
+{}{}
+install.packages("glmtlp")
+~~~
+
+To install the latest development builds directly from GitHub, run this instead:
+
+~~~
+{}{}
+if (!require("devtools"))
+install.packages("devtools")
+library(devtools)
+devtools::install_github("ChongWu-Biostat/glmtlp")
+~~~
+
+=== Quick Start
+
+The purpose of this section is to give users a general idea of the package. In terms of usage, the package is almost the same as /glmtlp/, however, in terms of performance, /glmtlp/ should be better than /glmnet/ in a wide range of scenarios. Users may have a better idea after this section.
+
+First, we load the /glmtlp/ package:
+
+~~~
+{}{}
+library(glmtlp)
+~~~
+
+We will keep most parameters as default and mainly focus on the general sense of the package. We load a set of data created beforehand for illustration. Users can either load their own data or use those saved in the package. This data is exactly same as a data set in /glmnet/ and we use the exactly same example codes. We hope we can get some general ideas about the difference between elastic net and truncated lasso and understand why non-convex truncated lasso penalty is superior than elastic net or other convex penalties.
+
+~~~
+{}{}
+data("QuickStartExample")
+~~~
+
+The command loads an input matrix $x$ and a response vector $y$ from the package. Then we fit the model using the basic function \glmTLP\.
+
+~~~
+{}{}
+fit = glmTLP(x,y)
+~~~
+
+"fit" is an object of class /glmnet/ that contains all the relevant information of the fitted model for further use. You can think you use a better penalty in /glmnet/ and then get the output. Most supporting functions such as /plot/, /print/, /coef/ and /predict/ can be directly used for the output. For example, we can visualize the coefficients by executing the /plot/ function:
+
+~~~
+{}{}
+plot(fit)
+~~~
+
+~~~
+{}{img_left}{glmtlp_fig1.pdf}{Portrait of Chong Wu}{alt text}{WIDTHpx}{glmtlp_fig1.pdf}{IMGLINKTARGET}
+~~~
+
+Each curve corresponds to a variable. The above figure shows the path of its coefficient against the $l_1$-norm of the whole coefficient vector at as $\lambda$ varies. The axis above indicates the number of nonzero coefficients at the current $\lambda$, which is the effective degrees of freedom (df) for the lasso. Users may also wish to annotate the curves; this can be done by setting /label = TRUE/ in the plot command. Again, this function performs exactly the same as /plot/ in /glmnet/.
+
+A summary of the /glmTLP/ path at each step can be printed via function /print/:
+
+~~~
+{}{}
+print(fit)
+~~~
+
+~~~
+{}{}
+Call:  glmTLP(x = x, y = y)
+
+Df   %Dev    Lambda
+[1,]  7 0.8544 1.8350000
+[2,]  7 0.8623 1.6720000
+[3,]  8 0.8696 1.5230000
+[4,]  8 0.8761 1.3880000
+[5,]  8 0.8815 1.2650000
+[6,]  8 0.8859 1.1520000
+[7,]  8 0.8896 1.0500000
+[8,]  8 0.8927 0.9567000
+[9,]  8 0.8970 0.8717000
+....
+~~~
+
+It shows the number of nonzero coefficients (/Df/), the percent of null deviance explained (/%Dev/), and the value of corresponding $\lambda$ (/Lambda/). By default /glmTLP/ calss for 100 values of /lambda/, where /lambda/ is automatically determined by the internal function.
+
+We can obtain the actual coefficients at one or more $\lambda$'s within the range of the sequence. Note that even though /coef/ can return the results for $\lambda$ out of the range, the resutls are not reliable.
+~~~
+{}{}
+coef(fit,s=0.1)
+~~~
+
+~~~
+{}{}
+21 x 1 sparse Matrix of class "dgCMatrix"
+1
+(Intercept)  0.11678951
+V1           1.37182915
+V2           0.01835052
+V3           0.75251617
+V4           0.04492075
+V5          -0.89167611
+V6           0.60355346
+V7           0.10393552
+V8           0.38759151
+V9          -0.01738196
+V10          0.10891171
+V11          0.23712445
+V12         -0.05190906
+V13         -0.03808770
+V14         -1.14807069
+V15         -0.11590021
+V16         -0.03162155
+V17         -0.02981730
+V18          0.04185775
+V19          .
+V20         -1.13622401
+~~~
+
+Users can also make predicitions at specific $\lambda$'s with new input data:
+
+~~~
+{}{}
+nx = matrix(rnorm(10*20),10,20)
+predict(fit,newx=nx,s=c(0.1,0.05))
+~~~
+
+~~~
+{}{}
+1          2
+[1,] -2.7302125 -2.7212503
+[2,] -0.1261640 -0.1037789
+[3,]  2.4302532  2.4263055
+[4,]  4.4345692  4.4825886
+[5,] -0.8703297 -0.8770905
+[6,] -3.6949918 -3.6809959
+[7,] -0.5279150 -0.4789763
+[8,]  1.6668486  1.6533317
+[9,]  0.8976858  0.9092636
+[10,] -3.7293284 -3.7076979
+~~~
+
+The function /glmTLP/ returns a sequence of models for the users to choose from. However, in many cases, users may want to the package to select one of them adaptively. We recommend use cross-validation method to select the tuning parameters.
+
+/cv.glmTLP/ is the main function to do cross-validation here. Again, various supporting methods such as plotting and prediction used in package /glmnet/ can be directly applied here. We still act on the same sample data loaded before.
+
+~~~
+{}{}
+cvfit = cv.glmTLP(x, y,tau = 1)
+~~~
+
+/cv.glmTLP/ returns a /cv.glmnet/ object, which is defined in package /glmnet/. We encourage users the well-designed functions for potential tasks.
+
+We can plot the object.
+
+~~~
+{}{}
+plot(cvfit)
+~~~
+
+~~~
+{}{img_left}{glmtlp_fig2.pdf}{Figure 2}{alt text}{WIDTHpx}{glmtlp_fig2.pdf}{IMGLINKTARGET}
+~~~
+
+The above figure shows the cross-validation curve (red dotted line), and upper and lower standard deviation curves along the $\lambda$ sequence (error bars). Two selected $\lambda$'s are indicated by the vertical dotted lines.
+
+We can view the selected $\lambda$'s and the corresponding coefficients. For example,
+
+~~~
+{}{}
+cvfit$lambda.min
+~~~
+
+~~~
+{}{}
+[1] 0.3773556
+~~~
+
+/lambda.min/ is the value of $\lambda$ that gives minimum mean cross-validated error. We also save /lambda.1se/, which gives the most regularized model such that error within one standard error of the minimum. These two $\lambda$ are recommended by /glmnet/.
+
+Like /glmTLP/, we can extract coefficient via function /coef/.
+
+~~~
+{}{}
+coef(cvfit, s = "lambda.min")
+~~~
+
+~~~
+{}{}
+21 x 1 sparse Matrix of class "dgCMatrix"
+1
+(Intercept)  0.146500723
+V1           1.340178977
+V2           .
+V3           0.707734699
+V4           .
+V5          -0.847077207
+V6           0.553671322
+V7           0.037104906
+V8           0.346252025
+V9           .
+V10          0.007849848
+V11          0.184759134
+V12          .
+V13          .
+V14         -1.084353223
+V15         -0.001922412
+V16          .
+V17          .
+V18          .
+V19          .
+V20         -1.067892212
+~~~
+
+
+Like /glmnet/, we store the result in the sparse matrix format since the solutions along the regularization path are often sparse. If you prefer non-sparse format, use /as.matrix()/ to convert it to matrix.
+
+Predictions can be made based on the fitted /cv.glmnet/ object. For example:
+
+~~~
+{}{}
+predict(cvfit, newx = x[1:5,], s = "lambda.min")
+~~~
+
+~~~
+{}{}
+        1
+[1,] -1.3591677
+[2,]  2.5760596
+[3,]  0.5843585
+[4,]  2.0212049
+[5,]  1.5709110
+~~~
+
+/newx/ is for the new input and /s/, as before, is the value(s) of $\lambda$ at which prefictions are made.
+
+If you are familiar with /glmnet/, you can find in terms of usage, /glmtlp/ and /glmnet/ is almost exactly the same.
+
+
+
+
