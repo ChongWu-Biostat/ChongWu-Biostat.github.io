@@ -15,7 +15,7 @@ For questions or comments regarding codes, contact Chong Wu ([chongwu@umn.edu ch
 
 == Installation
 
-- Download and unpack the [Scripts, reference data, and external weights] (Or download directly using clone or download option at GitHub.).
+- Download and unpack the [Scripts and external weights] (Or download directly using clone or download option at GitHub.).
 
 ~~~
 {}{}
@@ -23,6 +23,8 @@ wget https://github.com/gusevlab/fusion_twas/archive/master.zip
 unzip master.zip
 cd fusion_twas-master
 ~~~
+
+- Download the reference data, for example, 1000 Genomes, HapMap. Here we provide HapMap 3 with independent European reference. Use this [https://www.dropbox.com/sh/8sqquebpdwyksuv/AACLHoYfG64_yloli4QRfyTIa?dl=0 link] to download. Put it into the same working directory. 
 
 - install [https://www.cog-genomics.org/plink2 plink] and put it into the working directory.
 - Launch R and install required libraries:
