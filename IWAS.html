@@ -82,15 +82,16 @@ Rscript IWAS.R \
 <p>The results are stored in the user-defined output file. For illustration, we explain the meaning of each entry in the first two lines.</p>
 <table id="VariExp">
 <tr class="r1"><td class="c1">number </td><td class="c2"> Column   </td><td class="c3"> Value  </td><td class="c4"> Explanations </td></tr>
-<tr class="r2"><td class="c1">1 </td><td class="c2"> gene         </td><td class="c3"> AK</td><td class="c4"> Feature/gene identifier, taken from gene_list file </td></tr>
+<tr class="r2"><td class="c1">1 </td><td class="c2"> gene         </td><td class="c3"> A4GALT </td><td class="c4"> Feature/gene identifier, taken from gene_list file </td></tr>
 <tr class="r3"><td class="c1">2 </td><td class="c2"> CHR        </td><td class="c3"> 22     </td><td class="c4"> Chromosome </td></tr>
-<tr class="r4"><td class="c1">3 </td><td class="c2"> P0            </td><td class="c3"> 11</td><td class="c4"> Gene start (from hg19 list from plink website) </td></tr>
-<tr class="r5"><td class="c1">4 </td><td class="c2"> P1        </td><td class="c3">   12  </td><td class="c4"> Gene end (from hg19 list from plink website) </td></tr>
-<tr class="r6"><td class="c1">5 </td><td class="c2"> #nonzero_SNPs </td><td class="c3">11 </td><td class="c4"> Number of non-zero weight SNPs </td></tr>
-<tr class="r7"><td class="c1">6 </td><td class="c2"> TWAS_asy </td><td class="c3"> </td><td class="c4"> TWAS p-value with imaging based external weight. The p-value is based on asymptotic distribution. </td></tr>
-<tr class="r8"><td class="c1">7 </td><td class="c2"> SSU_asy </td><td class="c3"> </td><td class="c4"> SSU p-value with imaging based external weight. The p-value is based on asymptotic distribution. </td></tr>
-<tr class="r9"><td class="c1">8-23</td><td class="c2"> SPU </td><td class="c3"> </td><td class="c4"> SPU or aSPU p-values. The results are based on simulations. 
+<tr class="r4"><td class="c1">3 </td><td class="c2"> P0            </td><td class="c3"> 41088126 </td><td class="c4"> Gene start (from hg19 list from plink website) </td></tr>
+<tr class="r5"><td class="c1">4 </td><td class="c2"> P1        </td><td class="c3">   43116876  </td><td class="c4"> Gene end (from hg19 list from plink website) </td></tr>
+<tr class="r6"><td class="c1">5 </td><td class="c2"> #nonzero_SNPs </td><td class="c3"> 5 </td><td class="c4"> Number of non-zero weight SNPs </td></tr>
+<tr class="r7"><td class="c1">6 </td><td class="c2"> TWAS_asy </td><td class="c3"> 0.69 </td><td class="c4"> TWAS p-value with imaging based external weight. The p-value is based on asymptotic distribution. </td></tr>
+<tr class="r8"><td class="c1">7 </td><td class="c2"> SSU_asy </td><td class="c3"> 0.61 </td><td class="c4"> SSU p-value with imaging based external weight. The p-value is based on asymptotic distribution. </td></tr>
+<tr class="r9"><td class="c1">8-23</td><td class="c2"> SPU </td><td class="c3"> 0.69</td><td class="c4"> SPU or aSPU p-values. The results are based on simulations. 
 </td></tr></table>
+<p><b>Note:</b> We only store the results for genes with external weights. The genes without external weights will be ignored in the output file.</p>
 <h2>External Weights</h2>
 <p>We put the external weights into GitHub. You can compute your own weights as well. To facilitate this step, we put our source file into the folder <i>.Weight/conWeights.R</i>. Our method is based on elastic net, and you can use other methods to compute the weights. Currently, we provide the pre-computed weights for the following 14 imaging endophenotype. You can define which image endophenotype you want to use by weight_type options. </p>
 <table id="TABLENAME">
@@ -104,7 +105,6 @@ Rscript IWAS.R \
 <tr class="r8"><td class="c1">ST29SV </td><td class="c2"> ST88SV  </td><td class="c3"> Hippocampus 
 </td></tr></table>
 <h2>Command-line parameters</h2>
-<p>write something here.</p>
 <h2>FAQ</h2>
 <p><b>IWAS looks similar to TWAS and PrediXcan. What's the difference between them?</b></p>
 <p>Unlike TWAS and PrediXcan uses gene expression as the endophenotype, IWAS uses imaging endophenotype, which might be more powerful when analyzing some psychiatry related traits, such as AD. By noting that TWAS and PrediXcan are the same as weighted Sum test with external gene expression based weights, we propose to use aSPU, a more powerful and adaptive test, to conduct the association test. Since aSPU covers Weighted Sum test as a special scenario, we can get the results for TWAS or PrediXcan after running our methods as well. We demonstrate that our new method is more powerful and identify some new genes in some real data analyses. We expect this is generally true and hope you can let us know your results if you apply both TWAS and IWAS on your real data analyses.</p>

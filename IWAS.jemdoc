@@ -89,16 +89,17 @@ The results are stored in the user-defined output file. For illustration, we exp
 ~~~
 {}{table}{VariExp}
  number | Column   | Value  | Explanations ||
-1 | gene         | AK| Feature/gene identifier, taken from gene\_list file ||
+1 | gene         | A4GALT | Feature/gene identifier, taken from gene\_list file ||
 2 | CHR        | 22     | Chromosome ||
-3 | P0            | 11| Gene start (from hg19 list from plink website) ||
-4 | P1        |   12  | Gene end (from hg19 list from plink website) ||
-5 | \#nonzero\_SNPs |11 | Number of non-zero weight SNPs ||
-6 | TWAS\_asy | | TWAS p-value with imaging based external weight. The p-value is based on asymptotic distribution. ||
-7 | SSU\_asy | | SSU p-value with imaging based external weight. The p-value is based on asymptotic distribution. ||
-8-23| SPU | | SPU or aSPU p-values. The results are based on simulations. 
+3 | P0            | 41088126 | Gene start (from hg19 list from plink website) ||
+4 | P1        |   43116876  | Gene end (from hg19 list from plink website) ||
+5 | \#nonzero\_SNPs | 5 | Number of non-zero weight SNPs ||
+6 | TWAS\_asy | 0.69 | TWAS p-value with imaging based external weight. The p-value is based on asymptotic distribution. ||
+7 | SSU\_asy | 0.61 | SSU p-value with imaging based external weight. The p-value is based on asymptotic distribution. ||
+8-23| SPU | 0.69| SPU or aSPU p-values. The results are based on simulations. 
 ~~~
 
+*Note:* We only store the results for genes with external weights. The genes without external weights will be ignored in the output file.
 
 
 == External Weights
@@ -119,7 +120,8 @@ ST29SV | ST88SV  | Hippocampus
 
 
 == Command-line parameters
-write something here.
+
+
 
 == FAQ
 
