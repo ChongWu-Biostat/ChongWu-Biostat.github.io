@@ -1,0 +1,157 @@
+# jemdoc: nofooter
+
+= IWAS
+
+== Imaging-Wide Association Study
+
+IWAS is a new tool for performing an image-wide association study by incorporating imaging endophenotype based external weights into GWAS using only summary statistics. The goal is to identify new genes that are associated with a trait of interest. We provide precomputed external weights (based on gray matter volume as the endophenotype) from ADNI study to facilitate this analysis. Please cite the following manuscript for using IWAS method:
+
+~~~
+Xu et al. "Imaging-wide association study: integrating imaging endophenotypes in GWAS" 2017 Neuroimage, under revision.
+~~~
+
+For questions or comments regarding methods, contact Wei Pan ([weip@biostat.umn.edu weip@biostat.umn.edu]);
+For questions or comments regarding codes, contact Chong Wu ([chongwu@umn.edu chongwu@umn.edu]).
+
+== Installation
+
+- Download and unpack the [Scripts, reference data, and external weights] (Or download directly using clone or download option at GitHub.).
+
+~~~
+{}{}
+wget https://github.com/gusevlab/fusion_twas/archive/master.zip
+unzip master.zip
+cd fusion_twas-master
+~~~
+
+- install [https://www.cog-genomics.org/plink2 plink] and put it into the working directory.
+- Launch R and install required libraries:
+
+~~~
+{}{}
+install.packages('optparse','RColorBrewer','data.table','matlib','Rcpp','RcppArmadillo','bigmemory','mvtnorm','MASS')
+install.packages('plink2R-master/plink2R/',repos=NULL)
+if (!require("devtools"))
+  install.packages("devtools")
+devtools::install_github("ChongWu-Biostat/aSPU2")
+devtools::install_github("gabraham/plink2R/plink2R")
+~~~
+
+== Typical analysis and output
+
+The IWAS analysis takes imaging endophenotype based external weights and disease GWAS summary statistics to identify significant genes.
+
+We will use IGAP Alzheimer's summary as an example to illustrate how to use our methods. This example assumes you have setup the required environment as illustrated in the previous section. All analysis are based on R/3.3.1.
+
+=== Input: GWAS summary statistics
+
+At a minimum, we need a summary rds file with a header row containing the following fields:
+
+. SNP\_map – SNP identifier (CHR:BP)
+. A1 – first allele (effect allele, should be capitalized)
+. A2 – second allele (other allele, should be capitalized)
+. Z – Z-scores, sign with respect to A1.
+
+Additional columns are allowed but will be ignored. We recommend removing the additional columns before analysis to save space.
+
+*Note:* The performance of IWAS depends on the density of summary-level data. We highly recommend running IWAS with raw summary-level data. Pre-process step such as pruning and restricting to top SNPs may harm the performance.
+
+=== Input: external weights
+
+We pre-computed the external weights based on ADNI-1 or ADNI-2 data. The external weights data is stored in the ./WEIGHTS/ which provides the external weights for each gene, and their corresponding physical positions.
+
+=== Performing the IWAS
+
+After we prepared the data, we can run IWAS via the following single line.
+
+
+~~~
+{}{}
+Rscript IWAS.R \
+--sumstats ./Example/IGAP_chr22.rds \
+--out ./Example/example_res.rds \
+--weights ./WEIGHTS/ADNI1_wgt.rds \
+--ref_ld ./LDREF/hapmap_CEU_r23a_hg19 \
+--gene.list ./Example/gene_list.tx \
+--test_type aSPU \
+--weight_type ST31CV 
+~~~
+
+
+This should take around one or two minutes, and you will see some intermediate steps on the screen. If everything worked, you would see a file /example\_res.rds/ under the /.Example/ directory.
+
+Under the hood, we perform the following steps: (1) unify the GWAS and reference SNPs and remove ambiguous SNPs. (2) impute GWAS Z-scores for any missing reference SNPs via the IMPG algorithm; (3) perform IWAS; (4) report results and store it in the working directory.
+
+=== Output: Gene-disease association
+
+The results are stored in the user-defined output file. For illustration, we explain the meaning of each entry in the first two lines.
+
+~~~
+{}{table}{VariExp}
+ number | Column   | Value  | Explanations ||
+1 | gene         | AK| Feature/gene identifier, taken from gene\_list file ||
+2 | CHR        | 22     | Chromosome ||
+3 | P0            | 11| Gene start (from hg19 list from plink website) ||
+4 | P1        |   12  | Gene end (from hg19 list from plink website) ||
+5 | \#nonzero\_SNPs |11 | Number of non-zero weight SNPs ||
+6 | TWAS\_asy | | TWAS p-value with imaging based external weight. The p-value is based on asymptotic distribution. ||
+7 | SSU\_asy | | SSU p-value with imaging based external weight. The p-value is based on asymptotic distribution. ||
+8-23| SPU | | SPU or aSPU p-values. The results are based on simulations. 
+~~~
+
+
+
+== External Weights
+
+We put the external weights into GitHub. You can compute your own weights as well. To facilitate this step, we put our source file into the folder /.Weight\/conWeights.R/. Our method is based on elastic net, and you can use other methods to compute the weights. Currently, we provide the pre-computed weights for the following 14 imaging endophenotype. You can define which image endophenotype you want to use by weight\_type options. 
+
+~~~
+{}{table}{TABLENAME}
+left   | right  | ROI name ||
+ST31CV | ST90CV | Inferior parietal ||
+ST32CV | ST91CV | Inferior temporal ||
+ST39CV | ST98CV | Medial orbitofrontal ||
+ST44CV | ST103CV | Parahippocampal ||
+ST52CV | ST111CV | Precuneus ||
+T50CV | ST109CV | Posterior cingulate ||
+ST29SV | ST88SV  | Hippocampus 
+~~~
+
+
+== Command-line parameters
+write something here.
+
+== FAQ
+
+*IWAS looks similar to TWAS and PrediXcan. What's the difference between them?*
+
+Unlike TWAS and PrediXcan uses gene expression as the endophenotype, IWAS uses imaging endophenotype, which might be more powerful when analyzing some psychiatry related traits, such as AD. By noting that TWAS and PrediXcan are the same as weighted Sum test with external gene expression based weights, we propose to use aSPU, a more powerful and adaptive test, to conduct the association test. Since aSPU covers Weighted Sum test as a special scenario, we can get the results for TWAS or PrediXcan after running our methods as well. We demonstrate that our new method is more powerful and identify some new genes in some real data analyses. We expect this is generally true and hope you can let us know your results if you apply both TWAS and IWAS on your real data analyses.
+
+
+*Can I use other reference data?*
+
+Yes. Other references such as 1000 Genomes, can be used as well. We will upload the 1000 Genomes with only HapMap SNPs set in the near future. Please check this website later for updating.
+
+*What related software is available?*
+
+Two methods are highly correlated with two well-known groups.
+
+The MetaXcan and PrediXcan developed by Im lab perform gene-based association tests with and without summary data. 
+
+TWAS by Gusev performs gene-based association tests only with summary data. 
+
+In our mind, MetaXcan and TWAS are very similar. The main difference between TWAS and MetaXcan is that they use a slightly different way and different reference data to construct weight. We recommend you check their website to download other weights as well.
+
+We submit a paper to Genetics with extension to TWAS or PrediXcan. The main idea is that, instead of applying weighted Sum test, we apply aSPU. We demonstrate that aSPU is more powerful than TWAS and PrediXcan. 
+
+
+== Acknowledgements
+
+We are grateful to the external reference data, and all of the hard work involved in the study. Without the efforts of these groups and sharing the individual level data, we are unable to construct the external weights, and our methods will be useless. 
+
+
+~~~
+Data collection and sharing for this project was funded by the Alzheimer’s Disease Neuroimaging Initiative (ADNI) (National Institutes of Health Grant U01 AG024904) and DOD
+ADNI (Department of Defense award number W81XWH-12-2-0012). ADNI is funded by the National Institute on Aging, the National Institute of Biomedical Imaging and Bioengineering, and through generous contributions from the following: Alzheimer’s Association; Alzheimers Drug Discovery Foundation; Araclon Biotech; BioClinica, Inc.; Biogen Idec Inc.; Bristol-Myers Squibb Company; Eisai Inc.; Elan Pharmaceuticals, Inc.; Eli Lilly and Company; EuroImmun; F. Ho↵mann-La Roche Ltd and its a liated company Genentech, Inc.; Fujirebio; GE Healthcare; IXICO Ltd.; Janssen Alzheimer Immunotherapy Research & Development, LLC.; Johnson & Johnson Pharmaceutical Research & Development LLC.; Medpace, Inc.; Merck & Co., Inc.; Meso Scale Diagnostics, LLC.; NeuroRx Research; Neurotrack Technologies; Novartis Pharmaceuticals Corporation; Pfizer Inc.; Piramal Imaging; Servier; Synarc Inc.; and Takeda Pharmaceutical Company. The Canadian Institutes of Rev December 5, 2013 Health Research is providing funds to support ADNI clinical sites in Canada. Private sector contributions are facilitated by the Foundation for the National Institutes of Health (www.fnih.org). The grantee organization is the Northern California Institute for Research and Education, and the study is coordinated by the Alzheimer’s Disease Cooperative Study at the University of California, San Diego. ADNI data are disseminated by the Laboratory for Neuro Imaging at the University of Southern California.
+~~~
+
