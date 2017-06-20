@@ -163,13 +163,7 @@ Differing from that [http://gusevlab.org/projects/fusion/ TWAS] (Gusev et al. 20
 *What related software is available?*
 
 Our methods are related to the following method by other two groups.
-Two methods are highly correlated with two well-known groups.
-
-[https://github.com/hakyimlab/MetaXcan MetaXcan] and  [https://github.com/hakyimlab/PrediXcan PrediXcan]  (Gamazon et al 2015) developed by the Im lab perform gene-based association tests with and without summary data. 
-
-[http://gusevlab.org/projects/fusion/ TWAS] by Gusev performs gene-based association tests with individual-level or summary statistics. 
-
-MetaXcan and TWAS are similar. The main difference between TWAS and MetaXcan is that they use a slightly different way and different reference data to construct weights. We recommend you to check their websites to download other gene-expression based weights as well.
+Two methods are highly correlated with two well-known groups.  [https://github.com/hakyimlab/MetaXcan MetaXcan] and  [https://github.com/hakyimlab/PrediXcan PrediXcan]  (Gamazon et al 2015) developed by the Im lab perform gene-based association tests with and without summary data. [http://gusevlab.org/projects/fusion/ TWAS] by Gusev performs gene-based association tests with individual-level or summary statistics.  MetaXcan and TWAS are similar. The main difference between TWAS and MetaXcan is that they use a slightly different way and different reference data to construct weights. We recommend you to check their websites to download other gene-expression based weights as well.
 
 *Can I use other reference data?*
 
