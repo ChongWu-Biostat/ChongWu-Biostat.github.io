@@ -196,11 +196,11 @@ ADNI (Department of Defense award number W81XWH-12-2-0012). ADNI is funded by th
 
 - Lambert, JC., Ibrahim-Verbaas, CA., Harold, D., Naj, AC., Sims, R., Bellenguez, C., DeStafano, AL., Bis, JC., Beecham, GW., Grenier-Boley, B., et al. (2013) Meta-analysis of 74,046 individuals identifies 11 new susceptibility loci for Alzheimer’s disease. /Nat. Genet./ 45, 1452–1460.
 - Pasaniuc, B., Zaitlen, N., Shi, H., Bhatia, G., Gusev, A., Pickrell, J., Hirschhorn, J., Strachan, D.P., Patterson, N. and Price, A.L. (2014). Fast and accurate imputation of summary statistics enhances evidence of functional enrichment. /Bioinformatics/ 30, 2906- 2914.
-- Gusev, A. et al. (2016) Integrative approaches for large-scale transcriptome-wide association studies. Nat Genet. 48, 245-252.
+- Gusev, A. et al. (2016) Integrative approaches for large-scale transcriptome-wide association studies. /Nat Genet./ 48, 245-252.
 - Gamazon, E.R. et al. (2015) A gene-based association method for mapping traits using reference transcriptome data. /Nat. Genet./ 47, 1091-1098.
 - Alvaro Barbeira, Kaanan P Shah, Jason M Torres, Heather E Wheeler, Eric S Torstenson, Todd Edwards, Tzintzuni Garcia, Graeme I Bell, Dan Nicolae, Nancy J Cox, Hae Kyung Im. (2016) [http://biorxiv.org/content/early/2017/05/21/045260 MetaXcan: Summary Statistics Based Gene-Level Association Method Infers Accurate PrediXcan Results].
 
-=== License
+== License
 
 Maintainer: [wuchong.org Chong Wu] (wuxx0845@umn.edu)
 
