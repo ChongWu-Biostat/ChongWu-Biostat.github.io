@@ -355,6 +355,7 @@ td {
 
 table + table {
 	margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 tr.heading {
