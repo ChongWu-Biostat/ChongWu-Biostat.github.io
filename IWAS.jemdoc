@@ -146,13 +146,13 @@ Flag   | Usage  | Default ||
 \-\-weight\_type | Weight we want to use  | ST31TA ||
 \-\-Rsq\_cutoff | R square cutoff for genes we want to analyze | 0.01 ||
 \-\-max\_nperm | maximum number of permutation for aSPU or daSPU | 1000000 
-
 ~~~
 
 
-*note 1:* We only want to analyze the genes with relatively informative external weights. To do that, we calculated the squared Person correlation, $r^2$, between the predicted and observed endophenotype values in the dataset, and selected only those genes with $r^2 > 0.01$ (\-\-Rsq\_cutoff). To facility your analyses when you are constructing your own weights, we make the cutoff as an option.  
 
-*note 2:* A single layer/loop of Monte Carlo simulations is used to obtain the $p$-values of all the SPU, aSPU, and daSPU tests simultaneously. we use an adaptive way to select the number of simulations and calculate $p$-values efficiently. \-\-max\_nperm is the upper bound for the number of simulations. 
+- *note 1:* We only want to analyze the genes with relatively informative external weights. To do that, we calculated the squared Person correlation, $r^2$, between the predicted and observed endophenotype values in the dataset, and selected only those genes with $r^2 > 0.01$ (\-\-Rsq\_cutoff). To facility your analyses when you are constructing your own weights, we make the cutoff as an option.  
+
+- *note 2:* A single layer/loop of Monte Carlo simulations is used to obtain the $p$-values of all the SPU, aSPU, and daSPU tests simultaneously. we use an adaptive way to select the number of simulations and calculate $p$-values efficiently. \-\-max\_nperm is the upper bound for the number of simulations. 
 
 
 == FAQ
