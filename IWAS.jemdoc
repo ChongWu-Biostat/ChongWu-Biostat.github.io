@@ -146,6 +146,7 @@ Flag   | Usage  | Default ||
 \-\-weight\_type | Weight we want to use  | ST31TA ||
 \-\-Rsq\_cutoff | R square cutoff for genes we want to analyze | 0.01 ||
 \-\-max\_nperm | maximum number of permutation for aSPU or daSPU | 1000000 
+
 ~~~
 
 
