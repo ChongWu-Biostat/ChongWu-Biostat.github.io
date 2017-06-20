@@ -120,8 +120,27 @@ T50CV | ST109CV | Posterior cingulate ||
 ST29SV | ST88SV  | Hippocampus 
 ~~~
 
+== Further Analyses
+
+=== Testing for effect in multiple external weights
+
+There may be compelling reasons to take advantage of multiple sets of weights based on multiple correlated endophenotypes. First, the statistical advantages of joint analysis of multiple traits include possibly increasing statistical power and more precise parameter estimates, alleviating the burden of multiple testing. Biologically, joint analysis of multiple traits addresses the issue of pleiotropy (i.e. one locus influencing multiple traits), providing biological insight into molecular mechanisms underlying the disease or trait. Second, the above conclusions are expected to carry over to the current context of analysis of multiple endophenotypes. In our current version software, we provide a adaptive test, called daSPU, which can combine the information from multiple sets of weights simultaneously. To use daSPU, we can simply set /test\_type/ option to /daSPU/.
 
 == Command-line parameters
+
+=== IWAS.R
+
+~~~
+{}{table}{Command}
+Flag   | Usage  | Default ||
+\-\-sumstats | ummary statistics (rds file and must have SNP and Z column headers) | Required ||
+\-\-out | Path to output file | Required ||
+\-\-weights | File listing molecular weight (rds files and must have columns ID,CHR,P0,P1, Weights) | Required ||
+\-\-ref\_ld | Reference LD files in binary PLINK format | Required ||
+\-\-gene\_list | Gene sets we want to analyze, currently only gene sets from a single chromosome are supported | Required ||
+\-\-test\_type | Test we want to perform | aSPU ||
+\-\-weight\_type | Weight we want to use  | ST31TA 
+~~~
 
 
 

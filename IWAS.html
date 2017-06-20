@@ -108,7 +108,21 @@ Rscript IWAS.R \
 <tr class="r7"><td class="c1">T50CV </td><td class="c2"> ST109CV </td><td class="c3"> Posterior cingulate </td></tr>
 <tr class="r8"><td class="c1">ST29SV </td><td class="c2"> ST88SV  </td><td class="c3"> Hippocampus 
 </td></tr></table>
+<h2>Further Analyses</h2>
+<h3>Testing for effect in multiple external weights</h3>
+<p>There may be compelling reasons to take advantage of multiple sets of weights based on multiple correlated endophenotypes. First, the statistical advantages of joint analysis of multiple traits include possibly increasing statistical power and more precise parameter estimates, alleviating the burden of multiple testing. Biologically, joint analysis of multiple traits addresses the issue of pleiotropy (i.e. one locus influencing multiple traits), providing biological insight into molecular mechanisms underlying the disease or trait. Second, the above conclusions are expected to carry over to the current context of analysis of multiple endophenotypes. In our current version software, we provide a adaptive test, called daSPU, which can combine the information from multiple sets of weights simultaneously. To use daSPU, we can simply set <i>test_type</i> option to <i>daSPU</i>.</p>
 <h2>Command-line parameters</h2>
+<h3>IWAS.R</h3>
+<table id="Command">
+<tr class="r1"><td class="c1">Flag   </td><td class="c2"> Usage  </td><td class="c3"> Default </td></tr>
+<tr class="r2"><td class="c1">--sumstats </td><td class="c2"> ummary statistics (rds file and must have SNP and Z column headers) </td><td class="c3"> Required </td></tr>
+<tr class="r3"><td class="c1">--out </td><td class="c2"> Path to output file </td><td class="c3"> Required </td></tr>
+<tr class="r4"><td class="c1">--weights </td><td class="c2"> File listing molecular weight (rds files and must have columns ID,CHR,P0,P1, Weights) </td><td class="c3"> Required </td></tr>
+<tr class="r5"><td class="c1">--ref_ld </td><td class="c2"> Reference LD files in binary PLINK format </td><td class="c3"> Required </td></tr>
+<tr class="r6"><td class="c1">--gene_list </td><td class="c2"> Gene sets we want to analyze, currently only gene sets from a single chromosome are supported </td><td class="c3"> Required </td></tr>
+<tr class="r7"><td class="c1">--test_type </td><td class="c2"> Test we want to perform </td><td class="c3"> aSPU </td></tr>
+<tr class="r8"><td class="c1">--weight_type </td><td class="c2"> Weight we want to use  </td><td class="c3"> ST31TA 
+</td></tr></table>
 <h2>FAQ</h2>
 <p><b>IWAS looks similar to TWAS and PrediXcan. What's the difference between them?</b></p>
 <p>Unlike TWAS and PrediXcan uses gene expression as the endophenotype, IWAS uses imaging endophenotype, which might be more powerful when analyzing some psychiatry related traits, such as AD. By noting that TWAS and PrediXcan are the same as weighted Sum test with external gene expression based weights, we propose to use aSPU, a more powerful and adaptive test, to conduct the association test. Since aSPU covers Weighted Sum test as a special scenario, we can get the results for TWAS or PrediXcan after running our methods as well. We demonstrate that our new method is more powerful and identify some new genes in some real data analyses. We expect this is generally true and hope you can let us know your results if you apply both TWAS and IWAS on your real data analyses.</p>
