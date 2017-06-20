@@ -121,8 +121,7 @@ Rscript IWAS.R \
 <tr class="r7"><td class="c1">--test_type </td><td class="c2"> Test we want to perform </td><td class="c3"> aSPU </td></tr>
 <tr class="r8"><td class="c1">--weight_type </td><td class="c2"> Weight we want to use  </td><td class="c3"> ST31TA </td></tr>
 <tr class="r9"><td class="c1">--Rsq_cutoff </td><td class="c2"> R square cutoff for genes we want to analyze </td><td class="c3"> 0.01 </td></tr>
-<tr class="r10"><td class="c1">--max_nperm </td><td class="c2"> maximum number of permutation for aSPU or daSPU </td><td class="c3"> 1000000 </td></tr>
-<tr class="r11"><td class="c1">
+<tr class="r10"><td class="c1">--max_nperm </td><td class="c2"> maximum number of permutation for aSPU or daSPU </td><td class="c3"> 1000000 
 </td></tr></table>
 <p><b>note 1:</b> We only want to analyze the genes with relatively informative external weights. To do that, we calculated the squared Person correlation, \(r^2\), between the predicted and observed endophenotype values in the dataset, and selected only those genes with \(r^2 &gt; 0.01\) (--Rsq_cutoff). To facility your analyses when you are constructing your own weights, we make the cutoff as an option.  </p>
 <p><b>note 2:</b> A single layer/loop of Monte Carlo simulations is used to obtain the \(p\)-values of all the SPU, aSPU, and daSPU tests simultaneously. we use an adaptive way to select the number of simulations and calculate \(p\)-values efficiently. --max_nperm is the upper bound for the number of simulations. </p>
@@ -167,7 +166,7 @@ ADNI (Department of Defense award number W81XWH-12-2-0012). ADNI is funded by th
 <p>Copyright (c) 2013-present, Chong Wu (wuxx0845@umn.edu), Zhiyuan Xu (xuxx0284@umn.edu) &amp; Wei Pan(weip@biostat.umn.edu)</p>
 <div id="footer">
 <div id="footer-text">
-Page generated 2017-06-20 12:57:14 CDT, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
+Page generated 2017-06-20 12:57:44 CDT, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
 </div>
 </div>
 </div>
