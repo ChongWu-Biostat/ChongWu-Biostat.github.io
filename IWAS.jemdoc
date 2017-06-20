@@ -177,7 +177,7 @@ Yes. Other references such as 1000 Genomes, can be used as well. We will upload 
 
 * What QC is performed internally when using IWAS?*
 
-IWAS performs a similar quality control steps as TWAS did. We automatically match up SNPs, remove [https://www.snpedia.com/index.php/Ambiguous_flip ambiguous markers] (A/C or G/T) and flip alleles to match the reference data.
+IWAS performs a similar quality control steps as TWAS did. We automatically match up SNPs, remove [https://www.snpedia.com/index.php/Ambiguous_flip ambiguous markers] (A\/C or G\/T) and flip alleles to match the reference data.
 
 == Acknowledgements
 This research was supported by NIH grants R21AG057038, R01HL116720, R01GM113250 and R01HL105397, and by the Minnesota Supercomputing Institute; ZX was supported by a University of Minnesota MnDRIVE Fellowship and CW by a University of Minnesota Dissertation Fellowship.
