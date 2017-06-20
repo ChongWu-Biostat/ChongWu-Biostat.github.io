@@ -11,13 +11,13 @@
 <div id="layout-content">
 <h1>IWAS</h1>
 <h2>Imaging-Wide Association Study</h2>
-<p>IWAS is a new tool for performing an image-wide association study by incorporating imaging endophenotype based external weights into GWAS using only summary statistics. The goal is to identify new genes that are associated with a trait of interest. We provide precomputed external weights (based on gray matter volume as the endophenotype) from ADNI study to facilitate this analysis. Please cite the following manuscript for using IWAS method:</p>
+<p>IWAS is a new tool for performing an image-wide association study by incorporating imaging endophenotypes as weights into GWAS using either individual level data or only summary statistics. The goal is to identify new genes that are associated with a trait of interest in GWAS. We provide precomputed external weights (based on gray matter volumes as the endophenotype) from the <a href="http://adni.loni.usc.edu" target=&ldquo;blank&rdquo;>ADNI data</a> to facilitate analysis. Please cite the following manuscript for using the IWAS method & data:</p>
 <div class="infoblock">
 <div class="blockcontent">
-<p>Xu et al. &ldquo;Imaging-wide association study: integrating imaging endophenotypes in GWAS&rdquo; 2017 Neuroimage, under revision.</p>
+<p>Xu et al. 2017 &ldquo;Imaging-wide association study: integrating imaging endophenotypes in GWAS&rdquo; Neuroimage, under revision.</p>
 </div></div>
 <p>For questions or comments regarding methods, contact Wei Pan (<a href="mailto:weip@biostat.umn.edu" target=&ldquo;blank&rdquo;>weip@biostat.umn.edu</a>);
-For questions or comments regarding codes, contact Chong Wu (<a href="mailto:chongwu@umn.edu" target=&ldquo;blank&rdquo;>chongwu@umn.edu</a>).</p>
+For questions or comments regarding data & codes, contact Chong Wu (<a href="mailto:chongwu@umn.edu" target=&ldquo;blank&rdquo;>chongwu@umn.edu</a>).</p>
 <h2>Installation</h2>
 <ul>
 <li><p>Download and unpack the <a href="Scripts" target=&ldquo;blank&rdquo;>and external weights</a> (Or download directly using clone or download option at GitHub.).</p>
@@ -50,7 +50,7 @@ devtools::install_github("gabraham/plink2R/plink2R")
 </pre></div></div>
 <h2>Typical analysis and output</h2>
 <p>The IWAS analysis takes imaging endophenotype based external weights and disease GWAS summary statistics to identify significant genes.</p>
-<p>We will use IGAP Alzheimer's summary as an example to illustrate how to use our methods. This example assumes you have setup the required environment as illustrated in the previous section. All analysis are based on R/3.3.1.</p>
+<p>We will use the <a href="http://web.pasteur-lille.fr/en/recherche/u744/igap/igap_download.php" target=&ldquo;blank&rdquo;>IGAP Alzheimer's summary data</a> (Lambert et al. 2013) as an example to illustrate how to use our methods. This example assumes you have setup the required environment and data as illustrated in the previous section. All analyses are based on R/3.3.1.</p>
 <h3>Input: GWAS summary statistics</h3>
 <p>At a minimum, we need a summary rds file with a header row containing the following fields:</p>
 <ol>
@@ -66,7 +66,7 @@ devtools::install_github("gabraham/plink2R/plink2R")
 <p>Additional columns are allowed but will be ignored. We recommend removing the additional columns before analysis to save space.</p>
 <p><b>Note:</b> The performance of IWAS depends on the density of summary-level data. We highly recommend running IWAS with raw summary-level data. Pre-process step such as pruning and restricting to top SNPs may harm the performance.</p>
 <h3>Input: external weights</h3>
-<p>We pre-computed the external weights based on ADNI-1 or ADNI-2 data. The external weights data is stored in the .<i>WEIGHTS</i> which provides the external weights for each gene, and their corresponding physical positions.</p>
+<p>We pre-computed the external weights based on ADNI-1 or ADNI GO<i>2 data. For each gene, in addition to its coding region, all variants within the 1 MB upstream and downstream regions of the transcription start</i>ending sites were included. The external weights are stored in the .<i>WEIGHTS</i> which provides the external weights for each gene, and their corresponding physical positions.</p>
 <h3>Performing the IWAS</h3>
 <p>After we prepared the data, we can run IWAS via the following single line.</p>
 <div class="codeblock">
@@ -80,12 +80,12 @@ Rscript IWAS.R \
 --test_type aSPU \
 --weight_type ST31CV
 </pre></div></div>
-<p>This should take around one or two minutes, and you will see some intermediate steps on the screen. If everything worked, you would see a file <i>example_res.rds</i> under the <i>.Example</i> directory.</p>
-<p>Under the hood, we perform the following steps: (1) unify the GWAS and reference SNPs and remove ambiguous SNPs. (2) impute GWAS Z-scores for any missing reference SNPs via the IMPG algorithm; (3) perform IWAS; (4) report results and store it in the working directory.</p>
+<p>This should take around one or two minutes, and you will see some intermediate steps on the screen. If everything works, you will see a file <i>example_res.rds</i> under the <i>.Example</i> and <i>output.txt</i> in the working directory.</p>
+<p>Through IWAS.R, we perform the following steps: (1) combine the GWAS and reference SNPs and remove ambiguous SNPs. (2) impute GWAS Z-scores for any reference SNPs with missing GWAS Z-scores via the IMPG algorithm ([https:<i></i>academic.oup.com<i>bioinformatics</i>article<i>30</i>20<i>2906</i>2422225/Fast-and-accurate-imputation-of-summary-statistics Pasaniuc et al. 2014); (3) perform IWAS; (4) report results and store them in the working directory.</p>
 <h3>Output: Gene-disease association</h3>
-<p>The results are stored in the user-defined output file. For illustration, we explain the meaning of each entry in the first two lines.</p>
+<p>The results are stored in a user-defined output file. For illustration, we explain the meaning of each entry in the first two lines of the output.</p>
 <table id="VariExp">
-<tr class="r1"><td class="c1">number </td><td class="c2"> Column   </td><td class="c3"> Value  </td><td class="c4"> Explanations </td></tr>
+<tr class="r1"><td class="c1">Col. num. </td><td class="c2"> Column name   </td><td class="c3"> Value  </td><td class="c4"> Explanations </td></tr>
 <tr class="r2"><td class="c1">1 </td><td class="c2"> gene         </td><td class="c3"> A4GALT </td><td class="c4"> Feature/gene identifier, taken from gene_list file </td></tr>
 <tr class="r3"><td class="c1">2 </td><td class="c2"> CHR        </td><td class="c3"> 22     </td><td class="c4"> Chromosome </td></tr>
 <tr class="r4"><td class="c1">3 </td><td class="c2"> P0            </td><td class="c3"> 41088126 </td><td class="c4"> Gene start (from hg19 list from plink website) </td></tr>
@@ -97,7 +97,7 @@ Rscript IWAS.R \
 </td></tr></table>
 <p><b>Note:</b> We only store the results for genes with external weights. The genes without external weights will be ignored in the output file.</p>
 <h2>External Weights</h2>
-<p>We put the external weights into GitHub. You can compute your own weights as well. To facilitate this step, we put our source file into the folder <i>.Weight/conWeights.R</i>. Our method is based on elastic net, and you can use other methods to compute the weights. Currently, we provide the pre-computed weights for the following 14 imaging endophenotype. You can define which image endophenotype you want to use by weight_type options. </p>
+<p>We put some pre-computed external weights on GitHub. You can compute your own weights as well. To facilitate this step, we put our source file into the folder <i>.Weight/conWeights.R</i>. Our method is based on elastic net, and you can use other methods to compute the weights. Currently, we provide the pre-computed weights for the following 14 imaging endophenotypes. You can define which image endophenotype you want to use by weight_type options. The following table describes the values and corresponding meanings for --weight_type option.</p>
 <table id="TABLENAME">
 <tr class="r1"><td class="c1">left   </td><td class="c2"> right  </td><td class="c3"> ROI name </td></tr>
 <tr class="r2"><td class="c1">ST31CV </td><td class="c2"> ST90CV </td><td class="c3"> Inferior parietal </td></tr>
@@ -110,7 +110,9 @@ Rscript IWAS.R \
 </td></tr></table>
 <h2>Further Analyses</h2>
 <h3>Testing for effect in multiple external weights</h3>
-<p>There may be compelling reasons to take advantage of multiple sets of weights based on multiple correlated endophenotypes. First, the statistical advantages of joint analysis of multiple traits include possibly increasing statistical power and more precise parameter estimates, alleviating the burden of multiple testing. Biologically, joint analysis of multiple traits addresses the issue of pleiotropy (i.e. one locus influencing multiple traits), providing biological insight into molecular mechanisms underlying the disease or trait. Second, the above conclusions are expected to carry over to the current context of analysis of multiple endophenotypes. In our current version software, we provide a adaptive test, called daSPU, which can combine the information from multiple sets of weights simultaneously. To use daSPU, we can simply set <i>test_type</i> option to <i>daSPU</i>.</p>
+<p>There may be compelling reasons to take advantage of multiple sets of weights based on multiple correlated endophenotypes. First, the statistical advantages of joint analysis of multiple traits include possibly increasing statistical power and more precise parameter estimates, alleviating the burden of multiple testing. Biologically, joint analysis of multiple traits addresses the issue of pleiotropy (i.e. one locus influencing multiple traits), providing biological insight into molecular mechanisms underlying the disease or trait. Second, the above conclusions are expected to carry over to the current context of analysis of multiple endophenotypes. In our current version of the software, we provide an adaptive test, called daSPU, which can combine the information from multiple sets of weights simultaneously. To use daSPU, we can simply set <i>--test_type</i> option to <i>daSPU</i>.</p>
+<h3>Testing with the individual level GWAS data</h3>
+<p>IWAS can be applied to individual level GWAS data as well. The main idea is the same. Specifically, we can calculate the score and its corresponding covariance matrix for SNPs in the gene regions. Then we can apply <i>aSPU2</i> package with pre-computed imaging endophenotype based external weights provided on this website. Since there some restrictions sharing individual level GWAS data, we do not provide any example regarding applying IWAS to individual level data. However, this should be a relatively easy task. </p>
 <h2>Command-line parameters</h2>
 <h3>IWAS.R</h3>
 <table id="Command">
@@ -121,26 +123,56 @@ Rscript IWAS.R \
 <tr class="r5"><td class="c1">--ref_ld </td><td class="c2"> Reference LD files in binary PLINK format </td><td class="c3"> Required </td></tr>
 <tr class="r6"><td class="c1">--gene_list </td><td class="c2"> Gene sets we want to analyze, currently only gene sets from a single chromosome are supported </td><td class="c3"> Required </td></tr>
 <tr class="r7"><td class="c1">--test_type </td><td class="c2"> Test we want to perform </td><td class="c3"> aSPU </td></tr>
-<tr class="r8"><td class="c1">--weight_type </td><td class="c2"> Weight we want to use  </td><td class="c3"> ST31TA 
+<tr class="r8"><td class="c1">--weight_type </td><td class="c2"> Weight we want to use  </td><td class="c3"> ST31TA </td></tr>
+<tr class="r9"><td class="c1">--Rsq_cutoff </td><td class="c2"> R square cutoff for genes we want to analyze </td><td class="c3"> 0.01 </td></tr>
+<tr class="r10"><td class="c1">--max_nperm </td><td class="c2"> maximum number of permutation for aSPU or daSPU </td><td class="c3"> 1000000 </td></tr>
+<tr class="r11"><td class="c1">
 </td></tr></table>
+<p><b>note 1:</b> We only want to analyze the genes with relatively informative external weights. To do that, we calculated the squared Person correlation, \(r^2\), between the predicted and observed endophenotype values in the dataset, and selected only those genes with \(r^2 &gt; 0.01\) (--Rsq_cutoff). To facility your analyses when you are constructing your own weights, we make the cutoff as an option.  </p>
+<p><b>note 2:</b> A single layer/loop of Monte Carlo simulations is used to obtain the \(p\)-values of all the SPU, aSPU, and daSPU tests simultaneously. we use an adaptive way to select the number of simulations and calculate \(p\)-values efficiently. --max_nperm is the upper bound for the number of simulations. </p>
 <h2>FAQ</h2>
 <p><b>IWAS looks similar to TWAS and PrediXcan. What's the difference between them?</b></p>
-<p>Unlike TWAS and PrediXcan uses gene expression as the endophenotype, IWAS uses imaging endophenotype, which might be more powerful when analyzing some psychiatry related traits, such as AD. By noting that TWAS and PrediXcan are the same as weighted Sum test with external gene expression based weights, we propose to use aSPU, a more powerful and adaptive test, to conduct the association test. Since aSPU covers Weighted Sum test as a special scenario, we can get the results for TWAS or PrediXcan after running our methods as well. We demonstrate that our new method is more powerful and identify some new genes in some real data analyses. We expect this is generally true and hope you can let us know your results if you apply both TWAS and IWAS on your real data analyses.</p>
+<p>Differing from that <a href="http://gusevlab.org/projects/fusion/" target=&ldquo;blank&rdquo;>TWAS</a> (Gusev et al. 2016) and <a href="https://github.com/hakyimlab/PrediXcan" target=&ldquo;blank&rdquo;>PrediXcan</a>  (Gamazon et al. 2015) use gene expression as the endophenotype, IWAS uses imaging endophenotypes, which might be more powerful when analyzing some neuro degenerative or psychiatric disorders, such as AD. By noting that TWAS and PrediXcan are the same as a weighted Sum test with gene expression based weights, we propose to use aSPU, a more powerful and adaptive test, to conduct association testing. Since aSPU covers the (weighted) Sum test as a special case, we can get the results for TWAS or PrediXcan after running our method as well. We demonstrate that our new method is more powerful and identify some new genes in some real data analyses. We expect this to be generally true and hope you can let us know your results if you apply both TWAS and IWAS on your real data analyses.</p>
+<p><b>What related software is available?</b></p>
+<p>Our methods are related to the following method by other two groups.
+Two methods are highly correlated with two well-known groups.</p>
+<p><a href="https://github.com/hakyimlab/MetaXcan" target=&ldquo;blank&rdquo;>MetaXcan</a> and  <a href="https://github.com/hakyimlab/PrediXcan" target=&ldquo;blank&rdquo;>PrediXcan</a>  (Gamazon et al 2015) developed by the Im lab perform gene-based association tests with and without summary data. </p>
+<p><a href="http://gusevlab.org/projects/fusion/" target=&ldquo;blank&rdquo;>TWAS</a> by Gusev performs gene-based association tests with individual-level or summary statistics. </p>
+<p>MetaXcan and TWAS are similar. The main difference between TWAS and MetaXcan is that they use a slightly different way and different reference data to construct weights. We recommend you to check their websites to download other gene-expression based weights as well.</p>
 <p><b>Can I use other reference data?</b></p>
 <p>Yes. Other references such as 1000 Genomes, can be used as well. We will upload the 1000 Genomes with only HapMap SNPs set in the near future. Please check this website later for updating.</p>
-<p><b>What related software is available?</b></p>
-<p>Two methods are highly correlated with two well-known groups.</p>
-<p>The MetaXcan and PrediXcan developed by Im lab perform gene-based association tests with and without summary data. </p>
-<p>TWAS by Gusev performs gene-based association tests only with summary data. </p>
-<p>In our mind, MetaXcan and TWAS are very similar. The main difference between TWAS and MetaXcan is that they use a slightly different way and different reference data to construct weight. We recommend you check their website to download other weights as well.</p>
-<p>We submit a paper to Genetics with extension to TWAS or PrediXcan. The main idea is that, instead of applying weighted Sum test, we apply aSPU. We demonstrate that aSPU is more powerful than TWAS and PrediXcan. </p>
+<p><b> What QC is performed internally when using IWAS?</b></p>
+<p>IWAS performs a similar quality control steps as TWAS did. We automatically match up SNPs, remove <a href="https://www.snpedia.com/index.php/Ambiguous_flip" target=&ldquo;blank&rdquo;>ambiguous markers</a> (A<i>C or G</i>T) and flip alleles to match the reference data.</p>
 <h2>Acknowledgements</h2>
+<p>This research was supported by NIH grants R21AG057038, R01HL116720, R01GM113250 and R01HL105397, and by the Minnesota Supercomputing Institute; ZX was supported by a University of Minnesota MnDRIVE Fellowship and CW by a University of Minnesota Dissertation Fellowship.</p>
 <p>We are grateful to the external reference data, and all of the hard work involved in the study. Without the efforts of these groups and sharing the individual level data, we are unable to construct the external weights, and our methods will be useless. </p>
 <div class="infoblock">
 <div class="blockcontent">
 <p>Data collection and sharing for this project was funded by the Alzheimer’s Disease Neuroimaging Initiative (ADNI) (National Institutes of Health Grant U01 AG024904) and DOD
 ADNI (Department of Defense award number W81XWH-12-2-0012). ADNI is funded by the National Institute on Aging, the National Institute of Biomedical Imaging and Bioengineering, and through generous contributions from the following: Alzheimer’s Association; Alzheimers Drug Discovery Foundation; Araclon Biotech; BioClinica, Inc.; Biogen Idec Inc.; Bristol-Myers Squibb Company; Eisai Inc.; Elan Pharmaceuticals, Inc.; Eli Lilly and Company; EuroImmun; F. Ho↵mann-La Roche Ltd and its a liated company Genentech, Inc.; Fujirebio; GE Healthcare; IXICO Ltd.; Janssen Alzheimer Immunotherapy Research &amp; Development, LLC.; Johnson &amp; Johnson Pharmaceutical Research &amp; Development LLC.; Medpace, Inc.; Merck &amp; Co., Inc.; Meso Scale Diagnostics, LLC.; NeuroRx Research; Neurotrack Technologies; Novartis Pharmaceuticals Corporation; Pfizer Inc.; Piramal Imaging; Servier; Synarc Inc.; and Takeda Pharmaceutical Company. The Canadian Institutes of Rev December 5, 2013 Health Research is providing funds to support ADNI clinical sites in Canada. Private sector contributions are facilitated by the Foundation for the National Institutes of Health (www.fnih.org). The grantee organization is the Northern California Institute for Research and Education, and the study is coordinated by the Alzheimer’s Disease Cooperative Study at the University of California, San Diego. ADNI data are disseminated by the Laboratory for Neuro Imaging at the University of Southern California.</p>
 </div></div>
+<h2>References</h2>
+<ul>
+<li><p>Lambert, JC., Ibrahim-Verbaas, CA., Harold, D., Naj, AC., Sims, R., Bellenguez, C., DeStafano, AL., Bis, JC., Beecham, GW., Grenier-Boley, B., et al. (2013) Meta-analysis of 74,046 individuals identifies 11 new susceptibility loci for Alzheimer’s disease. <i>Nat. Genet.</i> 45, 1452–1460.</p>
+</li>
+<li><p>Pasaniuc, B., Zaitlen, N., Shi, H., Bhatia, G., Gusev, A., Pickrell, J., Hirschhorn, J., Strachan, D.P., Patterson, N. and Price, A.L. (2014). Fast and accurate imputation of summary statistics enhances evidence of functional enrichment. <i>Bioinformatics</i> 30, 2906- 2914.</p>
+</li>
+<li><p>Gusev, A. et al. (2016) Integrative approaches for large-scale transcriptome-wide association studies. Nat Genet. 48, 245-252.</p>
+</li>
+<li><p>Gamazon, E.R. et al. (2015) A gene-based association method for mapping traits using reference transcriptome data. <i>Nat. Genet.</i> 47, 1091-1098.</p>
+</li>
+<li><p>Alvaro Barbeira, Kaanan P Shah, Jason M Torres, Heather E Wheeler, Eric S Torstenson, Todd Edwards, Tzintzuni Garcia, Graeme I Bell, Dan Nicolae, Nancy J Cox, Hae Kyung Im. (2016) <a href="http://biorxiv.org/content/early/2017/05/21/045260" target=&ldquo;blank&rdquo;>MetaXcan: Summary Statistics Based Gene-Level Association Method Infers Accurate PrediXcan Results</a>.</p>
+</li>
+</ul>
+<h3>License</h3>
+<p>Maintainer: <a href="wuchong.org" target=&ldquo;blank&rdquo;>Chong Wu</a> (wuxx0845@umn.edu)</p>
+<p><a href="http://opensource.org/licenses/MIT" target=&ldquo;blank&rdquo;>MIT</a></p>
+<p>Copyright (c) 2013-present, Chong Wu (wuxx0845@umn.edu), Zhiyuan Xu (xuxx0284@umn.edu) &amp; Wei Pan(weip@biostat.umn.edu)</p>
+<div id="footer">
+<div id="footer-text">
+Page generated 2017-06-20 12:45:08 CDT, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
+</div>
+</div>
 </div>
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
