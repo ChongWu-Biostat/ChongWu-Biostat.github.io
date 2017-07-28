@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="jemdoc.css" type="text/css" />
+<title></title>
+</head>
+<body>
+<div id="layout-content">
+<h1>aSPU in GLM</h1>
+<h2>adaptive sum of powered score (aSPU) test in Generalized Linear Models</h2>
+<p>Several tests for high-dimensional generalized linear models have been proposed recently, however, they are mainly based on a sum of squares of the score vector and  only powerful under certain limited alternative hypotheses.  In practice, since the associations in a true alternative hypothesis may be sparse or dense or between, the existing tests may or may not be powerful. Here, we propose an adaptive test that maintains high power across a wide range of scenarios. To calculate its \(p\)-value, its asymptotic null distribution is derived. Please cite the following manuscript for using the aSPU method:</p>
+<div class="infoblock">
+<div class="blockcontent">
+<p>Wu et al. 2017 &ldquo;An adaptive test on high-dimensional parameters in generalized linear models&rdquo; Statistica Sinica, under revision.</p>
+</div></div>
+<p>For questions or comments regarding methods, contact Wei Pan (<a href="mailto:weip@biostat.umn.edu" target=&ldquo;blank&rdquo;>weip@biostat.umn.edu</a>) and Chong Wu (<a href="mailto:chongwu@umn.edu" target=&ldquo;blank&rdquo;>chongwu@umn.edu</a>);
+For questions or comments regarding data & codes, contact Chong Wu (<a href="mailto:chongwu@umn.edu" target=&ldquo;blank&rdquo;>chongwu@umn.edu</a>).</p>
+<h2>Installation</h2>
+<p>To install the stable version from CRAN, simply run the following from an R console:</p>
+<div class="infoblock">
+<div class="blockcontent">
+<p>install.packages(&ldquo;GLMaSPU&rdquo;)</p>
+</div></div>
+<p>To install the latest development builds directly from GitHub, run this instead:</p>
+<div class="infoblock">
+<div class="blockcontent">
+<p>if (!require(&ldquo;devtools&rdquo;))
+install.packages(&ldquo;devtools&rdquo;)
+devtools::install_github(&ldquo;ChongWu-Biostat/GLMaSPU&rdquo;)</p>
+</div></div>
+<h2>Typical analysis and output</h2>
+<p>This example assumes you have setup the required environment and data as illustrated in the previous section. All analyses are based on R/3.3.1.</p>
+<h3>Input:</h3>
+<p>At a minimum, we need the following inputs:</p>
+<ol>
+<li><p>Y - Response. It can be binary or continuous trait. A vector with length n (number of observations).</p>
+</li>
+<li><p>X - Genotype or other data; each row for a subject, and each column for a variable of interest. An n by p matrix (n: number of observations, p: number of predictors).</p>
+</li>
+<li><p>cov - (Optional) Covariates. An n by q matrix (n: number of observations, q: number of covari- ates).
+Additional columns are allowed but will be ignored. We recommend removing the additional columns before analysis to save space.</p>
+</li>
+<li><p>pow - Gamma set used in SPU test. A vector of the powers. By default, we use pow = c(1,2,&hellip;,6,Inf)</p>
+</li>
+<li><p>model - Corresponding to the Response. &ldquo;gaussian&rdquo; for a quantitative response; &ldquo;binomial&rdquo; for a binary response.</p>
+</li>
+</ol>
+<h3>Performing the IWAS</h3>
+<p>After we prepared the data, we can run GLMaSPU via the following single line.</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+aSPU_apval(Y, X, cov = cov, pow = c(1:6, Inf))
+</pre></div></div>
+<p><b>Note</b> The output is the p-values for SPU(gamma) and aSPU.</p>
+<h2>Parametric bootstrap version of HDGLM</h2>
+<p>To faciliciate researchers compare our methods with Chen's method (Guo et al. 2016), we provided the parametric bootstrap version of HDGLM, which can be performed by the following single line.</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+HDGLM_perm(Y, X, cov = cov)
+</pre></div></div>
+<h2>FAQ</h2>
+<p><b>GLMaSPU package looks similar to aSPU package. What's the difference between them?</b></p>
+<p>The main difference is that in GLMaSPU package, we develope the asymptotic null distribution and calculate the p-values based on that. For aSPU package, the parametric boostrap or other resampling methods are used to calculate the p-values. If you want to learn more about applying aSPU to genome-wide assocation studies, you can read our other works, such as Pan et al. 2014.</p>
+<h2>Acknowledgements</h2>
+<p>TThis research was supported by National Institutes of Health (NIH) grants R01GM113250, R01HL105397, and R01HL116720 and by the Minnesota Supercomputing Institute. CW is supported by a University of Minnesota Doctoral Dissertation Fellowship.</p>
+<h2>References</h2>
+<ul>
+<li><p>Guo, B. and S. X. Chen (2016). Tests for high dimensional generalized linear models. Journal of the Royal Statistical Society: Series B (Statistical Methodology), 78(5), 1079-1102.</p>
+</li>
+<li><p>Pan, W., J. Kim, Y. Zhang, X. Shen, and P. Wei (2014). A powerful and adaptive associ-
+ation test for rare variants. Genetics 197 (4), 1081–1095.</p>
+</li>
+</ul>
+<h2>License</h2>
+<p>Maintainer: <a href="wuchong.org" target=&ldquo;blank&rdquo;>Chong Wu</a> (wuxx0845@umn.edu)</p>
+<p><a href="http://opensource.org/licenses/MIT" target=&ldquo;blank&rdquo;>MIT</a></p>
+<p>Copyright (c) 2013-present, Chong Wu (wuxx0845@umn.edu), Gongjun Xu (gongjun@umich.edu) &amp; Wei Pan(weip@biostat.umn.edu).</p>
+<div id="footer">
+<div id="footer-text">
+Page generated 2017-07-27 21:09:26 CDT, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
+</div>
+</div>
+</div>
+</body>
+</html>

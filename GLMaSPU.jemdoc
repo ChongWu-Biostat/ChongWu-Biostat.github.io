@@ -1,0 +1,87 @@
+
+# jemdoc: nofooter
+
+= aSPU in GLM
+
+== adaptive sum of powered score (aSPU) test in Generalized Linear Models
+
+Several tests for high-dimensional generalized linear models have been proposed recently, however, they are mainly based on a sum of squares of the score vector and  only powerful under certain limited alternative hypotheses.  In practice, since the associations in a true alternative hypothesis may be sparse or dense or between, the existing tests may or may not be powerful. Here, we propose an adaptive test that maintains high power across a wide range of scenarios. To calculate its $p$-value, its asymptotic null distribution is derived. Please cite the following manuscript for using the aSPU method:
+
+~~~
+Wu et al. 2017 "An adaptive test on high-dimensional parameters in generalized linear models" Statistica Sinica, under revision.
+~~~
+
+For questions or comments regarding methods, contact Wei Pan ([weip@biostat.umn.edu weip@biostat.umn.edu]) and Chong Wu ([chongwu@umn.edu chongwu@umn.edu]);
+For questions or comments regarding data \& codes, contact Chong Wu ([chongwu@umn.edu chongwu@umn.edu]).
+
+== Installation
+To install the stable version from CRAN, simply run the following from an R console:
+~~~
+install.packages("GLMaSPU")
+~~~
+
+To install the latest development builds directly from GitHub, run this instead:
+~~~
+if (!require("devtools"))
+install.packages("devtools")
+devtools::install_github("ChongWu-Biostat/GLMaSPU")
+~~~
+
+== Typical analysis and output
+
+This example assumes you have setup the required environment and data as illustrated in the previous section. All analyses are based on R/3.3.1.
+
+=== Input:
+
+At a minimum, we need the following inputs:
+
+. Y - Response. It can be binary or continuous trait. A vector with length n (number of observations).
+. X - Genotype or other data; each row for a subject, and each column for a variable of interest. An n by p matrix (n: number of observations, p: number of predictors).
+. cov - (Optional) Covariates. An n by q matrix (n: number of observations, q: number of covari- ates).
+Additional columns are allowed but will be ignored. We recommend removing the additional columns before analysis to save space.
+. pow - Gamma set used in SPU test. A vector of the powers. By default, we use pow = c(1,2,...,6,Inf)
+. model - Corresponding to the Response. "gaussian" for a quantitative response; "binomial" for a binary response.
+
+=== Performing the IWAS
+
+After we prepared the data, we can run GLMaSPU via the following single line.
+
+~~~
+{}{}
+aSPU_apval(Y, X, cov = cov, pow = c(1:6, Inf))
+~~~
+*Note* The output is the p-values for SPU(gamma) and aSPU.
+
+
+
+== Parametric bootstrap version of HDGLM
+
+To faciliciate researchers compare our methods with Chen's method (Guo et al. 2016), we provided the parametric bootstrap version of HDGLM, which can be performed by the following single line.
+
+~~~
+{}{}
+HDGLM_perm(Y, X, cov = cov)
+~~~
+
+== FAQ
+
+*GLMaSPU package looks similar to aSPU package. What's the difference between them?*
+
+The main difference is that in GLMaSPU package, we develope the asymptotic null distribution and calculate the p-values based on that. For aSPU package, the parametric boostrap or other resampling methods are used to calculate the p-values. If you want to learn more about applying aSPU to genome-wide assocation studies, you can read our other works, such as Pan et al. 2014.
+
+
+== Acknowledgements
+TThis research was supported by National Institutes of Health (NIH) grants R01GM113250, R01HL105397, and R01HL116720 and by the Minnesota Supercomputing Institute. CW is supported by a University of Minnesota Doctoral Dissertation Fellowship.
+== References
+
+- Guo, B. and S. X. Chen (2016). Tests for high dimensional generalized linear models. Journal of the Royal Statistical Society: Series B (Statistical Methodology), 78(5), 1079-1102.
+- Pan, W., J. Kim, Y. Zhang, X. Shen, and P. Wei (2014). A powerful and adaptive associ-
+ation test for rare variants. Genetics 197 (4), 1081–1095.
+
+== License
+
+Maintainer: [wuchong.org Chong Wu] (wuxx0845@umn.edu)
+
+[http://opensource.org/licenses/MIT MIT]
+
+Copyright (c) 2013-present, Chong Wu (wuxx0845@umn.edu), Gongjun Xu (gongjun@umich.edu) & Wei Pan(weip@biostat.umn.edu).
