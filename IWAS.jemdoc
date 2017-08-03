@@ -8,7 +8,7 @@
 IWAS is a new tool for performing an image-wide association study by incorporating imaging endophenotypes as weights into GWAS using either individual level data or only summary statistics. The goal is to identify new genes that are associated with a trait of interest in GWAS. We provide precomputed external weights (based on gray matter volumes as the endophenotype) from the [http://adni.loni.usc.edu ADNI data] to facilitate analysis. Please cite the following manuscript for using the IWAS method \& data:
 
 ~~~
-Xu et al. 2017 "Imaging-wide association study: integrating imaging endophenotypes in GWAS" Neuroimage, accepted.
+Xu, Z., Wu, C., Pan, W., & Alzheimer's Disease Neuroimaging Initiative. (2017). Imaging-wide association study: integrating imaging endophenotypes in GWAS. Neuroimage, accepted.
 ~~~
 
 For questions or comments regarding methods, contact Wei Pan ([weip@biostat.umn.edu weip@biostat.umn.edu]);
