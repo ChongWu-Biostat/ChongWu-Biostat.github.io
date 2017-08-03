@@ -1,0 +1,177 @@
+
+# jemdoc: nofooter
+
+= TWAS-aSPU
+
+== Integrating eQTL and GWAS data
+
+Two new gene-based association analysis methods, called PrediXcan and TWAS for GWAS individual-level and summary data respectively, were recently proposed to integrate GWAS with eQTL data, alleviating two common problems in GWAS by boosting statistical power and facilitating biological interpretation of GWAS discoveries. Based on a novel reformulation of PrediXcan and TWAS, *we propose a more powerful gene-based association test to integrate single set or multiple sets of eQTL data with GWAS individual-level data or summary statistics*. As demonstrated in our simulations and real data analyses and hopefully will be demonstrated in your own studies, the proposed method uncovered more known or novel trait-associated genes, showcasing much-improved performance of our proposed method. Please cite the following manuscript for using the TWAS-aSPU method:
+
+~~~
+Xu et al. 2017 "A powerful framework for integrating eQTL and GWAS summary data" Genetics, under revision.
+~~~
+
+For questions or comments regarding methods, contact Wei Pan ([weip@biostat.umn.edu weip@biostat.umn.edu]);
+For questions or comments regarding data \& codes, contact Chong Wu ([chongwu@umn.edu chongwu@umn.edu]).
+
+== Installation
+
+Note: Since the proposed method can be treated as the extension of [http://gusevlab.org/projects/fusion/ TWAS], some steps are exactly the same and taken from the [http://gusevlab.org/projects/fusion/ TWAS website].
+
+- Download and unpack the (1000 Genomes)  [https://data.broadinstitute.org/alkesgroup/FUSION/LDREF.tar.bz2 LD reference data]:
+~~~
+{}{}
+wget https://data.broadinstitute.org/alkesgroup/FUSION/LDREF.tar.bz2
+tar xjvf LDREF.tar.bz2
+~~~
+
+- Download the weights from the [http://gusevlab.org/projects/fusion/ TWAS website] or [https://github.com/hakyimlab/PrediXcan PrediXcan] website.
+
+- Download and unpack the [https://github.com/ChongWu-Biostat/IWAS Scripts and examples] (Using clone or download option at GitHub).
+
+~~~
+{}{}
+git clone https://github.com/ChongWu-Biostat/IWAS.git
+~~~
+
+
+- Launch R and install required libraries:
+
+~~~
+{}{}
+install.packages('optparse','RColorBrewer','data.table','matlib','Rcpp','RcppArmadillo','bigmemory','mvtnorm','MASS')
+install.packages('plink2R-master/plink2R/',repos=NULL)
+if (!require("devtools"))
+install.packages("devtools")
+devtools::install_github("ChongWu-Biostat/aSPU2")
+devtools::install_github("gabraham/plink2R/plink2R")
+~~~
+
+== Typical analysis and output
+
+The TWAS-aSPU analysis takes gene expression based external weights and disease GWAS summary statistics to identify significant genes. We will use the [http://web.pasteur-lille.fr/en/recherche/u744/igap/igap_download.php IGAP Alzheimer's summary data] (Lambert et al. 2013) as an example to illustrate how to use our methods. This example assumes you have setup the required environment and data as illustrated in the previous section. All analyses are based on R/3.3.1.
+
+=== Input: GWAS summary statistics
+
+At a minimum, we need a summary rds file with a header row containing the following fields:
+
+. SNP\_map – SNP identifier (CHR:BP)
+. A1 – first allele (effect allele, should be capitalized)
+. A2 – second allele (other allele, should be capitalized)
+. Z – Z-scores, sign with respect to A1.
+
+Additional columns are allowed but will be ignored. We recommend removing the additional columns before analysis to save space.
+
+*Note:* The performance of TWAS-aSPU depends on the density of summary-level data. We highly recommend running TWAS-aSPU with raw summary-level data. Pre-process step such as pruning and restricting to top SNPs may harm the performance.
+
+=== Input: external weights
+
+The pre-computed external weights can be downloaded from [http://gusevlab.org/projects/fusion/ TWAS] (Gusev et al. 2016) or [https://github.com/hakyimlab/PrediXcan PrediXcan] websites.
+
+=== Performing the TWAS-aSPU
+
+After we prepared the data, we can run IWAS via the following single line.
+
+~~~
+{}{}
+Rscript TWAS_aSPU.R \
+--sumstats ./Example/IGAP_chr22.rds \
+--out ./Example/example_res.rds \
+--weights ./WEIGHTS/NTR.BLOOD.RNAARR.pos \
+--weights_dir ./WEIGHTS/ \
+--ref_ld ./LDREF/1000G.EUR. \
+--gene_list ./Example/gene_list.txt \
+--chr 22
+~~~
+
+
+This should take around one or two minutes, and you will see some intermediate steps on the screen. If everything works, you will see a file /example\_res.rds/ under the /.Example/ and /output.txt/ in the working directory.
+
+Through TWAS_aSPU.R, we perform the following steps: (1) combine the GWAS and reference SNPs and remove ambiguous SNPs. (2) impute GWAS Z-scores for any reference SNPs with missing GWAS Z-scores via the IMPG algorithm ([https://academic.oup.com/bioinformatics/article/30/20/2906/2422225/Fast-and-accurate-imputation-of-summary-statistics Pasaniuc et al. 2014); (3) perform TWAS-aSPU; (4) report results and store them in the working directory.
+
+=== Output: Gene-disease association
+
+The results are stored in a user-defined output file. For illustration, we explain the meaning of each entry in the first two lines of the output.
+
+~~~
+{}{table}{VariExp}
+Col. num. | Column name   | Value  | Explanations ||
+1 | gene         | A4GALT | Feature/gene identifier, taken from gene\_list file ||
+2 | CHR        | 22     | Chromosome ||
+3 | P0            | 41088126 | Gene start (from hg19 list from plink website) ||
+4 | P1        |   43116876  | Gene end (from hg19 list from plink website) ||
+5 | \#nonzero\_SNPs | 5 | Number of non-zero weight SNPs ||
+6 | TWAS\_asy | 0.69 | TWAS p-value with imaging based external weight. The p-value is based on asymptotic distribution. ||
+7 | SSU\_asy | 0.61 | SSU p-value with imaging based external weight. The p-value is based on asymptotic distribution. ||
+8-23| SPU | 0.69| SPU or aSPU p-values. The results are based on simulations.
+~~~
+
+*Note:* We only store the results for genes with external weights. The genes without external weights will be ignored in the output file.
+
+
+== Further Analyses
+
+=== Testing for effect in multiple external weights
+
+There may be compelling reasons to take advantage of multiple sets of weights based on multiple correlated endophenotypes. First, the statistical advantages of joint analysis of multiple traits include possibly increasing statistical power and more precise parameter estimates, alleviating the burden of multiple testing. Biologically, joint analysis of multiple traits addresses the issue of pleiotropy (i.e. one locus influencing multiple traits), providing biological insight into molecular mechanisms underlying the disease or trait. Second, the above conclusions are expected to carry over to the current context of analysis of multiple endophenotypes. In our current version of the software, we provide an adaptive test, called aSPUO, which can combine the information from multiple sets of weights simultaneously. This test also covers TWAS-omnibus as a special situation. You can call /aSPUO/ via aSPU2 package. Note that this procedure is very time-consuming.
+
+=== Testing with the individual level GWAS data
+
+TWAS-aSPU can be applied to individual level GWAS data as well. The main idea is the same. Specifically, we can calculate the score and its corresponding covariance matrix for SNPs in the gene regions. Then we can apply /aSPU2/ package with pre-computed imaging endophenotype based external weights provided on this website. Since there some restrictions sharing individual level GWAS data, we do not provide any example regarding applying TWAS-aSPUO to individual level data. However, this should be a relatively easy task.
+
+
+== Command-line parameters
+
+=== TWAS_aSPU.R
+
+~~~
+{}{table}{Command}
+Flag   | Usage  | Default ||
+\-\-sumstats | ummary statistics (rds file and must have SNP and Z column headers) | Required ||
+\-\-out | Path to output file | Required ||
+\-\-weights | File listing molecular weight (rds files and must have columns ID,CHR,P0,P1, Weights) | Required ||
+\-\-ref\_ld | Reference LD files in binary PLINK format | Required ||
+\-\-gene\_list | Gene sets we want to analyze, currently only gene sets from a single chromosome are supported | Required ||
+\-\-max\_nperm | maximum number of permutation for aSPU or daSPU | 1000000
+~~~
+
+*note:* A single layer/loop of Monte Carlo simulation is used to obtain the $p$-values of all the SPU, aSPU, and daSPU tests simultaneously. we use an adaptive way to select the number of simulations and calculate $p$-values efficiently. \-\-max\_nperm is the upper bound for the number of simulations.
+
+
+== FAQ
+
+*TWAS-aSPU looks similar to TWAS and PrediXcan. What's the difference between them?*
+
+By noting that TWAS and PrediXcan are the same as a weighted Sum test with gene expression based weights, we propose to use aSPU, a more powerful and adaptive test, to conduct association testing. Since aSPU covers the (weighted) Sum test as a special case, we can get the results for TWAS or PrediXcan after running our method as well. We demonstrate that our new method is more powerful and identify some new genes in some real data analyses. We expect this to be generally true and hope you can let us know your results if you apply both TWAS and IWAS on your real data analyses.
+
+
+*What related software is available?*
+
+Our methods are related to the following method by other two groups.
+Two methods are highly correlated with two well-known groups.  [https://github.com/hakyimlab/MetaXcan MetaXcan] and  [https://github.com/hakyimlab/PrediXcan PrediXcan]  (Gamazon et al 2015) developed by the Im lab perform gene-based association tests with and without summary data. [http://gusevlab.org/projects/fusion/ TWAS] by Gusev performs gene-based association tests with individual-level or summary statistics.  MetaXcan and TWAS are similar. The main difference between TWAS and MetaXcan is that they use a slightly different way and different reference data to construct weights. We recommend you to check their websites to download other gene-expression based weights as well.
+
+Instead of using gene-expression based external weight, we may construct weights based on other endophenotypes. See our [www.wuchong.org/IWAS.html IWAS] for more details.
+
+
+* What QC is performed internally when using TWAS-aSPU?*
+
+TWAS-aSPU performs a similar quality control steps as TWAS did. We automatically match up SNPs, remove [https://www.snpedia.com/index.php/Ambiguous_flip ambiguous markers] (A\/C or G\/T) and flip alleles to match the reference data.
+
+== Acknowledgements
+This research was supported by NIH grants R21AG057038, R01HL116720, R01GM113250 and R01HL105397, and by the Minnesota Supercomputing Institute; ZX was supported by a University of Minnesota MnDRIVE Fellowship and CW by a University of Minnesota Dissertation Fellowship.
+
+== References
+
+- Lambert, JC., Ibrahim-Verbaas, CA., Harold, D., Naj, AC., Sims, R., Bellenguez, C., DeStafano, AL., Bis, JC., Beecham, GW., Grenier-Boley, B., et al. (2013) Meta-analysis of 74,046 individuals identifies 11 new susceptibility loci for Alzheimer’s disease. /Nat. Genet./ 45, 1452–1460.
+- Pasaniuc, B., Zaitlen, N., Shi, H., Bhatia, G., Gusev, A., Pickrell, J., Hirschhorn, J., Strachan, D.P., Patterson, N. and Price, A.L. (2014). Fast and accurate imputation of summary statistics enhances evidence of functional enrichment. /Bioinformatics/ 30, 2906- 2914.
+- Gusev, A. et al. (2016) Integrative approaches for large-scale transcriptome-wide association studies. /Nat Genet./ 48, 245-252.
+- Gamazon, E.R. et al. (2015) A gene-based association method for mapping traits using reference transcriptome data. /Nat. Genet./ 47, 1091-1098.
+- Alvaro Barbeira, Kaanan P Shah, Jason M Torres, Heather E Wheeler, Eric S Torstenson, Todd Edwards, Tzintzuni Garcia, Graeme I Bell, Dan Nicolae, Nancy J Cox, Hae Kyung Im. (2016) [http://biorxiv.org/content/early/2017/05/21/045260 MetaXcan: Summary Statistics Based Gene-Level Association Method Infers Accurate PrediXcan Results].
+
+== License
+
+Maintainer: [wuchong.org Chong Wu] (wuxx0845@umn.edu)
+
+[http://opensource.org/licenses/MIT MIT]
+
+Copyright (c) 2013-present, Chong Wu (wuxx0845@umn.edu), Zhiyuan Xu (xuxx0284@umn.edu), Wei Peng (PWei2@mdanderson.org) & Wei Pan(weip@biostat.umn.edu).

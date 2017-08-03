@@ -14,7 +14,7 @@
 <p>IWAS is a new tool for performing an image-wide association study by incorporating imaging endophenotypes as weights into GWAS using either individual level data or only summary statistics. The goal is to identify new genes that are associated with a trait of interest in GWAS. We provide precomputed external weights (based on gray matter volumes as the endophenotype) from the <a href="http://adni.loni.usc.edu" target=&ldquo;blank&rdquo;>ADNI data</a> to facilitate analysis. Please cite the following manuscript for using the IWAS method & data:</p>
 <div class="infoblock">
 <div class="blockcontent">
-<p>Xu et al. 2017 &ldquo;Imaging-wide association study: integrating imaging endophenotypes in GWAS&rdquo; Neuroimage, under revision.</p>
+<p>Xu et al. 2017 &ldquo;Imaging-wide association study: integrating imaging endophenotypes in GWAS&rdquo; Neuroimage, accepted.</p>
 </div></div>
 <p>For questions or comments regarding methods, contact Wei Pan (<a href="mailto:weip@biostat.umn.edu" target=&ldquo;blank&rdquo;>weip@biostat.umn.edu</a>);
 For questions or comments regarding data & codes, contact Chong Wu (<a href="mailto:chongwu@umn.edu" target=&ldquo;blank&rdquo;>chongwu@umn.edu</a>).</p>
@@ -28,7 +28,7 @@ For questions or comments regarding data & codes, contact Chong Wu (<a href="mai
 git clone https://github.com/ChongWu-Biostat/IWAS.git
 </pre></div></div>
 <ul>
-<li><p>Download the reference data, for example, 1000 Genomes, HapMap. Here we provide HapMap 3 with independent European reference. Use this <a href="https://www.dropbox.com/sh/8sqquebpdwyksuv/AACLHoYfG64_yloli4QRfyTIa?dl=0" target=&ldquo;blank&rdquo;>link</a> to download. Put it into the same working directory. </p>
+<li><p>Download the reference data, for example, 1000 Genomes, HapMap. Here we provide HapMap 3 with independent European reference. Use this <a href="https://www.dropbox.com/sh/8sqquebpdwyksuv/AACLHoYfG64_yloli4QRfyTIa?dl=0" target=&ldquo;blank&rdquo;>link</a> to download. Put it into the same working directory.</p>
 </li>
 </ul>
 <ul>
@@ -40,7 +40,7 @@ git clone https://github.com/ChongWu-Biostat/IWAS.git
 install.packages('optparse','RColorBrewer','data.table','matlib','Rcpp','RcppArmadillo','bigmemory','mvtnorm','MASS')
 install.packages('plink2R-master/plink2R/',repos=NULL)
 if (!require("devtools"))
-  install.packages("devtools")
+install.packages("devtools")
 devtools::install_github("ChongWu-Biostat/aSPU2")
 devtools::install_github("gabraham/plink2R/plink2R")
 </pre></div></div>
@@ -89,7 +89,7 @@ Rscript IWAS.R \
 <tr class="r6"><td class="c1">5 </td><td class="c2"> #nonzero_SNPs </td><td class="c3"> 5 </td><td class="c4"> Number of non-zero weight SNPs </td></tr>
 <tr class="r7"><td class="c1">6 </td><td class="c2"> TWAS_asy </td><td class="c3"> 0.69 </td><td class="c4"> TWAS p-value with imaging based external weight. The p-value is based on asymptotic distribution. </td></tr>
 <tr class="r8"><td class="c1">7 </td><td class="c2"> SSU_asy </td><td class="c3"> 0.61 </td><td class="c4"> SSU p-value with imaging based external weight. The p-value is based on asymptotic distribution. </td></tr>
-<tr class="r9"><td class="c1">8-23</td><td class="c2"> SPU </td><td class="c3"> 0.69</td><td class="c4"> SPU or aSPU p-values. The results are based on simulations. 
+<tr class="r9"><td class="c1">8-23</td><td class="c2"> SPU </td><td class="c3"> 0.69</td><td class="c4"> SPU or aSPU p-values. The results are based on simulations.
 </td></tr></table>
 <p><b>Note:</b> We only store the results for genes with external weights. The genes without external weights will be ignored in the output file.</p>
 <h2>External Weights</h2>
@@ -102,13 +102,13 @@ Rscript IWAS.R \
 <tr class="r5"><td class="c1">ST44CV </td><td class="c2"> ST103CV </td><td class="c3"> Parahippocampal </td></tr>
 <tr class="r6"><td class="c1">ST52CV </td><td class="c2"> ST111CV </td><td class="c3"> Precuneus </td></tr>
 <tr class="r7"><td class="c1">T50CV </td><td class="c2"> ST109CV </td><td class="c3"> Posterior cingulate </td></tr>
-<tr class="r8"><td class="c1">ST29SV </td><td class="c2"> ST88SV  </td><td class="c3"> Hippocampus 
+<tr class="r8"><td class="c1">ST29SV </td><td class="c2"> ST88SV  </td><td class="c3"> Hippocampus
 </td></tr></table>
 <h2>Further Analyses</h2>
 <h3>Testing for effect in multiple external weights</h3>
 <p>There may be compelling reasons to take advantage of multiple sets of weights based on multiple correlated endophenotypes. First, the statistical advantages of joint analysis of multiple traits include possibly increasing statistical power and more precise parameter estimates, alleviating the burden of multiple testing. Biologically, joint analysis of multiple traits addresses the issue of pleiotropy (i.e. one locus influencing multiple traits), providing biological insight into molecular mechanisms underlying the disease or trait. Second, the above conclusions are expected to carry over to the current context of analysis of multiple endophenotypes. In our current version of the software, we provide an adaptive test, called daSPU, which can combine the information from multiple sets of weights simultaneously. To use daSPU, we can simply set <i>--test_type</i> option to <i>daSPU</i>.</p>
 <h3>Testing with the individual level GWAS data</h3>
-<p>IWAS can be applied to individual level GWAS data as well. The main idea is the same. Specifically, we can calculate the score and its corresponding covariance matrix for SNPs in the gene regions. Then we can apply <i>aSPU2</i> package with pre-computed imaging endophenotype based external weights provided on this website. Since there some restrictions sharing individual level GWAS data, we do not provide any example regarding applying IWAS to individual level data. However, this should be a relatively easy task. </p>
+<p>IWAS can be applied to individual level GWAS data as well. The main idea is the same. Specifically, we can calculate the score and its corresponding covariance matrix for SNPs in the gene regions. Then we can apply <i>aSPU2</i> package with pre-computed imaging endophenotype based external weights provided on this website. Since there some restrictions sharing individual level GWAS data, we do not provide any example regarding applying IWAS to individual level data. However, this should be a relatively easy task.</p>
 <h2>Command-line parameters</h2>
 <h3>IWAS.R</h3>
 <table id="Command">
@@ -121,10 +121,10 @@ Rscript IWAS.R \
 <tr class="r7"><td class="c1">--test_type </td><td class="c2"> Test we want to perform </td><td class="c3"> aSPU </td></tr>
 <tr class="r8"><td class="c1">--weight_type </td><td class="c2"> Weight we want to use  </td><td class="c3"> ST31TA </td></tr>
 <tr class="r9"><td class="c1">--Rsq_cutoff </td><td class="c2"> R square cutoff for genes we want to analyze </td><td class="c3"> 0.01 </td></tr>
-<tr class="r10"><td class="c1">--max_nperm </td><td class="c2"> maximum number of permutation for aSPU or daSPU </td><td class="c3"> 1000000 
+<tr class="r10"><td class="c1">--max_nperm </td><td class="c2"> maximum number of permutation for aSPU or daSPU </td><td class="c3"> 1000000
 </td></tr></table>
-<p><b>note 1:</b> We only want to analyze the genes with relatively informative external weights. To do that, we calculated the squared Person correlation, \(r^2\), between the predicted and observed endophenotype values in the dataset, and selected only those genes with \(r^2 &gt; 0.01\) (--Rsq_cutoff). To facility your analyses when you are constructing your own weights, we make the cutoff as an option.  </p>
-<p><b>note 2:</b> A single layer/loop of Monte Carlo simulations is used to obtain the \(p\)-values of all the SPU, aSPU, and daSPU tests simultaneously. we use an adaptive way to select the number of simulations and calculate \(p\)-values efficiently. --max_nperm is the upper bound for the number of simulations. </p>
+<p><b>note 1:</b> We only want to analyze the genes with relatively informative external weights. To do that, we calculated the squared Person correlation, \(r^2\), between the predicted and observed endophenotype values in the dataset, and selected only those genes with \(r^2 &gt; 0.01\) (--Rsq_cutoff). To facility your analyses when you are constructing your own weights, we make the cutoff as an option.</p>
+<p><b>note 2:</b> A single layer/loop of Monte Carlo simulations is used to obtain the \(p\)-values of all the SPU, aSPU, and daSPU tests simultaneously. we use an adaptive way to select the number of simulations and calculate \(p\)-values efficiently. --max_nperm is the upper bound for the number of simulations.</p>
 <h2>FAQ</h2>
 <p><b>IWAS looks similar to TWAS and PrediXcan. What's the difference between them?</b></p>
 <p>Differing from that <a href="http://gusevlab.org/projects/fusion/" target=&ldquo;blank&rdquo;>TWAS</a> (Gusev et al. 2016) and <a href="https://github.com/hakyimlab/PrediXcan" target=&ldquo;blank&rdquo;>PrediXcan</a>  (Gamazon et al. 2015) use gene expression as the endophenotype, IWAS uses imaging endophenotypes, which might be more powerful when analyzing some neuro degenerative or psychiatric disorders, such as AD. By noting that TWAS and PrediXcan are the same as a weighted Sum test with gene expression based weights, we propose to use aSPU, a more powerful and adaptive test, to conduct association testing. Since aSPU covers the (weighted) Sum test as a special case, we can get the results for TWAS or PrediXcan after running our method as well. We demonstrate that our new method is more powerful and identify some new genes in some real data analyses. We expect this to be generally true and hope you can let us know your results if you apply both TWAS and IWAS on your real data analyses.</p>
@@ -137,7 +137,7 @@ Two methods are highly correlated with two well-known groups.  <a href="https://
 <p>IWAS performs a similar quality control steps as TWAS did. We automatically match up SNPs, remove <a href="https://www.snpedia.com/index.php/Ambiguous_flip" target=&ldquo;blank&rdquo;>ambiguous markers</a> (A/C or G/T) and flip alleles to match the reference data.</p>
 <h2>Acknowledgements</h2>
 <p>This research was supported by NIH grants R21AG057038, R01HL116720, R01GM113250 and R01HL105397, and by the Minnesota Supercomputing Institute; ZX was supported by a University of Minnesota MnDRIVE Fellowship and CW by a University of Minnesota Dissertation Fellowship.</p>
-<p>We are grateful to the external reference data, and all of the hard work involved in the study. Without the efforts of these groups and sharing the individual level data, we are unable to construct the external weights, and our methods will be useless. </p>
+<p>We are grateful to the external reference data, and all of the hard work involved in the study. Without the efforts of these groups and sharing the individual level data, we are unable to construct the external weights, and our methods will be useless.</p>
 <p>ADNI data</p>
 <div class="infoblock">
 <div class="blockcontent">
@@ -160,15 +160,14 @@ ADNI (Department of Defense award number W81XWH-12-2-0012). ADNI is funded by th
 <h2>License</h2>
 <p>Maintainer: <a href="wuchong.org" target=&ldquo;blank&rdquo;>Chong Wu</a> (wuxx0845@umn.edu)</p>
 <p><a href="http://opensource.org/licenses/MIT" target=&ldquo;blank&rdquo;>MIT</a></p>
-<p>Copyright (c) 2013-present, Chong Wu (wuxx0845@umn.edu), Zhiyuan Xu (xuxx0284@umn.edu) &amp; Wei Pan(weip@biostat.umn.edu)</p>
+<p>Copyright (c) 2013-present, Chong Wu (wuxx0845@umn.edu), Zhiyuan Xu (xuxx0284@umn.edu) &amp; Wei Pan(weip@biostat.umn.edu).</p>
+<h2>Advertisement</h2>
+<p>The author <a href="www.wuchong.org" target=&ldquo;blank&rdquo;>Chong Wu</a> is looking for a tenure-track or research-track Assistant Professor or Research Scientist position. If you are interested in my work, please do not hestiate to contact me at wuxx0845@umn.edu.</p>
 <div id="footer">
 <div id="footer-text">
-Page generated 2017-06-20 16:51:04 CDT, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
+Page generated 2017-08-02 22:12:32 EDT, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
 </div>
 </div>
 </div>
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+</body>
+</html>
