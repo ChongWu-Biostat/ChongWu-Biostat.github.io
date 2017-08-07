@@ -5,7 +5,7 @@
 
 == adaptive sum of powered score (aSPU) test in Generalized Linear Models
 
-Several tests for high-dimensional generalized linear models have been proposed recently, however, they are mainly based on a sum of squares of the score vector and  only powerful under certain limited alternative hypotheses.  In practice, since the associations in a true alternative hypothesis may be sparse or dense or between, the existing tests may or may not be powerful. Here, we propose an adaptive test that maintains high power across a wide range of scenarios. To calculate its $p$-value, its asymptotic null distribution is derived. Please cite the following manuscript for using the aSPU method:
+Several tests for high-dimensional generalized linear models have been proposed recently, however, they are mainly based on a sum of squares of the score vector and  only powerful under certain limited alternative hypotheses.  In practice, since the associations in a true alternative hypothesis may be sparse or dense or between, the existing tests may or may not be powerful. Here, we propose an adaptive test that maintains high power across a wide range of scenarios. To calculate its p-value, its asymptotic null distribution is derived. Please cite the following manuscript for using the aSPU method:
 
 ~~~
 Wu et al. 2017 "An adaptive test on high-dimensional parameters in generalized linear models" Statistica Sinica, under revision.
@@ -42,7 +42,7 @@ Additional columns are allowed but will be ignored. We recommend removing the ad
 . pow - Gamma set used in SPU test. A vector of the powers. By default, we use pow = c(1,2,...,6,Inf)
 . model - Corresponding to the Response. "gaussian" for a quantitative response; "binomial" for a binary response.
 
-=== Performing the IWAS
+=== Performing the aSPU
 
 After we prepared the data, we can run GLMaSPU via the following single line.
 
@@ -50,7 +50,7 @@ After we prepared the data, we can run GLMaSPU via the following single line.
 {}{}
 aSPU_apval(Y, X, cov = cov, pow = c(1:6, Inf))
 ~~~
-*Note* The output is the p-values for SPU(gamma) and aSPU.
+*Note* The output is the p-values for SPU(gamma) and aSPU and the p-values are based on asymptotics based method.
 
 
 
@@ -71,7 +71,7 @@ The main difference is that in GLMaSPU package, we develop the asymptotic null d
 
 
 == Acknowledgements
-TThis research was supported by National Institutes of Health (NIH) grants R01GM113250, R01HL105397, and R01HL116720 and by the Minnesota Supercomputing Institute. CW is supported by a University of Minnesota Doctoral Dissertation Fellowship.
+This research was supported by National Institutes of Health (NIH) grants R01GM113250, R01HL105397, and R01HL116720 and by the Minnesota Supercomputing Institute. CW is supported by a University of Minnesota Doctoral Dissertation Fellowship.
 == References
 
 - Guo, B. and S. X. Chen (2016). Tests for high dimensional generalized linear models. Journal of the Royal Statistical Society: Series B (Statistical Methodology), 78(5), 1079-1102.

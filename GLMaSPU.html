@@ -11,7 +11,7 @@
 <div id="layout-content">
 <h1>aSPU in GLM</h1>
 <h2>adaptive sum of powered score (aSPU) test in Generalized Linear Models</h2>
-<p>Several tests for high-dimensional generalized linear models have been proposed recently, however, they are mainly based on a sum of squares of the score vector and  only powerful under certain limited alternative hypotheses.  In practice, since the associations in a true alternative hypothesis may be sparse or dense or between, the existing tests may or may not be powerful. Here, we propose an adaptive test that maintains high power across a wide range of scenarios. To calculate its \(p\)-value, its asymptotic null distribution is derived. Please cite the following manuscript for using the aSPU method:</p>
+<p>Several tests for high-dimensional generalized linear models have been proposed recently, however, they are mainly based on a sum of squares of the score vector and  only powerful under certain limited alternative hypotheses.  In practice, since the associations in a true alternative hypothesis may be sparse or dense or between, the existing tests may or may not be powerful. Here, we propose an adaptive test that maintains high power across a wide range of scenarios. To calculate its p-value, its asymptotic null distribution is derived. Please cite the following manuscript for using the aSPU method:</p>
 <div class="infoblock">
 <div class="blockcontent">
 <p>Wu et al. 2017 &ldquo;An adaptive test on high-dimensional parameters in generalized linear models&rdquo; Statistica Sinica, under revision.</p>
@@ -48,13 +48,13 @@ Additional columns are allowed but will be ignored. We recommend removing the ad
 <li><p>model - Corresponding to the Response. &ldquo;gaussian&rdquo; for a quantitative response; &ldquo;binomial&rdquo; for a binary response.</p>
 </li>
 </ol>
-<h3>Performing the IWAS</h3>
+<h3>Performing the aSPU</h3>
 <p>After we prepared the data, we can run GLMaSPU via the following single line.</p>
 <div class="codeblock">
 <div class="blockcontent"><pre>
 aSPU_apval(Y, X, cov = cov, pow = c(1:6, Inf))
 </pre></div></div>
-<p><b>Note</b> The output is the p-values for SPU(gamma) and aSPU.</p>
+<p><b>Note</b> The output is the p-values for SPU(gamma) and aSPU and the p-values are based on asymptotics based method.</p>
 <h2>Parametric bootstrap version of HDGLM</h2>
 <p>To facilitate researchers compare our methods with Chen's method (Guo et al. 2016), we provided the parametric bootstrap version of HDGLM, which can be performed by the following single line.</p>
 <div class="codeblock">
@@ -65,7 +65,7 @@ HDGLM_perm(Y, X, cov = cov)
 <p><b>GLMaSPU package looks similar to aSPU package. What's the difference between them?</b></p>
 <p>The main difference is that in GLMaSPU package, we develop the asymptotic null distribution and calculate the p-values based on the asymptotic null distribtuion. For aSPU package, the parametric bootstrap or other resampling methods are used to calculate the p-values. If you want to learn more about applying aSPU to genome-wide association studies, you can read our other works, such as Pan et al. 2014.</p>
 <h2>Acknowledgements</h2>
-<p>TThis research was supported by National Institutes of Health (NIH) grants R01GM113250, R01HL105397, and R01HL116720 and by the Minnesota Supercomputing Institute. CW is supported by a University of Minnesota Doctoral Dissertation Fellowship.</p>
+<p>This research was supported by National Institutes of Health (NIH) grants R01GM113250, R01HL105397, and R01HL116720 and by the Minnesota Supercomputing Institute. CW is supported by a University of Minnesota Doctoral Dissertation Fellowship.</p>
 <h2>References</h2>
 <ul>
 <li><p>Guo, B. and S. X. Chen (2016). Tests for high dimensional generalized linear models. Journal of the Royal Statistical Society: Series B (Statistical Methodology), 78(5), 1079-1102.</p>
@@ -79,7 +79,7 @@ HDGLM_perm(Y, X, cov = cov)
 <p>Copyright (c) 2013-present, Chong Wu (wuxx0845@umn.edu), Gongjun Xu (gongjun@umich.edu) &amp; Wei Pan(weip@biostat.umn.edu).</p>
 <div id="footer">
 <div id="footer-text">
-Page generated 2017-07-27 21:16:15 CDT, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
+Page generated 2017-08-07 14:06:12 CDT, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
 </div>
 </div>
 </div>
