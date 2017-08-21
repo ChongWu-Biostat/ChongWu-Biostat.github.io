@@ -27,11 +27,11 @@ tar xjvf LDREF.tar.bz2
 
 - Download the weights from the [http://gusevlab.org/projects/fusion/ TWAS website] or [https://github.com/hakyimlab/PrediXcan PrediXcan] website.
 
-- Download and unpack the [https://github.com/ChongWu-Biostat/IWAS Scripts and examples] (Using clone or download option at GitHub).
+- Download and unpack the [https://github.com/ChongWu-Biostat/TWAS Scripts and examples] (Using clone or download option at GitHub).
 
 ~~~
 {}{}
-git clone https://github.com/ChongWu-Biostat/IWAS.git
+git clone https://github.com/ChongWu-Biostat/TWAS.git
 ~~~
 
 
