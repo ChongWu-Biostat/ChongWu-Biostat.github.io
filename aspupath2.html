@@ -9,9 +9,9 @@
 </head>
 <body>
 <div id="layout-content">
-<h1>Paster</h1>
-<h2>Integrating eQTL and GWAS data for pathway-based analysis</h2>
-<p>Many genetic variants affect complex traits by regulating gene expression and generally a combination of multiple genes in a pathway acting in a concerted fashion. Here we introduce a new test called pathway-based adaptive score test with expression reference (Paster) that integrates gene expression based weights with genome-wide association studies (GWAS) summary association statistics to identify pathways whose expression is significantly associated with complex diseases.  The basic idea is to impute the genetically regulated component of gene expression for each gene in a pathway, then adaptively test for association between imputed expression levels of the genes and a GWAS trait by effectively aggregating possibly weak association signals across the genes in the pathway. please cite the following manuscript for using Paster:</p>
+<h1>aSPUpath2</h1>
+<h2>Integrating eQTL data with GWAS summary statistics in pathway-based analysis</h2>
+<p>Many genetic variants affect complex traits through gene expression, which can be exploited to boost statistical power and enhance interpretation in genome-wide association studies (GWASs) as demonstrated by the transcriptome-wide association study (TWAS) approach. Furthermore, due to polygenic architecture, a complex trait may be affected by multiple genes with similar function as annotated in gene pathways. Here we extend TWAS from gene-based analysis to pathway-based analysis:  we integrate public pathway collections, gene expression data and  GWAS summary association statistics to identify gene pathways associated with complex traits.  The basic idea is to impute the genetically regulated component of gene expression for each gene in a pathway, then adaptively test for association between imputed expression levels of the genes in the pathways and a GWAS trait by effectively aggregating possibly weak association signals across the genes in the pathway. Please cite the following manuscript for using our proposed method, aSPUpath2:</p>
 <div class="infoblock">
 <div class="blockcontent">
 <p>Wu, C. &amp; Pan, W. (2017). Integrating eQTL data with GWAS summary statistics in pathway-based analysis. Submitted.</p>
@@ -19,7 +19,7 @@
 <p>For questions or comments regarding methods, contact Wei Pan (<a href="mailto:weip@biostat.umn.edu" target=&ldquo;blank&rdquo;>weip@biostat.umn.edu</a>);
 For questions or comments regarding data & codes, contact Chong Wu (<a href="mailto:wuxx0845@umn.edu" target=&ldquo;blank&rdquo;>wuxx0845@umn.edu</a>).</p>
 <h2>Installation</h2>
-<p>Note: To maximize the compatibility of Paster and reduce the learning curve for using Paster, some steps are exactly the same and taken from the <a href="http://gusevlab.org/projects/fusion/" target=&ldquo;blank&rdquo;>TWAS website</a>.</p>
+<p>Note: To maximize the compatibility of aSPUpath2 and reduce the learning curve for using aSPUpath2, some steps are exactly the same and taken from the <a href="http://gusevlab.org/projects/fusion/" target=&ldquo;blank&rdquo;>TWAS website</a>.</p>
 <ul>
 <li><p>Download and unpack the (1000 Genomes)  <a href="https://data.broadinstitute.org/alkesgroup/FUSION/LDREF.tar.bz2" target=&ldquo;blank&rdquo;>LD reference data</a>:</p>
 </li>
@@ -34,12 +34,12 @@ tar xjvf LDREF.tar.bz2
 </li>
 </ul>
 <ul>
-<li><p>Download and unpack the <a href="https://github.com/ChongWu-Biostat/TWAS" target=&ldquo;blank&rdquo;>Scripts and examples</a> (Using clone or download option at GitHub).</p>
+<li><p>Download and unpack the <a href="https://github.com/ChongWu-Biostat/aSPUpath2" target=&ldquo;blank&rdquo;>Scripts and examples</a> (Using clone or download option at GitHub).</p>
 </li>
 </ul>
 <div class="codeblock">
 <div class="blockcontent"><pre>
-git clone https://github.com/ChongWu-Biostat/TWAS.git
+git clone https://github.com/ChongWu-Biostat/aSPUpath2.git
 </pre></div></div>
 <ul>
 <li><p>Launch R and install required libraries:</p>
@@ -55,7 +55,7 @@ devtools::install_github("ChongWu-Biostat/aSPU2")
 devtools::install_github("gabraham/plink2R/plink2R")
 </pre></div></div>
 <h2>Typical analysis and output</h2>
-<p>Pathway-based adaptive score test with expression reference (Paster) integrates gene expression reference weights, GWAS summary data, SNP linkage disequilibrium (LD) reference, and pre-defined pathways to identify pathways whose expression is associated with complex traits directly (Figure 1). We will use the <a href="https://www.med.unc.edu/pgc/results-and-downloads" target=&ldquo;blank&rdquo;>PGC schizophrenia GWAS summary data</a> (Ripke et al. 2013) as an example to illustrate how to use Paster. This example assumes you have setup the required environment and data as illustrated in the previous section. All analyses are based on R/3.3.1.</p>
+<p>aSPUpath2 integrates gene expression reference weights, GWAS summary data, SNP linkage disequilibrium (LD) information, and candidate pathways to identify pathways whose expression is associated with complex traits directly (Figure 1). We will use the <a href="https://www.med.unc.edu/pgc/results-and-downloads" target=&ldquo;blank&rdquo;>PGC schizophrenia GWAS summary data</a> (Ripke et al. 2013) as an example to illustrate how to use aSPUpath2. This example assumes you have setup the required environment and data as illustrated in the previous section. All analyses are based on R/3.3.1.</p>
 <table class="imgtable"><tr><td>
 <a href="paster_illustration.pdf"><img src="paster_illustration.pdf" alt="Portrait of Chong Wu" width="alt text" height="WIDTHpx" /></a>&nbsp;</td>
 <td align="left"></td></tr></table>
@@ -66,20 +66,20 @@ devtools::install_github("gabraham/plink2R/plink2R")
 </li>
 <li><p>A1 – first allele (effect allele, should be capitalized)</p>
 </li>
-<li><p>A2 – second allele (other allele, should be capitalized)</p>
+<li><p>A2 – second allele (the other allele, should be capitalized)</p>
 </li>
 <li><p>Z – Z-scores, sign with respect to A1.</p>
 </li>
 </ol>
 <p>Additional columns are allowed but will be ignored. We recommend removing the additional columns before analysis to save space.</p>
-<p><b>Note:</b> The performance of Paster depends on the density of GWAS summary data. We highly recommend running Paster with raw GWAS summary data. Pre-process step such as pruning and restricting to top SNPs may harm the performance.</p>
+<p><b>Note:</b> The performance of aSPUpath2 depends on the density of GWAS summary data. We highly recommend running aSPUpath2 with raw GWAS summary data. Pre-process step such as pruning and restricting to top SNPs may harm the performance.</p>
 <h3>Input: external weights</h3>
 <p>The pre-computed external weights can be downloaded from <a href="http://gusevlab.org/projects/fusion/" target=&ldquo;blank&rdquo;>TWAS</a> (Gusev et al. 2016) or <a href="https://github.com/hakyimlab/PrediXcan" target=&ldquo;blank&rdquo;>PrediXcan</a> websites.</p>
 <h3>Performing the TWAS-aSPU</h3>
-<p>After we prepared the data, we can run Paster via the following single line.</p>
+<p>After we prepared the data, we can run aSPUpath2 via the following single line.</p>
 <div class="codeblock">
 <div class="blockcontent"><pre>
-Rscript Paster.R \
+Rscript aSPUpath2.R \
 --sumstats ./Example/example.stat.rds \
 --out ./Example/example_res.rds \
 --weights ./WEIGHTS/CMC.BRAIN.RNASEQ.pos \
@@ -88,7 +88,7 @@ Rscript Paster.R \
 --pathway_list ./Example/example_GOCC.txt
 </pre></div></div>
 <p>This should take around one or two minutes, and you will see some intermediate steps on the screen. If everything works, you will see a file <i>example_res.rds</i> under the <i>.Example</i> and <i>output.txt</i> in the working directory.</p>
-<p>Through Paster.R, we perform the following steps: (1) combine the GWAS and reference SNPs and remove ambiguous SNPs. (2) impute GWAS Z-scores for any reference SNPs with missing GWAS Z-scores via the IMPG algorithm ([https:<i></i>academic.oup.com<i>bioinformatics</i>article<i>30</i>20<i>2906</i>2422225/Fast-and-accurate-imputation-of-summary-statistics Pasaniuc et al. 2014); (3) perform Paster; (4) report results and store them in the working directory.</p>
+<p>Through aSPUpath2, we perform the following steps: (1) combine the GWAS and reference SNPs and remove ambiguous SNPs. (2) impute GWAS Z-scores for any reference SNPs with missing GWAS Z-scores via the IMPG algorithm ([https:<i></i>academic.oup.com<i>bioinformatics</i>article<i>30</i>20<i>2906</i>2422225/Fast-and-accurate-imputation-of-summary-statistics Pasaniuc et al. 2014); (3) perform aSPUpath2; (4) report results and store them in the working directory.</p>
 <h3>Output: pathway-disease association</h3>
 <p>The results are stored in a user-defined output file. For illustration, we explain the meaning of each entry in the first two lines of the output.</p>
 <table id="VariExp">
@@ -96,17 +96,17 @@ Rscript Paster.R \
 <tr class="r2"><td class="c1">1 </td><td class="c2"> pathway         </td><td class="c3"> GO_FILOPODIUM </td><td class="c4"> Pathway identifier, taken from pathway_list file </td></tr>
 <tr class="r3"><td class="c1">2 </td><td class="c2"> # genes        </td><td class="c3"> 6     </td><td class="c4"> Number of genes with gene expression reference weights. </td></tr>
 <tr class="r4"><td class="c1">3 </td><td class="c2"> #nonzero_SNPs </td><td class="c3"> 1714 </td><td class="c4"> Number of non-zero weight SNPs </td></tr>
-<tr class="r5"><td class="c1">4 </td><td class="c2"> Paster(1) </td><td class="c3"> 0.006 </td><td class="c4"> p value of Paster(1). The p-value is based on asymptotic distribution. </td></tr>
-<tr class="r6"><td class="c1">5 </td><td class="c2"> Paster(2) </td><td class="c3"> 0.003 </td><td class="c4"> p value of Paster(2). The p-value is based on asymptotic distribution. </td></tr>
-<tr class="r7"><td class="c1">6 </td><td class="c2"> Paster </td><td class="c3"> 0.006</td><td class="c4"> p value of Paster. The p-value is based on asymptotic distribution. </td></tr>
-<tr class="r8"><td class="c1">7 </td><td class="c2"> time </td><td class="c3"> 10.24 </td><td class="c4"> running time (s) for Paster.
+<tr class="r5"><td class="c1">4 </td><td class="c2"> PathSPU(1) </td><td class="c3"> 0.006 </td><td class="c4"> p value of PathSPU(1). The p-value is based on asymptotic distribution. </td></tr>
+<tr class="r6"><td class="c1">5 </td><td class="c2"> PathSPU(2) </td><td class="c3"> 0.003 </td><td class="c4"> p value of PathSPU(2). The p-value is based on asymptotic distribution. </td></tr>
+<tr class="r7"><td class="c1">6 </td><td class="c2"> aSPUpath2 </td><td class="c3"> 0.006</td><td class="c4"> p value of aSPUpath2. The p-value is based on asymptotic distribution. </td></tr>
+<tr class="r8"><td class="c1">7 </td><td class="c2"> time </td><td class="c3"> 10.24 </td><td class="c4"> running time (s) for aSPUpath2.
 </td></tr></table>
 <p><b>Note:</b> For a given pathway, we exclude the genes without gene expression reference weights.</p>
 <h2>Further Analyses</h2>
 <h3>Testing with the individual level GWAS data</h3>
-<p>Paster can be applied to GWAS individual data as well. The main idea is the same. Specifically, we can calculate the score and its corresponding covariance matrix for SNPs in the gene regions. Then we can apply <i>aSPU2</i> package with pre-computed imaging endophenotype based external weights provided on this website. Since there some restrictions sharing GWAS individual data, we do not provide any example regarding applying Paster to GWAS individual data.</p>
+<p>aSPUpath2 can be applied to GWAS individual data as well. The main idea is the same. Specifically, we can calculate the score and its corresponding covariance matrix for SNPs in the gene regions. Then we can apply <i>aSPU2</i> package with pre-computed imaging endophenotype based external weights provided on this website. Since there some restrictions sharing GWAS individual data, we do not provide any example regarding applying aSPUpath2 to GWAS individual data.</p>
 <h2>Command-line parameters</h2>
-<h3>TWAS_aSPU.R</h3>
+<h3>aSPUpath2.R</h3>
 <table id="Command">
 <tr class="r1"><td class="c1">Flag   </td><td class="c2"> Usage  </td><td class="c3"> Default </td></tr>
 <tr class="r2"><td class="c1">--sumstats </td><td class="c2"> ummary statistics (rds file and must have SNP and Z column headers) </td><td class="c3"> Required </td></tr>
@@ -115,16 +115,16 @@ Rscript Paster.R \
 <tr class="r5"><td class="c1">--ref_ld </td><td class="c2"> Reference LD files in binary PLINK format </td><td class="c3"> Required </td></tr>
 <tr class="r6"><td class="c1">--pathway_list </td><td class="c2"> Patwhays we want to analyze </td><td class="c3"> Required
 </td></tr></table>
-<p><b>note:</b> We use an asymptotics-based way to calculate p-values of Paster, which is fast in general.</p>
+<p><b>note:</b> We use an asymptotics-based way to calculate p-values of aSPUpath2, which is fast in general.</p>
 <h2>FAQ</h2>
-<p><b>Paster has some conceptual similarities with two gene-based methods: TWAS and PrediXcan. What's the difference between them?</b></p>
-<p>Yes, Paster has some conceptual similarities with two gene-based methods: TWAS (Gusev, et al 2016) and PrediXcan (Gamazon et al 2015)  that aim to impute the genetic regulated component of gene expression and then test the &lsquo;imputed&rsquo; gene expression with the phenotype directly. However, these methods are focused on identifying significant genes instead of significant pathways. Importantly, unlike TWAS and PrediXcan, which use the weighted linear combination of genetic variants to construct test statistics, our approach aggregates information based on the underlying association patterns adaptively, thus increasing discovery power.</p>
+<p><b>aSPUpath2 has some conceptual similarities with two gene-based methods: TWAS and PrediXcan. What's the difference between them?</b></p>
+<p>Yes, aSPUpath2 has some conceptual similarities with two gene-based methods: TWAS (Gusev, et al 2016) and PrediXcan (Gamazon et al 2015)  that aim to impute the genetic regulated component of gene expression and then test the &lsquo;imputed&rsquo; gene expression with the phenotype directly. However, these methods are focused on identifying significant genes instead of significant pathways. Importantly, unlike TWAS and PrediXcan, which use the weighted linear combination of genetic variants to construct test statistics, our approach aggregates information based on the underlying association patterns adaptively, thus increasing discovery power.</p>
 <p><b>What related software is available?</b></p>
-<p>To our knowledge, Paster is the first software for pathway-based analysis with gene expression reference weights. However, there are many softwares for gene-based analysis with gene expression reference weights.</p>
+<p>To our knowledge, aSPUpath2 is the first software for pathway-based analysis with gene expression reference weights. However, there are many software for gene-based analysis with gene expression reference weights.</p>
 <p>Two methods are highly correlated with two well-known groups.  <a href="https://github.com/hakyimlab/MetaXcan" target=&ldquo;blank&rdquo;>MetaXcan</a> and  <a href="https://github.com/hakyimlab/PrediXcan" target=&ldquo;blank&rdquo;>PrediXcan</a>  (Gamazon et al 2015) developed by the Im lab perform gene-based association tests with and without summary data. <a href="http://gusevlab.org/projects/fusion/" target=&ldquo;blank&rdquo;>TWAS</a> by Gusev performs gene-based association tests with individual-level or summary statistics.  MetaXcan and TWAS are similar. The main difference between TWAS and MetaXcan is that they use a slightly different way and different reference data to construct weights. We recommend you to check their websites to download other gene-expression based weights as well.</p>
 <p><a href="www.wuchong.org/TWAS.html" target=&ldquo;blank&rdquo;>TWAS-aSPU</a> was proposed to boost statistical powerful over TWAS and PrediXcan. Instead of using gene-expression based external weight, we may construct weights based on other endophenotypes. See our <a href="www.wuchong.org/IWAS.html" target=&ldquo;blank&rdquo;>IWAS</a> (Xu et al 2017) for more details.</p>
-<p><b> What QC is performed internally when using Paster?</b></p>
-<p>Paster performs similar quality control steps as TWAS did. We automatically match up SNPs, remove <a href="https://www.snpedia.com/index.php/Ambiguous_flip" target=&ldquo;blank&rdquo;>ambiguous markers</a> (A/C or G/T) and flip alleles to match the reference data.</p>
+<p><b> What QC is performed internally when using aSPUpath2?</b></p>
+<p>aSPUpath2 performs similar quality control steps as TWAS did. We automatically match up SNPs, remove <a href="https://www.snpedia.com/index.php/Ambiguous_flip" target=&ldquo;blank&rdquo;>ambiguous markers</a> (A/C or G/T) and flip alleles to match the reference data.</p>
 <h2>Acknowledgements</h2>
 <p>This research was supported by NIH grants R21AG057038, R01HL116720, R01GM113250 and R01HL105397, and by the Minnesota Supercomputing Institute.</p>
 <h2>References</h2>
