@@ -85,9 +85,9 @@ Rscript aSPUpath2.R \
 ~~~
 
 
-This should take around one or two minutes, and you will see some intermediate steps on the screen. If everything works, you will see a file /example\_res.rds/ under the /.Example/ and /output.txt/ in the working directory.
+This should take around one or two minutes, and you will see some intermediate steps on the screen. If everything works, you will see a file /example\_res.rds/ under the /Example/ and /output.txt/ in the working directory.
 
-Through aSPUpath2, we perform the following steps: (1) combine the GWAS and reference SNPs and remove ambiguous SNPs. (2) impute GWAS Z-scores for any reference SNPs with missing GWAS Z-scores via the IMPG algorithm ([https://academic.oup.com/bioinformatics/article/30/20/2906/2422225/Fast-and-accurate-imputation-of-summary-statistics Pasaniuc et al. 2014); (3) perform aSPUpath2; (4) report results and store them in the working directory.
+Through aSPUpath2, we perform the following steps: (1) combine the GWAS and reference SNPs and remove ambiguous SNPs. (2) impute GWAS Z-scores for any reference SNPs with missing GWAS Z-scores via the IMPG algorithm ([https://academic.oup.com/bioinformatics/article/30/20/2906/2422225/Fast-and-accurate-imputation-of-summary-statistics Pasaniuc et al. 2014]); (3) perform aSPUpath2; (4) report results and store them in the working directory.
 
 === Output: pathway-disease association
 

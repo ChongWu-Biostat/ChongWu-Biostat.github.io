@@ -87,8 +87,8 @@ Rscript aSPUpath2.R \
 --ref_ld ./LDREF/1000G.EUR. \
 --pathway_list ./Example/example_GOCC.txt
 </pre></div></div>
-<p>This should take around one or two minutes, and you will see some intermediate steps on the screen. If everything works, you will see a file <i>example_res.rds</i> under the <i>.Example</i> and <i>output.txt</i> in the working directory.</p>
-<p>Through aSPUpath2, we perform the following steps: (1) combine the GWAS and reference SNPs and remove ambiguous SNPs. (2) impute GWAS Z-scores for any reference SNPs with missing GWAS Z-scores via the IMPG algorithm ([https:<i></i>academic.oup.com<i>bioinformatics</i>article<i>30</i>20<i>2906</i>2422225/Fast-and-accurate-imputation-of-summary-statistics Pasaniuc et al. 2014); (3) perform aSPUpath2; (4) report results and store them in the working directory.</p>
+<p>This should take around one or two minutes, and you will see some intermediate steps on the screen. If everything works, you will see a file <i>example_res.rds</i> under the <i>Example</i> and <i>output.txt</i> in the working directory.</p>
+<p>Through aSPUpath2, we perform the following steps: (1) combine the GWAS and reference SNPs and remove ambiguous SNPs. (2) impute GWAS Z-scores for any reference SNPs with missing GWAS Z-scores via the IMPG algorithm (<a href="https://academic.oup.com/bioinformatics/article/30/20/2906/2422225/Fast-and-accurate-imputation-of-summary-statistics" target=&ldquo;blank&rdquo;>Pasaniuc et al. 2014</a>); (3) perform aSPUpath2; (4) report results and store them in the working directory.</p>
 <h3>Output: pathway-disease association</h3>
 <p>The results are stored in a user-defined output file. For illustration, we explain the meaning of each entry in the first two lines of the output.</p>
 <table id="VariExp">
