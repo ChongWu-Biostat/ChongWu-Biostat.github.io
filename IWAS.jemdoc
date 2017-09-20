@@ -29,10 +29,12 @@ git clone https://github.com/ChongWu-Biostat/IWAS.git
 
 ~~~
 {}{}
-install.packages('optparse','RColorBrewer','data.table','matlib','Rcpp','RcppArmadillo','bigmemory','mvtnorm','MASS')
-install.packages('plink2R-master/plink2R/',repos=NULL)
-if (!require("devtools"))
+if (!require("devtools")) {
 install.packages("devtools")
+library(devtools)
+}
+
+install.packages('optparse','RColorBrewer','data.table','matlib','Rcpp','RcppArmadillo','bigmemory','mvtnorm','MASS')
 devtools::install_github("ChongWu-Biostat/aSPU2")
 devtools::install_github("gabraham/plink2R/plink2R")
 ~~~
