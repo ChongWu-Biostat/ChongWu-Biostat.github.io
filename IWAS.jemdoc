@@ -74,7 +74,7 @@ Rscript IWAS.R \
 --out ./Example/example_res.rds \
 --weights ./WEIGHTS/ADNI1_wgt.rds \
 --ref_ld ./LDREF/hapmap_CEU_r23a_hg19 \
---gene.list ./Example/gene_list.tx \
+--gene_list ./Example/gene_list.txt \
 --test_type aSPU \
 --weight_type ST31CV
 ~~~

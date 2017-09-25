@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="jemdoc.css" type="text/css" />
+<title></title>
+</head>
+<body>
+<div id="layout-content">
+<p>&lt;!DOCTYPE html PUBLIC &ldquo;-<i></i>W3C<i></i>DTD XHTML 1.1<i></i>EN&rdquo;
+&ldquo;http:<i></i>www.w3.org<i>TR</i>xhtml11<i>DTD</i>xhtml11.dtd&rdquo;&gt;
+&lt;html xmlns=&ldquo;http:<i></i>www.w3.org<i>1999</i>xhtml&rdquo; xml:lang=&ldquo;en&rdquo;&gt;
+&lt;head&gt;
+&lt;meta name=&ldquo;generator&rdquo; content=&ldquo;jemdoc, see http:<i></i>jemdoc.jaboc.net<i>&rdquo; </i>&gt;
+&lt;meta http-equiv=&ldquo;Content-Type&rdquo; content=&ldquo;text<i>html;charset=utf-8&rdquo; </i>&gt;
+&lt;link rel=&ldquo;stylesheet&rdquo; href=&ldquo;jemdoc.css&rdquo; type=&ldquo;text<i>css&rdquo; </i>&gt;
+&lt;title&gt;&lt;<i>title&gt;
+&lt;</i>head&gt;
+&lt;body&gt;
+&lt;div id=&ldquo;layout-content&rdquo;&gt;
+&lt;h1&gt;IWAS&lt;<i>h1&gt;
+&lt;h2&gt;Imaging-Wide Association Study&lt;</i>h2&gt;
+&lt;p&gt;IWAS is a new tool for performing an image-wide association study by incorporating imaging endophenotypes as weights into GWAS using either individual level data or only summary statistics. The goal is to identify new genes that are associated with a trait of interest in GWAS. We provide precomputed external weights (based on gray matter volumes as the endophenotype) from the &lt;a href=&ldquo;http:<i></i>adni.loni.usc.edu&rdquo; target=&amp;ldquo;blank&amp;rdquo;&gt;ADNI data&lt;<i>a&gt; to facilitate analysis. Please cite the following manuscript for using the IWAS method &amp; data:&lt;</i>p&gt;
+&lt;div class=&ldquo;infoblock&rdquo;&gt;
+&lt;div class=&ldquo;blockcontent&rdquo;&gt;
+&lt;p&gt;Xu, Z., Wu, C., Pan, W., &amp;amp; Alzheimer's Disease Neuroimaging Initiative. (2017). Imaging-wide association study: integrating imaging endophenotypes in GWAS. Neuroimage, accepted.&lt;<i>p&gt;
+&lt;</i>div&gt;&lt;<i>div&gt;
+&lt;p&gt;For questions or comments regarding methods, contact Wei Pan (&lt;a href=&ldquo;mailto:weip@biostat.umn.edu&rdquo; target=&amp;ldquo;blank&amp;rdquo;&gt;weip@biostat.umn.edu&lt;</i>a&gt;);
+For questions or comments regarding data &amp; codes, contact Chong Wu (&lt;a href=&ldquo;mailto:chongwu@umn.edu&rdquo; target=&amp;ldquo;blank&amp;rdquo;&gt;chongwu@umn.edu&lt;<i>a&gt;).&lt;</i>p&gt;
+&lt;h2&gt;Installation&lt;<i>h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Download and unpack the &lt;a href=&ldquo;https:</i><i>github.com</i>ChongWu-Biostat<i>IWAS&rdquo; target=&amp;ldquo;blank&amp;rdquo;&gt;Scripts and external weights&lt;</i>a&gt; (Using clone or download option at GitHub.).&lt;<i>p&gt;
+&lt;</i>li&gt;
+&lt;<i>ul&gt;
+&lt;div class=&ldquo;codeblock&rdquo;&gt;
+&lt;div class=&ldquo;blockcontent&rdquo;&gt;&lt;pre&gt;
+git clone https:</i><i>github.com</i>ChongWu-Biostat<i>IWAS.git
+&lt;</i>pre&gt;&lt;<i>div&gt;&lt;</i>div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Download the reference data, for example, 1000 Genomes, HapMap. Here we provide HapMap 3 with independent European reference. Use this &lt;a href=&ldquo;https:<i></i>www.dropbox.com<i>sh</i>8sqquebpdwyksuv<i>AACLHoYfG64_yloli4QRfyTIa?dl=0&rdquo; target=&amp;ldquo;blank&amp;rdquo;&gt;link&lt;</i>a&gt; to download. Put it into the same working directory.&lt;<i>p&gt;
+&lt;</i>li&gt;
+&lt;<i>ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Launch R and install required libraries:&lt;</i>p&gt;
+&lt;<i>li&gt;
+&lt;</i>ul&gt;
+&lt;div class=&ldquo;codeblock&rdquo;&gt;
+&lt;div class=&ldquo;blockcontent&rdquo;&gt;&lt;pre&gt;
+if (!require(&ldquo;devtools&rdquo;)) {
+install.packages(&ldquo;devtools&rdquo;)
+library(devtools)
+}</p>
+<p>install.packages('optparse&rsquo;,'RColorBrewer&rsquo;,'data.table&rsquo;,'matlib&rsquo;,'Rcpp&rsquo;,'RcppArmadillo&rsquo;,'bigmemory&rsquo;,'mvtnorm&rsquo;,'MASS&rsquo;)
+devtools::install<u>github(&ldquo;ChongWu-Biostat<i>aSPU2&rdquo;)
+devtools::install</u>github(&ldquo;gabraham</i>plink2R<i>plink2R&rdquo;)
+&lt;</i>pre&gt;&lt;<i>div&gt;&lt;</i>div&gt;
+&lt;h2&gt;Typical analysis and output&lt;<i>h2&gt;
+&lt;p&gt;The IWAS analysis takes imaging endophenotype based external weights and disease GWAS summary statistics to identify significant genes.&lt;</i>p&gt;
+&lt;p&gt;We will use the &lt;a href=&ldquo;http:<i></i>web.pasteur-lille.fr<i>en</i>recherche<i>u744</i>igap<i>igap<u>download.php&rdquo; target=&amp;ldquo;blank&amp;rdquo;&gt;IGAP Alzheimer's summary data&lt;</i>a&gt; (Lambert et al. 2013) as an example to illustrate how to use our methods. This example assumes you have setup the required environment and data as illustrated in the previous section. All analyses are based on R<i>3.3.1.&lt;</i>p&gt;
+&lt;h3&gt;Input: GWAS summary statistics&lt;<i>h3&gt;
+&lt;p&gt;At a minimum, we need a summary rds file with a header row containing the following fields:&lt;</i>p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;SNP</u>map – SNP identifier (CHR:BP)&lt;<i>p&gt;
+&lt;</i>li&gt;
+&lt;li&gt;&lt;p&gt;A1 – first allele (effect allele, should be capitalized)&lt;<i>p&gt;
+&lt;</i>li&gt;
+&lt;li&gt;&lt;p&gt;A2 – second allele (other allele, should be capitalized)&lt;<i>p&gt;
+&lt;</i>li&gt;
+&lt;li&gt;&lt;p&gt;Z – Z-scores, sign with respect to A1.&lt;<i>p&gt;
+&lt;</i>li&gt;
+&lt;<i>ol&gt;
+&lt;p&gt;Additional columns are allowed but will be ignored. We recommend removing the additional columns before analysis to save space.&lt;</i>p&gt;
+&lt;p&gt;&lt;b&gt;Note:&lt;<i>b&gt; The performance of IWAS depends on the density of summary-level data. We highly recommend running IWAS with raw summary-level data. Pre-process step such as pruning and restricting to top SNPs may harm the performance.&lt;</i>p&gt;
+&lt;h3&gt;Input: external weights&lt;<i>h3&gt;
+&lt;p&gt;We pre-computed the external weights based on ADNI-1 or ADNI GO&lt;i&gt;2 data. For each gene, in addition to its coding region, all variants within the 1 MB upstream and downstream regions of the transcription start&lt;</i>i&gt;ending sites were included. The external weights are stored in the .&lt;i&gt;WEIGHTS&lt;<i>i&gt; which provides the external weights for each gene, and their corresponding physical positions.&lt;</i>p&gt;
+&lt;h3&gt;Performing the IWAS&lt;<i>h3&gt;
+&lt;p&gt;After we prepared the data, we can run IWAS via the following single line.&lt;</i>p&gt;
+&lt;div class=&ldquo;codeblock&rdquo;&gt;
+&lt;div class=&ldquo;blockcontent&rdquo;&gt;&lt;pre&gt;
+Rscript IWAS.R </p>
