@@ -16,6 +16,8 @@ For questions or comments regarding data \& codes, contact Chong Wu ([chongwu@um
 
 == Installation
 
+- Confiugre the necessary environment and install [https://www.cog-genomics.org/plink2 plink].
+
 - Download and unpack the [https://github.com/ChongWu-Biostat/IWAS Scripts and external weights] (Using clone or download option at GitHub.).
 
 ~~~
