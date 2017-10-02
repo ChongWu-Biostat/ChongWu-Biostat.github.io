@@ -8,7 +8,7 @@ Biostatistics Ph.D. Candidate \n
 [http://www.sph.umn.edu/academics/divisions/biostatistics/ Division of Biostatistics]
 [http://twin-cities.umn.edu University of Minnesota] \n
 Advisor: Prof. Weihua Guan & [http://www.biostat.umn.edu/~weip/ Prof. Wei Pan] \n
-Research interest: machine learning, statistical genetics
+Research interest: high-dimensional data, big data, machine learning, statistical genetics
 
 [CV_ChongWu.pdf Curriculum Vitae]
 ~~~
@@ -26,7 +26,7 @@ Before coming to Minnesota, I received my bachelor's degree in Applied Math from
 . *Wu, C.*, Demerath, E. W., Pankow, J. S., Bressler, J., Fornage, M., Grove, M. L., Chen, W., and Guan, W. (2016). \n [http://www.tandfonline.com/doi/full/10.1080/15592294.2016.1145328 Imputation of missing covariate values in epigenome-wide analysis of DNA methylation data]. /Epigenetics/, 11(2):132–139. \n (IF: 4.4, the official journal of the DNA Methylation Society.)
 . Bose, M., *Wu, C.*, Pankow, J. S., Demerath, E. W., Bressler, J., Fornage, M., Grove, M. L., Mosley, T. H., Hicks, C., North, K., Kao, W. H., Zhang, Y., Boerwinkle, E., and Guan, W. (2014).\n  [http://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-15-312 Evaluation of microarray-based DNA methylation measurement using technical replicates: the Atherosclerosis Risk In Communities (ARIC) Study]. /BMC Bioinformatics/, 15(1):1–10. (IF: 2.4)
 
-== Selected Manuscript
+== Selected Manuscript \[[research.html by topic]\]
 
 . *Wu, C.*, Xu, G., Shen, X., and Pan, W. (2017+).\n
 An adaptive test on a high-dimensional parameter in the presence of a high-dimensional nuisance parameter in GLM with application to detect gene-environment interactions. Manuscript.\n (Job talk manuscript, to be submitted to /Journal of the American Statistical Association/.)
@@ -37,13 +37,28 @@ generalized linear models. /Statistica Sinica/, revised and resubmitted. (\* Cor
 post-dentin bond strength measurement methods. /Scientific Reports/, revised and resubmitted.
 . Park, J.Y., *Wu, C.*, Basu, S., McGue, M., and Pan, W. (2017+). Adaptive SNP set association testing in generalized linear mixed models with application to family studies. /Behavior Genetics/, revised and resubmitted.
 
-== [software.html Software]
+
+== [software.html Selected Software]
 - [https://cran.r-project.org/web/packages/prclust/index.html /prclust/]: Penalized Regression-Based Clustering Methods;
 - [https://cran.r-project.org/web/packages/MiSPU/index.html /MiSPU/]: Microbiome Based Sum of Powered Score (MiSPU) Tests;
 - [https://github.com/ChongWu-Biostat/GLMaSPU /GLMaSPU/]: Adaptive Tests on High Dimensional Parameters in Generalized Linear Models;
 - [IWAS.html IWAS]: Imaging-Wide Association Study;
 - [TWAS.html TWAS]: Integrating eQTL and GWAS data;
 - [aSPUpath2.html aSPUpath2]: Integrating eQTL data with GWAS summary statistics in pathway-based analysis.
+
+== Teaching
+For me, teaching can be described as a rewarding and fulfilling experience. I was a teaching assistant in two courses, Biostatistical Methods I and II, and a guest instructor in Statistical Learning and Data Mining. Along with Prof. Wei Pan, I mentor a Master’s student on a statistical genetics project.
+
+
+== [talks.html Selected Presentations]
+I enjoy sharing ideas and presenting my works. I usually atend JSM, ENAR, and ASHG each year.
+- [Chong_Wu_JSM.pdf An adaptive association test for microbiome data]
+-- Presented at 2016 JSM, ENAR
+- [presentation_aSPU_theory.pdf An adaptive test on high dimensional parameters in GLMs]
+-- Presented at 2017 JSM, ENAR
+
+
+
 
 
 == Selected Awards
