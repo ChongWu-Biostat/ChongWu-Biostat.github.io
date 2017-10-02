@@ -1,53 +1,52 @@
 # jemdoc: menu{MENU}{research.html}, nofooter
-== Research
+= Research
 
-== Supervised learning
-- *Wu C.* & Pan W.\n
-Network-based support vector machine with min-based penalties.\n
-In preparation
-- *Wu, C.*\*,Kwon, S.\*,Shen X., & Pan W. (2016) (\*: equal contribution)\n
-[http://jmlr.org/papers/volume17/15-553/15-553.pdf A New Algorithm and Theory for Penalized Regression-based Clustering.]\n
-[http://jmlr.org Journal of Machine Learning Research], 17, 1-25
+== Machine learning
 
-== High dimensional testing
-Due to the surge of high dimensional data in many fields, ranging from business to genetics, high dimensional testing problems have been increasingly studied. In high dimensional situations with the dimension of data $p$ larger than the sample size $n$, traditional multivariate tests, such as the likelihood ratio test and the Wald test, break down. More importantly, since the sample size $n$ is often relatively small and the underlying truth is unknown, existing methods may not powerful under certain scenarios.
+. *Wu, C.*\*,Kwon, S.\*,Shen X., & Pan W. (2016) (\*: equal contribution)\n
+[http://jmlr.org/papers/volume17/15-553/15-553.pdf A New Algorithm and Theory for Penalized Regression-based Clustering.] /[http://jmlr.org Journal of Machine Learning Research]/, 17, 1-25
+. Liu, B., *Wu, C.*, Shen, X., and Pan, W. (2017+). \n [https://www.biorxiv.org/content/early/2017/03/17/117473 A novel and efficient algorithm for de novo discovery of mutated driver pathways]. Accepted by /Annals of Applied Statistics/, early online.
+. *Wu C.* & Pan W.\n
+Network-based support vector machine with a new penalty. In preparation.
 
-An intriguing question is: How can we propose an adaptive and powerful that maintains power across various scenarios? My research tries to answer this question from both theory and application perspectives.
-=== Theory papers
-- *Wu, C.*, Xu, G., & Pan W.\n
-An Adaptive Test on High Dimensional Parameters in Generalized Linear Models.\n
-Journal of Machine Learning Research (JMLR), submitted
-- *Wu C.*, Xu G., & Pan W.\n
-An adaptive and powerful test for high dimensional covariance matrices.\n
-In preparation
+== Methods and applications in genetics and genomics
 
-=== Applied papers
-- *Wu, C.*, Chen, J., Kim, J., & Pan, W. (2016).\n
-[https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-016-0302-3 An adaptive association test for microbiome data.]\n
-[https://genomemedicine.biomedcentral.com Genome Medicine], 8(1), 1.\n
-(*Distinguished Student Paper Award in Genomics and Genetics Section*, ASA Sections on Genomics and Genetics, 2016)
+=== Integrative analysis of GWAS and other omic data.
 
-== Statistical genetics
+Recently, new gene-based GWAS tests were proposed to impute gene expression and then test its association with a trait in a GWAS dataset. We propose some more powerful tests along this direction.
+. Xu, Z., *Wu, C.*, Wei, P., and Pan, W. (2017+).\n [http://www.genetics.org/content/genetics/early/2017/09/11/genetics.117.300270.full.pdf A powerful framework for integrating eQTL and GWAS summary data]. Accepted by /Genetics/, early online. (IF: 4.6)
+. Xu, Z., *Wu, C.*, Pan, W., and Alzheimer’s Disease Neuroimaging Initiative (ADNI). (2017). \n [https://www.ncbi.nlm.nih.gov/pubmed/28736311 Imaging-wide association study: integrating imaging endophenotypes in GWAS]. /NeuroImage/, 159:159–169. \n (IF: 5.8.  is paper won a platform presentation at the American Society of Human Genetics (ASHG) 2017 Annual Meeting.)
+. *Wu, C.* and Pan, W. (2017+). \n Integrating eQTL data with GWAS summary statistics in pathway-based analysis. Submitted. \n(This paper won a poster talk (top 24 posters among about 3000 posters) at ASHG 2017 Annual Meeting.)
 
-=== Methylation data
-DNA methylation is a widely studied epigenetic mechanism. Incorporating epigenetic variation into genetic studies of these diseases represents a powerful and effective way to account for environmental influences that gene-sequence-based studies of disease do not. Due to the known and unknown confounders, many false positives have been found.
+Related software:
+. [IWAS.html IWAS]: Imaging-Wide Association Study;
+. [TWAS.html TWAS]: Integrating eQTL and GWAS data;
+. [aSPUpath2.html aSPUpath2]: Integrating eQTL data with GWAS summary statistics in pathway-based analysis.
 
-An intriguing question is: How can we propose novel statistical methods to facilitate the analysis of high throughput DNA methylation data? My research tries to answer this question from improving the data quality perspective.
-- *Wu C.*, Pankow J. S., Demerath E. W.,..., & Guan W.\n
-Iterative PCA in epigenome-wide association studies.\n
-In preparation
-- *Wu, C.*, Demerath, E. W., Pankow, J. S., Bressler, J., Fornage, M., Grove, M. L., ... & Guan, W. (2016).\n
-[http://www.tandfonline.com/doi/full/10.1080/15592294.2016.1145328 Imputation of missing covariate values in epigenome-wide analysis of DNA methylation data.]\n
-[http://www.tandfonline.com/toc/kepi20/current Epigenetics], 11(2), 132-139.
-- Bose, M., *Wu, C.*, Pankow, J. S., Demerath, E. W., Bressler, J., Fornage, M., ... & Kao, W. H. (2014).\n
-[http://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-15-312 Evaluation of microarray-based DNA methylation measurement using technical replicates: the Atherosclerosis Risk In Communities (ARIC) Study.]\n
-[https://bmcbioinformatics.biomedcentral.com BMC Bioinformatics], 15(1), 312.
+=== DNA methylation data analysis.
 
-=== Microbiome data
-The genomes of human microbes, and the way they interact with the human host, are collectively termed the microbiome. Human microbiome association studies aim to de- tect an association of human microbiome diversity with a phenotype of interest, such as disease status; this can improve our understanding of complex traits and diseases. With my co-advisor Prof. Wei Pan, I proposed a powerful data-driven approach to conducting human microbiome association studies.
-- *Wu, C.*, Chen, J., Kim, J., & Pan, W. (2016).\n
-[https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-016-0302-3 An adaptive association test for microbiome data.]\n
-[https://genomemedicine.biomedcentral.com Genome Medicine], 8(1), 1.\n
-(*Distinguished Student Paper Award in Genomics and Genetics Section*, ASA Sections on Genomics and Genetics, 2016)
+DNA methylation is a widely studied epigenetic mechanism. The Athero-sclerosis Risk in Communities (ARIC) study measures DNA methylation over 480,000 methylation markers obtained from about 3,000 subjects. I develop new methods to solve challenges arising from the ARIC DNA methylation data.
+. *Wu, C.*, Demerath, E. W., Pankow, J. S., Bressler, J., Fornage, M., Grove, M. L., Chen, W., and Guan, W. (2016). \n  I[http://www.tandfonline.com/doi/full/10.1080/15592294.2016.1145328 Imputation of missing covariate values in epigenome-wide analysis of DNA methylation data]. /Epigenetics/, 11(2):132–139. \n (IF: 4.4, the official journal of the DNA Methylation Society.)
+. Bose, M., *Wu, C.*, Pankow, J. S., Demerath, E. W., Bressler, J., Fornage, M., Grove, M. L., Mosley, T. H., Hicks, C., North, K., Kao, W. H., Zhang, Y., Boerwinkle, E., and Guan, W. (2014).\n  [http://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-15-312 Evaluation of microarray-based DNA methylation measurement using technical replicates: the Atherosclerosis Risk In Communities (ARIC) Study]. /BMC Bioinformatics/, 15(1):1–10. (IF: 2.4)
+
+=== Human microbiome data analysis.
+. *Wu, C.*, Chen, J., Kim, J., and Pan, W. (2016).\n  [https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-016-0302-3 An adaptive association test for microbiome data]. /Genome Medicine/, 8(1):1–12.\n  (IF: 7.1.  is paper won the 2016 Joint Statistical Meetings (JSM) Distinguished Student Paper Award on Statistics in Genomics and Genetics Section.)
+
+=== Others
+. Park, J. Y., *Wu, C.*, and Pan, W. (2017+).\n An adaptive gene-level association test for pedigree data.
+Accepted by /BMC Proceedings/, a special issue for the Genetic Analysis Workshop (GAW 20).
+. *Wu, C.*, Park, J.Y., Guan, W., and Pan, W. (2017+). \n A powerful gene-based test for methylation
+data. Accepted by BMC Proceedings, a special issue for the Genetic Analysis Workshop (GAW 20).
+. Park, J.Y., *Wu, C.*, Basu, S., McGue, M., and Pan, W. (2017+). Adaptive SNP set association testing in generalized linear mixed models with application to family studies. /Behavior Genetics/, revised and resubmitted.
 
 
+== Hypothesis tests on high-dimensional parameters in generalized linear models (GLMs).
+Regarding hypothesis testing, I have developed a new adaptive test for testing high-dimensional parameters under GLMs with low-dimensional nuisance parameters or with high-dimensional nuisance parameters.
+. *Wu, C.*, Xu, G., Shen, X., and Pan, W. (2017+).\n
+An adaptive test on a high-dimensional parameter in the presence of a high-dimensional nuisance parameter in GLM with application to detect gene-environment interactions. Manuscript.\n (Job talk manuscript, to be submitted to /Journal of the American Statistical Association/.)
+. *Wu, C.*\*, Xu, G., and Pan, W.\* (2017+). \n An adaptive test on high dimensional parameters in
+generalized linear models. /Statistica Sinica/, revised and resubmitted. (\* Corresponding author)
+
+== Collaborative research
+. Zhu, L., Li, Y., Chen, Y., Carrera, C., *Wu, C.*, and Fork, A. (2017+).\n Comparison between two
+post-dentin bond strength measurement methods. /Scientific Reports/, revised and resubmitted.

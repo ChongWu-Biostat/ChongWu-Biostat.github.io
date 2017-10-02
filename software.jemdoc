@@ -1,10 +1,12 @@
 # jemdoc: menu{MENU}{software.html}, nofooter
 
 == Softwares
-You can get the latest version of the following software from my [https://github.com/ChongWu-Biostat github github repository].
+I have developed and currently maintain the following software. You can get the latest version from my [https://github.com/ChongWu-Biostat GitHub repository].
 
-- [https://cran.r-project.org/web/packages/prclust/index.html /prclust/]: R package that provides two algorithms for fitting the penalized regression-based clustering (PRclust). Please see the paper [http://jmlr.org/papers/volume17/15-553/15-553.pdf Wu, Kwon, Shen and Pan, 2016] for details of the procedure.
-- [https://cran.r-project.org/web/packages/MiSPU/index.html /MiSPU/]:  R package that presents a novel global testing method called aMiSPU, that is highly adaptive and thus high powered across various scenarios, alleviating the issue with the choice of a phylogenetic distance. To the best of our knowledge, this method is more powerful than the competing methods. Please see the paper [https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-016-0302-3 Wu, Chen, Kim and Pan, 2016] for details of the procedure.
-- [https://github.com/ChongWu-Biostat/GLMaSPU /GLMaSPU/]: R package that makes it incredibly easy to implement some testing methods for high-dimensional parameters in generalized linear models with R.
-- [glmtlp.html glmtlp]: R package that makes it easy to implement truncated lasso penalty under the generalized linear model framework. This package is similar to glmnet.
-- [IWAS.html IWAS]: A software for implementing a powerful test framework with external weights. 
+- [https://cran.r-project.org/web/packages/prclust/index.html prclust]: R package that provides two algorithms for fitting the penalized regression-based clustering (PRclust). Please see the paper [http://jmlr.org/papers/volume17/15-553/15-553.pdf Wu, Kwon, Shen and Pan, 2016] for details of the procedure.
+- [https://cran.r-project.org/web/packages/MiSPU/index.html MiSPU]:  R package that presents a novel global testing method called aMiSPU, that is highly adaptive and thus high powered across various scenarios, alleviating the issue with the choice of a phylogenetic distance. To the best of our knowledge, this method is more powerful than the competing methods. Please see the paper [https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-016-0302-3 Wu, Chen, Kim and Pan, 2016] for details of the procedure.
+- [https://github.com/ChongWu-Biostat/GLMaSPU GLMaSPU]: R package that makes it incredibly easy to implement some testing methods under high-dimensional generalized linear models.
+- [glmtlp.html glmtlp]: R package that makes it easy to implement truncated lasso penalty under the generalized linear model framework. This package is similar to [https://web.stanford.edu/~hastie/glmnet/glmnet_alpha.html glmnet].
+- [IWAS.html IWAS]: A software for implementing Imaging-Wide Association Studies (IWAS).
+- [TWAS.html TWAS]: A more powerful gene-based association test to integrate single set or multiple sets of eQTL data with GWAS individual-level data or summary statistics.
+- [aSPUpath2.html aSPUpath2]: A new method for integrating eQTL data with GWAS summary statistics in pathway-based analysis

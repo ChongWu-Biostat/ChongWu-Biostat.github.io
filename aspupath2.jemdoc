@@ -120,11 +120,11 @@ aSPUpath2 can be applied to GWAS individual data as well. The main idea is the s
 ~~~
 {}{table}{Command}
 Flag   | Usage  | Default ||
-\-\-sumstats | ummary statistics (rds file and must have SNP and Z column headers) | Required ||
+\-\-sumstats | summary statistics (rds file and must have SNP and Z column headers) | Required ||
 \-\-out | Path to output file | Required ||
-\-\-weights | File listing molecular weight (rds files and must have columns ID,CHR,P0,P1, Weights) | Required ||
+\-\-weights | File listing molecular weight (rds files and must have columns ID, CHR, P0, P1, and Weights) | Required ||
 \-\-ref\_ld | Reference LD files in binary PLINK format | Required ||
-\-\-pathway\_list | Patwhays we want to analyze | Required
+\-\-pathway\_list | Pathways we want to analyze | Required
 ~~~
 
 *note:* We use an asymptotics-based way to calculate p-values of aSPUpath2, which is fast in general.
@@ -162,7 +162,7 @@ This research was supported by NIH grants R21AG057038, R01HL116720, R01GM113250 
 
 == License
 
-Maintainer: [wuchong.org Chong Wu] (wuxx0845@umn.edu)
+Maintainer: [index.html Chong Wu] (wuxx0845@umn.edu)
 
 [http://opensource.org/licenses/MIT MIT]
 
