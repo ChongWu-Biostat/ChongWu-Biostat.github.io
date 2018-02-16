@@ -21,7 +21,7 @@ Recently, new gene-based GWAS tests were proposed to impute gene expression and 
 Related software:
 . [IWAS.html IWAS]: Imaging-Wide Association Study;
 . [TWAS.html TWAS]: Integrating eQTL and GWAS data;
-. [aSPUpath2.html aSPUpath2]: Integrating eQTL data with GWAS summary statistics in pathway-based analysis.
+. [aspupath2.html aSPUpath2]: Integrating eQTL data with GWAS summary statistics in pathway-based analysis.
 
 === DNA methylation data analysis.
 
