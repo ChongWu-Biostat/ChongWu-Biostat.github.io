@@ -6,7 +6,7 @@
 Many genetic variants affect complex traits through gene expression, which can be exploited to boost statistical power and enhance interpretation in genome-wide association studies (GWASs) as demonstrated by the transcriptome-wide association study (TWAS) approach. Furthermore, due to polygenic architecture, a complex trait may be affected by multiple genes with similar function as annotated in gene pathways. Here we extend TWAS from gene-based analysis to pathway-based analysis:  we integrate public pathway collections, gene expression data and  GWAS summary association statistics to identify gene pathways associated with complex traits.  The basic idea is to impute the genetically regulated component of gene expression for each gene in a pathway, then adaptively test for association between imputed expression levels of the genes in the pathways and a GWAS trait by effectively aggregating possibly weak association signals across the genes in the pathway. Please cite the following manuscript for using our proposed method, aSPUpath2:
 
 ~~~
-Wu, C. & Pan, W. (2017). Integrating eQTL data with GWAS summary statistics in pathway-based analysis. Submitted.
+Wu, C. and Pan, W. (2018). [https://www.ncbi.nlm.nih.gov/pubmed/29411426 Integrating eQTL data with GWAS summary statistics in pathwaybased analysis]. Accepted by /Genetic Epidemiology/, early online.
 ~~~
 
 For questions or comments regarding methods, contact Wei Pan ([weip@biostat.umn.edu weip@biostat.umn.edu]);

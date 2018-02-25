@@ -1,6 +1,14 @@
 # jemdoc: menu{MENU}{talks.html}, nofooter
 = Presentations
 
+== [poster_ASHG2017.pdf Integrating eQTL data with GWAS summary statistics identifies novel genes and pathways associated with schizophrenia]
+- [Chong_Wu_ASHG_2017_poster_talk.pptx Poster talk] at [http://www.ashg.org/2017meeting/ ASHG 2017 Annual Meeting], Orlando, FL.
+- [poster_ASHG2017.pdf Poster] at [http://www.ashg.org/2017meeting/ ASHG 2017 Annual Meeting], Orlando, FL.
+
+== [Slides_IWAS.pdf Imaging-wide association study: integrating imaging endophenotypes in GWAS]
+- Invited presentation at [https://ww2.amstat.org/meetings/jsm/2017/ 2017 JSM] (On Prof. Wei Pan's behalf), Baltimore, MD.
+- Invited presentation at [http://kliak.mtu.edu/2017/ Third Annual Kliakhandler Conference] (On Prof. Wei Pan's behalf), Houghton, MI.
+
 == [Chong_Wu_JSM.pdf An adaptive association test for microbiome data]
 - Presentation at [http://www.enar.org/meetings/spring2016/ ENAR 2016] Spring Meeting, Austin, TX;
 - Poster presented at [http://www.sph.umn.edu/research/research-day 2016 School of Public Health Research Day], School of Public health, UMN, Minneapolis, MN;
@@ -16,9 +24,7 @@
 - Poster presented at [https://www.msi.umn.edu/content/2017-msi-research-exhibition Minnesota Supercomputing Institute (MSI) Research Exhibition 2017],  UMN, Minneapolis, MN;
 - Presentation at [https://ww2.amstat.org/meetings/jsm/2017/ 2017 JSM], Baltimore, MD.
 
-== [Slides_IWAS.pdf Imaging-wide association study: integrating imaging endophenotypes in GWAS]
-- Invited presentation at [https://ww2.amstat.org/meetings/jsm/2017/ 2017 JSM] (On Prof. Wei Pan's behalf), Baltimore, MD.
-- Invited presentation at [http://kliak.mtu.edu/2017/ Third Annual Kliakhandler Conference] (On Prof. Wei Pan's behalf), Houghton, MI.
+
 
 == A gene-level adaptive association test for methylation data
 - Presentation at [https://www.gaworkshop.org Genetic Analysis Workshop (GAW) 20], San Diego, CA

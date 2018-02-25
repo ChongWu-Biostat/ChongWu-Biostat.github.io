@@ -8,7 +8,7 @@
 Two new gene-based association analysis methods, called PrediXcan and TWAS for GWAS individual-level and summary data respectively, were recently proposed to integrate GWAS with eQTL data, alleviating two common problems in GWAS by boosting statistical power and facilitating biological interpretation of GWAS discoveries. Based on a novel reformulation of PrediXcan and TWAS, *we propose a more powerful gene-based association test to integrate single set or multiple sets of eQTL data with GWAS individual-level data or summary statistics*. As demonstrated in our simulations and real data analyses and hopefully will be demonstrated in your own studies, the proposed method uncovered more known or novel trait-associated genes, showcasing much-improved performance of our proposed method. Please cite the following manuscript for using the TWAS-aSPU method:
 
 ~~~
-Xu, Z., Wu, C., Peng, W., & Pan, W. (2017). A powerful framework for integrating eQTL and GWAS summary data. Genetics, under revision.
+ Xu, Z., Wu, C., Wei, P., and Pan, W. (2017+). [http://www.genetics.org/content/genetics/early/2017/09/11/genetics.117.300270.full.pdf A powerful framework for integrating eQTL and GWAS summary data]. Accepted by /Genetics/, early online.
 ~~~
 
 For questions or comments regarding methods, contact Wei Pan ([weip@biostat.umn.edu weip@biostat.umn.edu]);
