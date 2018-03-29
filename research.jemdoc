@@ -3,6 +3,8 @@
 
 == Machine learning
 
+I develop new algorithms and theory for some machine learning methods and solve some genetic and genomic problems by machine learning methods. Specifically, I did some research on penalized regression and clustering.
+
 ~~~
 {}{img_left}{machine_learning.png}{machine}{200}{170}
 
@@ -19,8 +21,7 @@ Network-based support vector machine with a new penalty. In preparation.
 
 === Integrative analysis of GWAS and other omic data
 
-Recently, new gene-based GWAS tests were proposed to impute gene expression and then test its association with a trait in a GWAS dataset. We propose some more powerful tests along this direction.
-
+Recently, new gene-based GWAS tests were proposed to impute gene expression and then test its association with a trait in a GWAS dataset. We propose some more powerful tests by incorporating external information.
 ~~~
 {}{img_left}{GWAS.jpg}{methylation}{200}{170}
 - Xu, Z., *Wu, C.*, Wei, P., and Pan, W. (2017+).\n [http://www.genetics.org/content/genetics/early/2017/09/11/genetics.117.300270.full.pdf A powerful framework for integrating eQTL and GWAS summary data]. Accepted by /Genetics/, early online. (IF: 4.6)
@@ -84,6 +85,8 @@ An adaptive test on a high-dimensional parameter in the presence of a high-dimen
 
 == Collaborative research
 
+For me, collaborative research is very fun and fulfilling experience. I enjoy collaborative research and if you have any interesting applied projects and need some help for analyzing the data, please feel free to contact me.
+
 ~~~
 {}{img_left}{Collaboration-Mindset.jpg}{methylation}{200}{170}
 - Zhu, L., Li, Y., Chen, Y., Carrera, C., *Wu, C.*, and Fork, A. (2018).\n [https://www.nature.com/articles/s41598-018-20891-3 Comparison between two post-dentin bond strength measurement methods]. /Scientific Reports/, 8(1):2350. (IF: 4.3)
@@ -95,5 +98,8 @@ activity in African-American adults. Submitted.
 
 
 \n
+
+
+Acknowledgment: research is/was supported by NSF, NIH, and University of Minnesota Doctoral Dissertation Fellowship
 
 /All Photos from [https://images.google.com Google Images]/
