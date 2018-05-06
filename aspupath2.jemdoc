@@ -23,7 +23,7 @@ wget https://data.broadinstitute.org/alkesgroup/FUSION/LDREF.tar.bz2
 tar xjvf LDREF.tar.bz2
 ~~~
 
-- Download the weights from the [http://gusevlab.org/projects/fusion/ TWAS website] or [https://github.com/hakyimlab/PrediXcan PrediXcan] website.
+- Download the weights from the [http://gusevlab.org/projects/fusion/ TWAS website] or [https://github.com/hakyimlab/PrediXcan PrediXcan] website. Please put the weights into the WEIGHTS subfolder.
 
 - Download and unpack the [https://github.com/ChongWu-Biostat/aSPUpath2 Scripts and examples] (Using clone or download option at GitHub).
 
@@ -37,7 +37,6 @@ git clone https://github.com/ChongWu-Biostat/aSPUpath2.git
 ~~~
 {}{}
 install.packages('optparse','RColorBrewer','data.table','matlib','Rcpp','RcppArmadillo','bigmemory','mvtnorm','MASS','magic')
-install.packages('plink2R-master/plink2R/',repos=NULL)
 if (!require("devtools"))
 install.packages("devtools")
 devtools::install_github("ChongWu-Biostat/aSPU2")
