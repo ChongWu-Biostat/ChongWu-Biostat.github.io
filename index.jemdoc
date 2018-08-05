@@ -5,10 +5,10 @@
 {}{img_left}{chongwu.png}{Portrait of Chong Wu}{230}{230}
 Chong Wu \n
 
-Biostatistics Ph.D. Candidate \n
-[http://www.sph.umn.edu/academics/divisions/biostatistics/ Division of Biostatistics]
-[http://twin-cities.umn.edu University of Minnesota] \n
-Advisor: Prof. Weihua Guan & [http://www.biostat.umn.edu/~weip/ Prof. Wei Pan] \n
+Assistant Professor \n
+[https://www.stat.fsu.edu Department of Statistics]\n
+[https://www.fsu.edu Florida State University]\n
+
 
 Research interest: high-dimensional data, statistical genetics, big data, and machine learning
 
@@ -20,8 +20,9 @@ Research interest: high-dimensional data, statistical genetics, big data, and ma
 [https://scholar.google.com/citations?user=rF6BnvsAAAAJ&hl=en Google Scholar]
 ~~~
 
+
 == Short Bio
-Before coming to Minnesota, I received my bachelor's degree in Applied Math the from Huazhong University of Science and Technology. Now, I am a fifth-year Ph.D. candidate in the [http://www.sph.umn.edu/academics/divisions/biostatistics/ Division of Biostatistics] at the [http://twin-cities.umn.edu University of Minnesota]. I am co-advised by Prof. Weihua Guan and [http://www.biostat.umn.edu/~weip/ Prof. Wei Pan] and plan to graduate in May, 2018.
+Currently, I am an Assistant Professor in the [https://www.stat.fsu.edu Department of Statistics] at [https://www.fsu.edu Florida State University]. Prior to FSU, I was a biostatistics Ph.D. student  at the [http://twin-cities.umn.edu University of Minnesota], co-advised by Prof. Weihua Guan and [http://www.biostat.umn.edu/~weip/ Prof. Wei Pan]. I received my bachelor's degree in Applied Math the from [http://english.hust.edu.cn Huazhong University of Science and Technology] in 2013.
 
 == Publications \[[research.html by topic]\]
 . *Wu, C.*\*, Xu, G., and Pan, W.\* (2017+).\n An adaptive test on high dimensional parameters ingeneralized linear models. Accepted by /Statistica Sinica/. (\* Corresponding author)
@@ -38,11 +39,6 @@ Before coming to Minnesota, I received my bachelor's degree in Applied Math the 
 . *Wu, C.*, Demerath, E. W., Pankow, J. S., Bressler, J., Fornage, M., Grove, M. L., Chen, W., and Guan, W. (2016). \n [http://www.tandfonline.com/doi/full/10.1080/15592294.2016.1145328 Imputation of missing covariate values in epigenome-wide analysis of DNA methylation data]. /Epigenetics/, 11(2):132–139. \n (IF: 4.4, the official journal of the DNA Methylation Society.)
 . Bose, M., *Wu, C.*, Pankow, J. S., Demerath, E. W., Bressler, J., Fornage, M., Grove, M. L., Mosley, T. H., Hicks, C., North, K., Kao, W. H., Zhang, Y., Boerwinkle, E., and Guan, W. (2014).\n  [http://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-15-312 Evaluation of microarray-based DNA methylation measurement using technical replicates: the Atherosclerosis Risk In Communities (ARIC) Study]. /BMC Bioinformatics/, 15(1):1–10. (IF: 2.4)
 
-== Selected Manuscripts \[[research.html by topic]\]
-. *Wu, C.* and Pan, W. (2018+).\n Integration of enhancer-promoter interactions with GWAS summaryresults identifies novel schizophrenia-associated genes and pathways. Submitted.
-. *Wu, C.*, Xu, G., Shen, X., and Pan, W. (2018+).\n
-An adaptive test on a high-dimensional parameter in the presence of a high-dimensional nuisance parameter in GLM with application to detect gene-environment interactions. Manuscript.\n (Job talk manuscript, to be submitted to /Journal of the American Statistical Association/.)
-
 
 == [software.html Selected Software]
 - [https://cran.r-project.org/web/packages/prclust/index.html /prclust/]: Penalized Regression-Based Clustering Methods;
@@ -53,9 +49,10 @@ An adaptive test on a high-dimensional parameter in the presence of a high-dimen
 - [aSPUpath2.html aSPUpath2]: Integrating eQTL data with GWAS summary statistics in pathway-based analysis.
 
 == Teaching
-For me, teaching can be described as a rewarding and fulfilling experience. I was a teaching assistant in two courses, Biostatistical Methods I and II, and a guest instructor in [http://www.biostat.umn.edu/~weip/course/dm/s18/home.html Statistical Learning and Data Mining]. Along with Prof. Wei Pan, I mentor a Master’s student and a Ph.D. student on some statistical genetics projects.
+For me, teaching can be described as a rewarding and fulfilling experience. I am the instrcutor for the following courses.
 
-[exampleforhighd.R Codes for Statistical Learning and Data Mining]
+- Fall 2018: [teaching.html STAT 4321/4323 Introduction of Math Stat]
+- [exampleforhighd.R Codes for Statistical Learning and Data Mining]
 
 
 == [talks.html Selected Presentations]
@@ -64,9 +61,6 @@ I enjoy sharing ideas and presenting my works. I usually atend JSM, ENAR, and AS
 -- Presented at 2016 JSM, ENAR
 - [presentation_aSPU_theory.pdf An adaptive test on high dimensional parameters in GLMs]
 -- Presented at 2017 JSM, ENAR
-
-
-
 
 
 == Selected Awards
@@ -85,4 +79,3 @@ Chong Wu\n
 420 Delaware St SE MMC 303\n
 Minneapolis, MN 55455\n
 E-mail: chongwu@umn.edu
-
