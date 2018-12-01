@@ -23,21 +23,25 @@ Research interest: high-dimensional data, statistical genetics, big data, and ma
 \n
 
 ~~~
-My research is mainly driven by the problems arising from genetics and genomics. If you have some massive and messy genetics and genomics data (such as GWAS, DNA methylation, and human microbiome) and need to find a biostatistician to analyze your data, please do not hesitate to contact me.
+My research is mainly driven by the problems arising from genetics and genomics. If you have some massive and messy genetics and genomics data (such as GWAS, DNA methylation, and human microbiome data) and need to find a biostatistician to analyze your data, please do not hesitate to contact me.
 
 I am seeking highly self-motivated students to join my research group. No prior knowledge in statistical genetics is required, but you should have a strong interest in research.
 ~~~
 
 == Short Bio
-Currently, I am an Assistant Professor in the [https://www.stat.fsu.edu Department of Statistics] at [https://www.fsu.edu Florida State University]. Prior to FSU, I was a biostatistics Ph.D. student  at the [http://twin-cities.umn.edu University of Minnesota], co-advised by Prof. Weihua Guan and [http://www.biostat.umn.edu/~weip/ Prof. Wei Pan]. I received my bachelor's degree in Applied Math the from [http://english.hust.edu.cn Huazhong University of Science and Technology] in 2013.
+Currently, I am an Assistant Professor in the [https://www.stat.fsu.edu Department of Statistics] at [https://www.fsu.edu Florida State University]. Prior to FSU, I was a biostatistics Ph.D. student  at the [http://twin-cities.umn.edu University of Minnesota], co-advised by Profs. Weihua Guan and [http://www.biostat.umn.edu/~weip/  Wei Pan]. I received my bachelor's degree in Applied Math from [http://english.hust.edu.cn the Huazhong University of Science and Technology] in 2013.
 
 == Publications \[[research.html by topic]\]
-. *Wu, C.*\*, Xu, G., and Pan, W.\* (2017+).\n An adaptive test on high dimensional parameters ingeneralized linear models. Accepted by /Statistica Sinica/. (\* Corresponding author)
+. *Wu, C.*\*, Xu, G., and Pan, W.\* (2017+).\n An adaptive test on high dimensional parameters in
+generalized linear models. Accepted by /Statistica Sinica/. (\* Corresponding author)
 . Zhu, L., Li, Y., Chen, Y., Carrera, C., *Wu, C.*, and Fork, A. (2018).\n [https://www.nature.com/articles/s41598-018-20891-3 Comparison between two post-dentin bond strength measurement methods]. /Scientific Reports/, 8(1):2350. (IF: 4.3)
 . *Wu, C.* and Pan, W. (2018). \n
 [https://www.ncbi.nlm.nih.gov/pubmed/29411426 Integrating eQTL data with GWAS summary statistics in pathwaybased analysis]. Accepted by /Genetic Epidemiology/, early online.\n
-(This paper won a poster talk (top 24 posters among about 3000 posters) at ASHG 2017 AnnualMeeting.)
-. Park, J.Y., *Wu, C.*, Basu, S., McGue, M., and Pan, W. (2018).\n [https://link.springer.com/article/10.1007/s10519-017-9883-x Adaptive SNP set associationtesting in generalized linear mixed models with application to family studies]. /Behavior Genetics/,48(1):55–66. (IF: 2.4)
+(This paper won a poster talk (top 24 posters among about 3000 posters) at ASHG 2017 Annual
+Meeting.)
+. Park, J.Y., *Wu, C.*, Basu, S., McGue, M., and Pan, W. (2018).\n [https://link.springer.com/article/10.1007/s10519-017-9883-x Adaptive SNP set association
+testing in generalized linear mixed models with application to family studies]. /Behavior Genetics/,
+48(1):55–66. (IF: 2.4)
 . Xu, Z., *Wu, C.*, Wei, P., and Pan, W. (2017+).\n [http://www.genetics.org/content/genetics/early/2017/09/11/genetics.117.300270.full.pdf A powerful framework for integrating eQTL and GWAS summary data]. Accepted by /Genetics/, early online. (IF: 4.6)
 . Liu, B., *Wu, C.*, Shen, X., and Pan, W. (2017). \n [https://www.biorxiv.org/content/early/2017/03/17/117473 A novel and efficient algorithm for de novo discovery of mutated driver pathways]. /Annals of Applied Statistics/, 17(3):1481–1512.
 . Xu, Z., *Wu, C.*, Pan, W., and Alzheimer’s Disease Neuroimaging Initiative (ADNI). (2017). \n [https://www.ncbi.nlm.nih.gov/pubmed/28736311 Imaging-wide association study: integrating imaging endophenotypes in GWAS]. /NeuroImage/, 159:159–169. \n (IF: 5.8.  This paper won a platform presentation at the American Society of Human Genetics (ASHG) 2017 Annual Meeting.)
