@@ -15,11 +15,6 @@ For questions or comments, contact Wei Pan ([weip@biostat.umn.edu weip@biostat.u
 
 
 - Download and unpack the software from [https://github.com/ChongWu-Biostat/EGMethyl GitHub] (Either clone or download option works).
-~~~
-{}{}
-wget https://data.broadinstitute.org/alkesgroup/FUSION/LDREF.tar.bz2
-tar xjvf LDREF.tar.bz2
-~~~
 
 - Download and install [https://www.cog-genomics.org/plink/1.9/ plink 1.9]. *Note: Make sure the plink has been installed globally. Or You can go to the directory where stores the plink and then add the plink directory to the search path by echo "export PATH=\$PATH:$(pwd)" >> ~/.bashrc. See [https://stackoverflow.com/questions/27188856/adding-any-current-directory-to-the-search-path-in-linux the link] for details.]
 
@@ -70,7 +65,7 @@ Additional columns are allowed but will be ignored. We recommend removing the ad
 *Note:*  We highly recommend running TWAS-aSPU with raw summary-level data. Pre-process step such as pruning and restricting to top SNPs may harm the performance.
 
 
-=== Performing "E + G + Methyl"
+=== Performing "E \+ G \+ Methyl"
 
 To let users easier to use the software, we included all the required data in the software. Once we downloaded necessary packages and plink, we can run "E + G + Methyl" via the following single line.
 
@@ -85,7 +80,8 @@ Rscript egmethyl.R \
 --test_method asy
 ~~~
 
-This should take less than one minute, and you will see some intermediate steps on the screen. If everything works, you will see a file under the ./out/.
+Due to some limits in GitHub, we have to put all the mQTL information in Google Drive. You need to download the mQTL informationn to conduct a genome-wide E \+ G \+ Methyl analysis.
+This example code should take less than one minute, and you will see some intermediate steps on the screen. If everything works, you will see a file under the ./out/.
 
 Through egmethyl.R, we perform the following steps: (1) combine the GWAS and reference SNPs and remove ambiguous SNPs; (2) prioritize the SNPs that are mQTL in either enhancer regions or a gene body region; (3) impute GWAS Z-scores for any reference SNPs with missing GWAS Z-scores via the IMPG algorithm ([https://academic.oup.com/bioinformatics/article/30/20/2906/2422225/Fast-and-accurate-imputation-of-summary-statistics Pasaniuc et al. 2014); (4) perform E + G + Methyl; (5) report results and store them in the working directory.
 
