@@ -1,0 +1,166 @@
+# jemdoc: nofooter
+
+= E+G+Methyl
+
+== Integration of mQTL and enhancer-target gene maps with GWAS summary results
+
+Most trait-associated genetic variants identified in genome-wide association studies (GWAS) are located in non-coding regions of the genome and thought to act through their regulatory roles. To account for enriched association signals in DNA regulatory elements, we propose a novel and general gene-based association testing strategy called "E + G + Methyl" that integrates enhancer-target gene pairs and methylation quantitative trait locus (mQTL) data with GWAS summary results; it aims to both boost statistical power for new discoveries and enhance mechanistic interpretability of any new discovery. This online tutorial aims to facilitate data analyses via "E + G + Methyl" in the wider community.  Please cite the following manuscript for using "E + G + Methyl":
+~~~
+Wu, C., and Pan, W. (2017+).  Integration of mQTL and enhancer-target gene maps with GWAS summary results. In revision.
+~~~
+
+For questions or comments, contact Wei Pan ([weip@biostat.umn.edu weip@biostat.umn.edu]) or Chong Wu ([cwu3@fsu.edu cwu3@fsu.edu]).
+
+== Installation
+
+
+- Download and unpack the software from [https://github.com/ChongWu-Biostat/EGMethyl GitHub] (Either clone or download option works).
+~~~
+{}{}
+wget https://data.broadinstitute.org/alkesgroup/FUSION/LDREF.tar.bz2
+tar xjvf LDREF.tar.bz2
+~~~
+
+- Download and install [https://www.cog-genomics.org/plink/1.9/ plink 1.9]. *Note: Make sure the plink has been installed globally. Or You can go to the directory where stores the plink and then add the plink directory to the search path by echo "export PATH=\$PATH:$(pwd)" >> ~/.bashrc. See [https://stackoverflow.com/questions/27188856/adding-any-current-directory-to-the-search-path-in-linux the link] for details.]
+
+- Download and unpack mQTL information to the directory stored the egmethyl software: [https://drive.google.com/file/d/1ySIZxAP-FcQ5mbQrnqL34rhwOEQ_q7EV/view?usp=sharing link].
+
+- Launch R and install required libraries:
+~~~
+{}{}
+install.packages('optparse','RColorBrewer','data.table','matlib','Rcpp','RcppArmadillo','bigmemory','mvtnorm','MASS')
+install.packages('plink2R-master/plink2R/',repos=NULL)
+if (!require("devtools"))
+install.packages("devtools")
+devtools::install_github("ChongWu-Biostat/aSPU2")
+devtools::install_github("gabraham/plink2R/plink2R")
+~~~
+
+== Data availability
+We share the some processed datasets as follows. Please cite the original paper and our paper for using these datasets.
+
+- mQTL information for each gene: we provide the mQTL of the CpG sites either in enhancers or gene body regions: [https://drive.google.com/file/d/1ySIZxAP-FcQ5mbQrnqL34rhwOEQ_q7EV/view?usp=sharing rds file format]; [https://drive.google.com/file/d/1PANzfVbIm6Ob2qCbDASsqinhsevKhhxy/view?usp=sharing bed file format]. *Note*: the mQTL information file is large, about 1GB. When using this dataset, please cite Gaunt, T. R., Shihab, H. A., Hemani, G., Min, J. L., Woodward, G., Lyttleton, O., Zheng, J., Duggirala, A., McArdle, W. L., Ho, K., et al. (2016). Systematic
+identification of genetic influences on methylation across the human life course. Genome Biology, 17(1), 61.
+
+
+
+- enhancer regions for each gene: [https://github.com/ChongWu-Biostat/EGMethyl/tree/master/processed_data link]
+
+For using Hippo information: Cao, Q., Anyansi, C., Hu, X., Xu, L., Xiong, L., Tang, W., Mok, M. T., Cheng, C.,
+Fan, X., Gerstein, M., et al. (2017). Reconstruction of enhancer-target networks in 935 samples of human primary cells, tissues and cell lines. Nature Genetics, 49(10), 1428–1436.
+
+For using MCF7 information: Li, G., Ruan, X., Auerbach, R. K., Sandhu, K. S., Zheng, M., Wang, P., Poh, H. M.,
+Goh, Y., Lim, J., Zhang, J., et al. (2012). Extensive promoter-centered chromatin interactions provide a topological basis for transcription regulation. Cell, 148(1), 84–98.
+
+== Typical analysis and output
+
+We will use the [https://www.med.unc.edu/pgc/results-and-downloads schizophrenia GWAS summary data (scz1)]  as an example to illustrate how to use "E + G + Methyl". This example assumes you have set up the required environment and data as illustrated in the previous section. All analyses are based on R/3.3.1.
+
+=== Input: GWAS summary statistics
+
+At a minimum, we need a summary text file with a header row containing the following fields:
+
+. SNP\_map – SNP identifier (rs id)
+. A1 – first allele (effect allele, should be capitalized)
+. A2 – second allele (another allele, should be capitalized)
+. Z – Z-scores, sign with respect to A1.
+
+Additional columns are allowed but will be ignored. We recommend removing the additional columns before analysis to save space.
+
+*Note:*  We highly recommend running TWAS-aSPU with raw summary-level data. Pre-process step such as pruning and restricting to top SNPs may harm the performance.
+
+
+=== Performing "E + G + Methyl"
+
+To let users easier to use the software, we included all the required data in the software. Once we downloaded necessary packages and plink, we can run "E + G + Methyl" via the following single line.
+
+~~~
+{}{}
+Rscript egmethyl.R \
+--sumstats scz1.txt \
+--out ./out \
+--out_name res \
+--gene_list gene_list.txt \
+--tissue Hippo \
+--test_method asy
+~~~
+
+This should take less than one minute, and you will see some intermediate steps on the screen. If everything works, you will see a file under the ./out/.
+
+Through egmethyl.R, we perform the following steps: (1) combine the GWAS and reference SNPs and remove ambiguous SNPs; (2) prioritize the SNPs that are mQTL in either enhancer regions or a gene body region; (3) impute GWAS Z-scores for any reference SNPs with missing GWAS Z-scores via the IMPG algorithm ([https://academic.oup.com/bioinformatics/article/30/20/2906/2422225/Fast-and-accurate-imputation-of-summary-statistics Pasaniuc et al. 2014); (4) perform E + G + Methyl; (5) report results and store them in the working directory.
+
+=== Output: Gene-disease association
+
+The results are stored in a user-defined output file. For illustration, we explain the meaning of each entry in the first two lines of the output.
+
+~~~
+{}{table}{VariExp}
+Col. num. | Column name   | Value  | Explanations ||
+1 | gene         | A4GALT | Feature/gene identifier, taken from gene\_list file ||
+2 | CHR        | 22     | Chromosome ||
+3 | P0            | 41088126 | Gene start (from hg19 list from plink website) ||
+4 | P1        |   43116876  | Gene end (from hg19 list from plink website) ||
+5 | nSNPs | 5 | Number of mQTLs in either enhancers or a gene body region ||
+6 | SPU(1) | 0.69 | SPU(1) p-value. The p-value is based on asymptotic distribution. ||
+7 | SPU(2) | 0.61 | SPU(2) p-value The p-value is based on asymptotic distribution. ||
+8-23| SPU | 0.69| SPU or aSPU p-values.
+
+Note: The results here are only for illustration.
+~~~
+
+
+== Command-line parameters
+
+=== TWAS_aSPU.R
+
+~~~
+{}{table}{Command}
+Flag   | Usage  | Default ||
+\-\-sumstats | ummary statistics (rds file and must have SNP and Z column headers) | Required ||
+\-\-out | Path to output file | Required ||
+\-\-out\_name | output file name | Required ||
+\-\-gene\_list | Gene list to be analyzed | Required ||
+\-\-tissue | Tissue to use. Either "MCF7" or "Hippo". | Required ||
+\-\-test\_method | Gene-based methods to be used. "aSPU" for aSPU test.. | Required
+~~~
+
+*Note:* A single layer/loop of Monte Carlo simulation is used to obtain the $p$-values of all the SPU and aSPU tests simultaneously if test.method = "aSPU". To save computational time, We use an adaptive way to select the number of simulations and calculate $p$-values efficiently.
+
+== FAQ
+
+* What QC is performed internally when using "E + G + Methyl"?*
+
+"E + G + Methyl" performs similar quality control steps as its competitors did. Specifically, we automatically match up SNPs, remove all  [https://www.snpedia.com/index.php/Ambiguous_flip ambiguous SNPs] (A\/C or G\/T) and non-biallelic SNPs, and flip alleles to match the reference data.
+
+* Can I run "E + G + Methyl" with aSPU test?
+Yes. aSPU generally provides more significant results and identifies more significant genes. You can use the following code to run aSPU test. However, you need to make sure you have installed the necessary supporting software. For example, in MacOS, you should install XCode and XCode select (by xcode-select --install).
+~~~
+{}{}
+Rscript egmethyl.R \
+--sumstats scz1.txt \
+--out ./out \
+--out_name res \
+--gene_list gene_list.txt \
+--tissue Hippo \
+--test_method aSPU
+~~~
+
+
+
+* Can you provide the mQTL and enhancer information via ped format? I am not familiar with R and want to use Python to conduct some data analysis.*
+
+Yes. You can download the file through the [https://drive.google.com/file/d/1PANzfVbIm6Ob2qCbDASsqinhsevKhhxy/view?usp=sharing bed file format link]. Each file represents the mQTL information. The files with prefix "Hippo_" stands for the mQTL information of Hippo tissue, while the files with prefix "MCF7" stands for the mQTL information of MCF7 tissue. *Note*: the file is large, about 1GB.
+
+
+== Acknowledgements
+This research was supported by NIH grants R21AG057038, R01HL116720, R01GM113250, and R01HL105397.
+
+
+== License
+
+Maintainer: [index.html Chong Wu] (cwu3@fsu.edu)
+
+[http://opensource.org/licenses/MIT MIT]
+
+Copyright (c) 2013-present, Chong Wu (cwu3@fsu.edu) & Wei Pan(weip@biostat.umn.edu).
+
