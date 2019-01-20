@@ -128,7 +128,8 @@ Flag   | Usage  | Default ||
 
 "E \+ G \+ Methyl" performs similar quality control steps as its competitors did. Specifically, we automatically match up SNPs, remove all  [https://www.snpedia.com/index.php/Ambiguous_flip ambiguous SNPs] (A\/C or G\/T) and non-biallelic SNPs, and flip alleles to match the reference data.
 
-* Can I run "E \+ G \+ Methyl" with aSPU test?
+
+* Can I run "E \+ G \+ Methyl" with aSPU test?*
 Yes. aSPU generally provides more significant results and identifies more significant genes. You can use the following code to run aSPU test. However, you need to make sure you have installed the necessary supporting software. For example, in MacOS, you should install XCode and XCode select (by xcode-select --install).
 ~~~
 {}{}
