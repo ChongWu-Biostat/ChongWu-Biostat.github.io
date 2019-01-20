@@ -9,12 +9,12 @@
 </head>
 <body>
 <div id="layout-content">
-<h1>E<tt>G</tt>Methyl</h1>
+<h1>E+G+Methyl</h1>
 <h2>Integration of mQTL and enhancer-target gene maps with GWAS summary results</h2>
-<p>Most trait-associated genetic variants identified in genome-wide association studies (GWAS) are located in non-coding regions of the genome and thought to act through their regulatory roles. To account for enriched association signals in DNA regulatory elements, we propose a novel and general gene-based association testing strategy called &ldquo;E <tt> G </tt> Methyl&rdquo; that integrates enhancer-target gene pairs and methylation quantitative trait locus (mQTL) data with GWAS summary results; it aims to both boost statistical power for new discoveries and enhance mechanistic interpretability of any new discovery. This online tutorial aims to facilitate data analyses via &ldquo;E <tt> G </tt> Methyl&rdquo; in the wider community.  Please cite the following manuscript for using &ldquo;E <tt> G </tt> Methyl&rdquo;:</p>
+<p>Most trait-associated genetic variants identified in genome-wide association studies (GWAS) are located in non-coding regions of the genome and thought to act through their regulatory roles. To account for enriched association signals in DNA regulatory elements, we propose a novel and general gene-based association testing strategy called &ldquo;E + G + Methyl&rdquo; that integrates enhancer-target gene pairs and methylation quantitative trait locus (mQTL) data with GWAS summary results; it aims to both boost statistical power for new discoveries and enhance mechanistic interpretability of any new discovery. This online tutorial aims to facilitate data analyses via &ldquo;E + G + Methyl&rdquo; in the wider community.  Please cite the following manuscript for using &ldquo;E + G + Methyl&rdquo;:</p>
 <div class="infoblock">
 <div class="blockcontent">
-<p>Wu, C., and Pan, W. (2017+).  Integration of mQTL and enhancer-target gene maps with GWAS summary results. In revision.</p>
+<p>Wu, C., and Pan, W. (2019+).  Integration of mQTL and enhancer-target gene maps with GWAS summary results. In revision.</p>
 </div></div>
 <p>For questions or comments, contact Wei Pan (<a href="mailto:weip@biostat.umn.edu" target=&ldquo;blank&rdquo;>weip@biostat.umn.edu</a>) or Chong Wu (<a href="mailto:cwu3@fsu.edu" target=&ldquo;blank&rdquo;>cwu3@fsu.edu</a>).</p>
 <h2>Installation</h2>
@@ -59,7 +59,7 @@ Fan, X., Gerstein, M., et al. (2017). Reconstruction of enhancer-target networks
 <p>For using MCF7 information: Li, G., Ruan, X., Auerbach, R. K., Sandhu, K. S., Zheng, M., Wang, P., Poh, H. M.,
 Goh, Y., Lim, J., Zhang, J., et al. (2012). Extensive promoter-centered chromatin interactions provide a topological basis for transcription regulation. Cell, 148(1), 84–98.</p>
 <h2>Typical analysis and output</h2>
-<p>We will use the <a href="https://www.med.unc.edu/pgc/results-and-downloads" target=&ldquo;blank&rdquo;>schizophrenia GWAS summary data (scz1)</a>  as an example to illustrate how to use &ldquo;E <tt> G </tt> Methyl&rdquo;. This example assumes you have set up the required environment and data as illustrated in the previous section. All analyses are based on R/3.3.1.</p>
+<p>We will use the <a href="https://www.med.unc.edu/pgc/results-and-downloads" target=&ldquo;blank&rdquo;>schizophrenia GWAS summary data (scz1)</a>  as an example to illustrate how to use &ldquo;E + G + Methyl&rdquo;. This example assumes you have set up the required environment and data as illustrated in the previous section. All analyses are based on R/3.3.1.</p>
 <h3>Input: GWAS summary statistics</h3>
 <p>At a minimum, we need a summary text file with a header row containing the following fields:</p>
 <ol>
@@ -75,7 +75,7 @@ Goh, Y., Lim, J., Zhang, J., et al. (2012). Extensive promoter-centered chromati
 <p>Additional columns are allowed but will be ignored. We recommend removing the additional columns before analysis to save space.</p>
 <p><b>Note:</b>  We highly recommend running TWAS-aSPU with raw summary-level data. Pre-process step such as pruning and restricting to top SNPs may harm the performance.</p>
 <h3>Performing &ldquo;E + G + Methyl&rdquo;</h3>
-<p>To let users easier to use the software, we included all the required data in the software. Once we downloaded necessary packages and plink, we can run &ldquo;E <tt> G </tt> Methyl&rdquo; via the following single line.</p>
+<p>To let users easier to use the software, we included all the required data in the software. Once we downloaded necessary packages and plink, we can run &ldquo;E + G + Methyl&rdquo; via the following single line.</p>
 <div class="codeblock">
 <div class="blockcontent"><pre>
 Rscript egmethyl.R \
@@ -88,7 +88,7 @@ Rscript egmethyl.R \
 </pre></div></div>
 <p>Due to some limits in GitHub, we have to put all the mQTL information in Google Drive. You need to download the mQTL informationn to conduct a genome-wide E + G + Methyl analysis.
 This example code should take less than one minute, and you will see some intermediate steps on the screen. If everything works, you will see a file under the .<i>out</i>.</p>
-<p>Through egmethyl.R, we perform the following steps: (1) combine the GWAS and reference SNPs and remove ambiguous SNPs; (2) prioritize the SNPs that are mQTL in either enhancer regions or a gene body region; (3) impute GWAS Z-scores for any reference SNPs with missing GWAS Z-scores via the IMPG algorithm ([https:<i></i>academic.oup.com<i>bioinformatics</i>article<i>30</i>20<i>2906</i>2422225/Fast-and-accurate-imputation-of-summary-statistics Pasaniuc et al. 2014); (4) perform E <tt> G </tt> Methyl; (5) report results and store them in the working directory.</p>
+<p>Through egmethyl.R, we perform the following steps: (1) combine the GWAS and reference SNPs and remove ambiguous SNPs; (2) prioritize the SNPs that are mQTL in either enhancer regions or a gene body region; (3) impute GWAS Z-scores for any reference SNPs with missing GWAS Z-scores via the IMPG algorithm ([https:<i></i>academic.oup.com<i>bioinformatics</i>article<i>30</i>20<i>2906</i>2422225/Fast-and-accurate-imputation-of-summary-statistics Pasaniuc et al. 2014); (4) perform E + G + Methyl analysis with different gene-based testing methods; (5) report results and store them in the working directory.</p>
 <h3>Output: Gene-disease association</h3>
 <p>The results are stored in a user-defined output file. For illustration, we explain the meaning of each entry in the first two lines of the output.</p>
 <table id="VariExp">
@@ -116,9 +116,9 @@ Note: The results here are only for illustration.
 </td></tr></table>
 <p><b>Note:</b> A single layer/loop of Monte Carlo simulation is used to obtain the \(p\)-values of all the SPU and aSPU tests simultaneously if test.method = &ldquo;aSPU&rdquo;. To save computational time, We use an adaptive way to select the number of simulations and calculate \(p\)-values efficiently.</p>
 <h2>FAQ</h2>
-<p><b> What QC is performed internally when using &ldquo;E <tt> G </tt> Methyl&rdquo;?</b></p>
-<p>&ldquo;E <tt> G </tt> Methyl&rdquo; performs similar quality control steps as its competitors did. Specifically, we automatically match up SNPs, remove all  <a href="https://www.snpedia.com/index.php/Ambiguous_flip" target=&ldquo;blank&rdquo;>ambiguous SNPs</a> (A/C or G/T) and non-biallelic SNPs, and flip alleles to match the reference data.</p>
-<p>* Can I run &ldquo;E <tt> G </tt> Methyl&rdquo; with aSPU test?
+<p><b> What QC is performed internally when using &ldquo;E + G + Methyl&rdquo;?</b></p>
+<p>&ldquo;E + G + Methyl&rdquo; performs similar quality control steps as its competitors did. Specifically, we automatically match up SNPs, remove all  <a href="https://www.snpedia.com/index.php/Ambiguous_flip" target=&ldquo;blank&rdquo;>ambiguous SNPs</a> (A/C or G/T) and non-biallelic SNPs, and flip alleles to match the reference data.</p>
+<p>* Can I run &ldquo;E + G + Methyl&rdquo; with aSPU test?
 Yes. aSPU generally provides more significant results and identifies more significant genes. You can use the following code to run aSPU test. However, you need to make sure you have installed the necessary supporting software. For example, in MacOS, you should install XCode and XCode select (by xcode-select &ndash;install).</p>
 <div class="codeblock">
 <div class="blockcontent"><pre>
