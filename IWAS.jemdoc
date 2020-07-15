@@ -12,11 +12,11 @@ Xu, Z., Wu, C., Pan, W., and Alzheimer’s Disease Neuroimaging Initiative (ADNI
 ~~~
 
 For questions or comments regarding methods, contact Wei Pan ([weip@biostat.umn.edu weip@biostat.umn.edu]);
-For questions or comments regarding data \& codes, contact Chong Wu ([chongwu@umn.edu chongwu@umn.edu]).
+For questions or comments regarding data \& codes, contact Chong Wu ([cwu3@fsu.edu cwu3@fsu.edu]).
 
 == Installation
 
-- Confiugre the necessary environment and install [https://www.cog-genomics.org/plink2 plink].
+- Confiugre the necessary environment and install [https://www.cog-genomics.org/plink2 plink]. If we use the server and the plink has been installed systematically, we can use 'module load plink' to load plink. Otherwise, we can use the following to link the plink directory such that the software can use plink properly: export PATH=$PATH:/gpfs/research/chongwu/shared/software, where /gpfs/research/chongwu/shared/software is the plink directory.
 
 - Download and unpack the [https://github.com/ChongWu-Biostat/IWAS Scripts and external weights] (Using clone or download option at GitHub.).
 
@@ -25,7 +25,7 @@ For questions or comments regarding data \& codes, contact Chong Wu ([chongwu@um
 git clone https://github.com/ChongWu-Biostat/IWAS.git
 ~~~
 
-- Download the reference data, for example, 1000 Genomes, HapMap. Here we provide HapMap 3 with independent European reference. Use this [https://www.dropbox.com/sh/8sqquebpdwyksuv/AACLHoYfG64_yloli4QRfyTIa?dl=0 link] to download. Put it into the same working directory.
+- Download the reference data, for example, 1000 Genomes, HapMap. Here we provide HapMap 3 of European ancestry reference. Use this [https://fsu-my.sharepoint.com/:f:/g/personal/cwu3_fsu_edu/EtFoxKO4wj1GulP6lvQ8vCkBJxvjVRLwqRk23W6_ep1kIA?e=pdFQAD link] to download. Put it into the same working directory (under LDREF).
 
 - Launch R and install required libraries:
 
@@ -43,9 +43,9 @@ devtools::install_github("gabraham/plink2R/plink2R")
 
 == Typical analysis and output
 
-The IWAS analysis takes imaging endophenotype based external weights and disease GWAS summary statistics to identify significant genes.
+The IWAS analysis takes imaging endophenotype based external weights and disease GWAS summary statistics as inputs to identify significant genes.
 
-We will use the [http://web.pasteur-lille.fr/en/recherche/u744/igap/igap_download.php IGAP Alzheimer's summary data] (Lambert et al. 2013) as an example to illustrate how to use our methods. This example assumes you have setup the required environment and data as illustrated in the previous section. All analyses are based on R/3.3.1.
+We will use the [http://web.pasteur-lille.fr/en/recherche/u744/igap/igap_download.php IGAP Alzheimer's summary data] (Lambert et al. 2013) as an example to illustrate how to use our methods. This example assumes you have setup the required environment and data as illustrated in the previous section.
 
 === Input: GWAS summary statistics
 
@@ -55,6 +55,7 @@ At a minimum, we need a summary rds file with a header row containing the follow
 . A1 – first allele (effect allele, should be capitalized)
 . A2 – second allele (other allele, should be capitalized)
 . Z – Z-scores, sign with respect to A1.
+
 
 Additional columns are allowed but will be ignored. We recommend removing the additional columns before analysis to save space.
 
@@ -73,7 +74,7 @@ After we prepared the data, we can run IWAS via the following single line.
 {}{}
 Rscript IWAS.R \
 --sumstats ./Example/IGAP_chr22.rds \
---out ./Example/example_res.rds \
+--out ./Example/example_res.txt \
 --weights ./WEIGHTS/ADNI1_wgt.rds \
 --ref_ld ./LDREF/hapmap_CEU_r23a_hg19 \
 --gene_list ./Example/gene_list.txt \
@@ -171,7 +172,7 @@ Two methods are highly correlated with two well-known groups.  [https://github.c
 
 *Can I use other reference data?*
 
-Yes. Other references such as 1000 Genomes, can be used as well. We will upload the 1000 Genomes with only HapMap SNPs set in the near future. Please check this website later for updating.
+Yes. Other references such as 1000 Genomes, can be used as well.
 
 * What QC is performed internally when using IWAS?*
 
@@ -199,14 +200,12 @@ ADNI (Department of Defense award number W81XWH-12-2-0012). ADNI is funded by th
 
 == License
 
-Maintainer: [index.html Chong Wu] (wuxx0845@umn.edu)
+Maintainer: [index.html Chong Wu] (cwu3@fsu.edu)
 
 [http://opensource.org/licenses/MIT MIT]
 
 Copyright (c) 2013-present, Chong Wu (wuxx0845@umn.edu), Zhiyuan Xu (xuxx0284@umn.edu) & Wei Pan(weip@biostat.umn.edu).
 
-== Advertisement
 
-The author [www.wuchong.org Chong Wu] is looking for a tenure-track or research-track Assistant Professor or Research Scientist position. If you are interested in my work, please do not hestiate to contact me at wuxx0845@umn.edu.
 
 

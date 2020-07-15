@@ -17,10 +17,10 @@
 <p>Xu, Z., Wu, C., Pan, W., and Alzheimer’s Disease Neuroimaging Initiative (ADNI). (2017).  <a href="https://www.ncbi.nlm.nih.gov/pubmed/28736311" target=&ldquo;blank&rdquo;>Imaging-wide association study: integrating imaging endophenotypes in GWAS</a>. <i>NeuroImage</i>, 159:159–169.</p>
 </div></div>
 <p>For questions or comments regarding methods, contact Wei Pan (<a href="mailto:weip@biostat.umn.edu" target=&ldquo;blank&rdquo;>weip@biostat.umn.edu</a>);
-For questions or comments regarding data & codes, contact Chong Wu (<a href="mailto:chongwu@umn.edu" target=&ldquo;blank&rdquo;>chongwu@umn.edu</a>).</p>
+For questions or comments regarding data & codes, contact Chong Wu (<a href="mailto:cwu3@fsu.edu" target=&ldquo;blank&rdquo;>cwu3@fsu.edu</a>).</p>
 <h2>Installation</h2>
 <ul>
-<li><p>Confiugre the necessary environment and install <a href="https://www.cog-genomics.org/plink2" target=&ldquo;blank&rdquo;>plink</a>.</p>
+<li><p>Confiugre the necessary environment and install <a href="https://www.cog-genomics.org/plink2" target=&ldquo;blank&rdquo;>plink</a>. If we use the server and the plink has been installed systematically, we can use 'module load plink&rsquo; to load plink. Otherwise, we can use the following to link the plink directory such that the software can use plink properly: export PATH=$PATH:<i>gpfs</i>research<i>chongwu</i>shared<i>software, where </i>gpfs<i>research</i>chongwu<i>shared</i>software is the plink directory.</p>
 </li>
 </ul>
 <ul>
@@ -32,7 +32,7 @@ For questions or comments regarding data & codes, contact Chong Wu (<a href="mai
 git clone https://github.com/ChongWu-Biostat/IWAS.git
 </pre></div></div>
 <ul>
-<li><p>Download the reference data, for example, 1000 Genomes, HapMap. Here we provide HapMap 3 with independent European reference. Use this <a href="https://www.dropbox.com/sh/8sqquebpdwyksuv/AACLHoYfG64_yloli4QRfyTIa?dl=0" target=&ldquo;blank&rdquo;>link</a> to download. Put it into the same working directory.</p>
+<li><p>Download the reference data, for example, 1000 Genomes, HapMap. Here we provide HapMap 3 of European ancestry reference. Use this <a href="https://fsu-my.sharepoint.com/:f:/g/personal/cwu3_fsu_edu/EtFoxKO4wj1GulP6lvQ8vCkBJxvjVRLwqRk23W6_ep1kIA?e=pdFQAD" target=&ldquo;blank&rdquo;>link</a> to download. Put it into the same working directory (under LDREF).</p>
 </li>
 </ul>
 <ul>
@@ -51,8 +51,8 @@ devtools::install_github("ChongWu-Biostat/aSPU2")
 devtools::install_github("gabraham/plink2R/plink2R")
 </pre></div></div>
 <h2>Typical analysis and output</h2>
-<p>The IWAS analysis takes imaging endophenotype based external weights and disease GWAS summary statistics to identify significant genes.</p>
-<p>We will use the <a href="http://web.pasteur-lille.fr/en/recherche/u744/igap/igap_download.php" target=&ldquo;blank&rdquo;>IGAP Alzheimer's summary data</a> (Lambert et al. 2013) as an example to illustrate how to use our methods. This example assumes you have setup the required environment and data as illustrated in the previous section. All analyses are based on R/3.3.1.</p>
+<p>The IWAS analysis takes imaging endophenotype based external weights and disease GWAS summary statistics as inputs to identify significant genes.</p>
+<p>We will use the <a href="http://web.pasteur-lille.fr/en/recherche/u744/igap/igap_download.php" target=&ldquo;blank&rdquo;>IGAP Alzheimer's summary data</a> (Lambert et al. 2013) as an example to illustrate how to use our methods. This example assumes you have setup the required environment and data as illustrated in the previous section.</p>
 <h3>Input: GWAS summary statistics</h3>
 <p>At a minimum, we need a summary rds file with a header row containing the following fields:</p>
 <ol>
@@ -75,7 +75,7 @@ devtools::install_github("gabraham/plink2R/plink2R")
 <div class="blockcontent"><pre>
 Rscript IWAS.R \
 --sumstats ./Example/IGAP_chr22.rds \
---out ./Example/example_res.rds \
+--out ./Example/example_res.txt \
 --weights ./WEIGHTS/ADNI1_wgt.rds \
 --ref_ld ./LDREF/hapmap_CEU_r23a_hg19 \
 --gene_list ./Example/gene_list.txt \
@@ -138,7 +138,7 @@ Rscript IWAS.R \
 <p>Our methods are related to the following method by other two groups.
 Two methods are highly correlated with two well-known groups.  <a href="https://github.com/hakyimlab/MetaXcan" target=&ldquo;blank&rdquo;>MetaXcan</a> and  <a href="https://github.com/hakyimlab/PrediXcan" target=&ldquo;blank&rdquo;>PrediXcan</a>  (Gamazon et al 2015) developed by the Im lab perform gene-based association tests with and without summary data. <a href="http://gusevlab.org/projects/fusion/" target=&ldquo;blank&rdquo;>TWAS</a> by Gusev performs gene-based association tests with individual-level or summary statistics.  MetaXcan and TWAS are similar. The main difference between TWAS and MetaXcan is that they use a slightly different way and different reference data to construct weights. We recommend you to check their websites to download other gene-expression based weights as well.</p>
 <p><b>Can I use other reference data?</b></p>
-<p>Yes. Other references such as 1000 Genomes, can be used as well. We will upload the 1000 Genomes with only HapMap SNPs set in the near future. Please check this website later for updating.</p>
+<p>Yes. Other references such as 1000 Genomes, can be used as well.</p>
 <p><b> What QC is performed internally when using IWAS?</b></p>
 <p>IWAS performs a similar quality control steps as TWAS did. We automatically match up SNPs, remove <a href="https://www.snpedia.com/index.php/Ambiguous_flip" target=&ldquo;blank&rdquo;>ambiguous markers</a> (A/C or G/T) and flip alleles to match the reference data.</p>
 <h2>Acknowledgements</h2>
@@ -164,14 +164,12 @@ ADNI (Department of Defense award number W81XWH-12-2-0012). ADNI is funded by th
 </li>
 </ul>
 <h2>License</h2>
-<p>Maintainer: <a href="index.html" target=&ldquo;blank&rdquo;>Chong Wu</a> (wuxx0845@umn.edu)</p>
+<p>Maintainer: <a href="index.html" target=&ldquo;blank&rdquo;>Chong Wu</a> (cwu3@fsu.edu)</p>
 <p><a href="http://opensource.org/licenses/MIT" target=&ldquo;blank&rdquo;>MIT</a></p>
 <p>Copyright (c) 2013-present, Chong Wu (wuxx0845@umn.edu), Zhiyuan Xu (xuxx0284@umn.edu) &amp; Wei Pan(weip@biostat.umn.edu).</p>
-<h2>Advertisement</h2>
-<p>The author <a href="www.wuchong.org" target=&ldquo;blank&rdquo;>Chong Wu</a> is looking for a tenure-track or research-track Assistant Professor or Research Scientist position. If you are interested in my work, please do not hestiate to contact me at wuxx0845@umn.edu.</p>
 <div id="footer">
 <div id="footer-text">
-Page generated 2018-02-24 23:20:35 CST, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
+Page generated 2020-07-15 12:43:41 CDT, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
 </div>
 </div>
 </div>

@@ -12,7 +12,7 @@ Assistant Professor \n
 
 Research interest: high-dimensional data, statistical genetics, integrative analysis, big data, and machine learning
 
-[CV_ChongWu.pdf Curriculum Vitae (July, 2019)]
+[CV_ChongWu.pdf Curriculum Vitae (July, 2020)]
 \n
 
 [https://github.com/ChongWu-Biostat GitHub] \n
@@ -22,30 +22,27 @@ Research interest: high-dimensional data, statistical genetics, integrative anal
 
 
 == Short Bio
-Currently, I am an Assistant Professor in the [https://www.stat.fsu.edu Department of Statistics] at [https://www.fsu.edu Florida State University]. Prior to FSU, I was a biostatistics Ph.D. student at the [http://twin-cities.umn.edu University of Minnesota], co-advised by Profs. Weihua Guan and [http://www.biostat.umn.edu/~weip/  Wei Pan]. I received my bachelor's degree in Applied Math from [http://english.hust.edu.cn the Huazhong University of Science and Technology] in 2013.
+Currently, I am an Assistant Professor in the [https://www.stat.fsu.edu Department of Statistics] at [https://www.fsu.edu Florida State University]. Prior to FSU, I was a biostatistics Ph.D. student at the [http://twin-cities.umn.edu University of Minnesota], co-advised by Profs. Weihua Guan and [http://www.biostat.umn.edu/~weip/  Wei Pan]. I received my bachelor's degree in Applied Math from [http://english.hust.edu.cn Huazhong University of Science and Technology] in 2013.
 
-My research interests are in statistical genetics and genomics, statistical learning, and machine learning. In the past a few years, I have obtained a diverse training in developing statistical methods and algorithm for analyzing multiple types of genetic and genomic data, including genome-wide association study (GWAS) data, DNA methylation data, and human microbiome data. My work includes gene- and pathway-based association testing and a new algorithm for clustering. To practice and facilitate reproducible research, I have developed and currently maintain several software and their online manuals ([software.html see Software page]). My recent work involves integrative analysis of GWAS with multiple sources of omics data. 
+My research interests are in statistical genetics and genomics, statistical learning, and machine learning. In the past a few years, I have obtained a diverse training in developing statistical methods and algorithms for analyzing multiple types of genetic and genomic data, including genome-wide association study (GWAS) data, DNA methylation data, and human microbiome data. My work includes gene- and pathway-based association testing and a new algorithm for clustering. To practice and facilitate reproducible research, I have developed and currently maintain several software and their online manuals ([software.html see Software page]). My recent work involves integrative analysis of GWAS with multiple sources of omics data.
 
 ~~~
-If you have some massive and messy genetics and genomics data and need to find a biostatistician to analyze your data, please do not hesitate to contact me.
+I have extensive experience in analyzing genetics and genomics datasets (e.g., UK Biobank data, GTEx data, ARIC data, etc.). If you want to conduct GWAS or related research, you can contact me.
 
-I am seeking two highly self-motivated students to join my research group. If you are interested, feel free to email me or stop by my office. 
+I am seeking highly self-motivated students to join my research group. If you are interested, feel free to email me or stop by my office. 
 ~~~
 
-== Selected Publications \[[research.html by topic]\]
+== Recent Publications \[[research.html by topic]\]
 \* Corresponding author
-
-. *Wu, C.*\* and Pan, W.\* (2019)\n [https://doi.org/10.1093/bioinformatics/btz161 Integration  of methylation QTL and enhancer-target gene maps with schizophrenia GWAS summary results identifies novel genes]. Accepted by /Bioinformatics/.
-. *Wu, C.*\*, Xu, G., and Pan, W.\* (2019).\n An adaptive test on high dimensional parameters in generalized linear models. Accepted by /Statistica Sinica/. 
+. He, Y., Xu, G., *Wu, C.*, Pan, W. (2020)\n [https://arxiv.org/abs/1809.00411 Asymptotically Independent U-Statistics in High-Dimensional Testing]. Accepted by /Annals of Statistics/.
+. *Wu, C.*\* and Pan, W.\* (2020)\n [https://link.springer.com/article/10.1007/s00439-019-02098-2 A powerful fine-mapping method for transcriptome-wide association studies]. /Human Genetics/ 139, 199–213.
+. *Wu, C.*\*, Xu, G., Shen, X., and Pan, W.\* (2020)\n A regularization-based adaptive test for high-dimensional generalized linear models. Accepted by /Journal of Machine Learning Research/.
+. *Wu, C.* (2020) \n [https://www.biorxiv.org/content/10.1101/758326v2.abstract Multi-trait genome-wide analyses of the brain imaging phenotypes in UK Biobank]. Accepted by /Genetics/. \n(Highlight in Genetics August issue; presented as a platform presentation at ASHG 2019 Annual Meeting)
+. *Wu, C.*\* and Pan, W.\* (2019)\n [https://doi.org/10.1093/bioinformatics/btz161 Integration  of methylation QTL and enhancer-target gene maps with schizophrenia GWAS summary results identifies novel genes].  /Bioinformatics/, 35(19), 3576-3583.
+. *Wu, C.*\*, Xu, G., and Pan, W.\* (2019).\n [http://www3.stat.sinica.edu.tw/statistica/J29N4/J29N429/J29N429.html An adaptive test on high dimensional parameters in generalized linear models]. /Statistica Sinica/, 29, 2163-2186.
 . *Wu, C.* and Pan, W. (2018). \n
 [https://www.ncbi.nlm.nih.gov/pubmed/29411426 Integrating eQTL data with GWAS summary statistics in pathwaybased analysis]. /Genetic Epidemiology/, 42.3: 303-316.\n
-(This paper won a poster talk at ASHG 2017 Annual Meeting.)
-. Xu, Z., *Wu, C.*, Wei, P., and Pan, W. (2017+).\n [http://www.genetics.org/content/genetics/early/2017/09/11/genetics.117.300270.full.pdf A powerful framework for integrating eQTL and GWAS summary data]. /Genetics/, 207(3), 893-902.
-. Liu, B., *Wu, C.*, Shen, X., and Pan, W. (2017). \n [https://www.biorxiv.org/content/early/2017/03/17/117473 A novel and efficient algorithm for de novo discovery of mutated driver pathways]. /Annals of Applied Statistics/, 17(3):1481-1512.
-. Xu, Z., *Wu, C.*, Pan, W., and ADNI. (2017). \n [https://www.ncbi.nlm.nih.gov/pubmed/28736311 Imaging-wide association study: integrating imaging endophenotypes in GWAS]. /NeuroImage/, 159:159-169. \n (This paper won a platform presentation at the American Society of Human Genetics (ASHG) 2017 Annual Meeting.)
-. *Wu, C.*, Kwon, S., Shen, X., and Pan, W. (2016). \n [http://jmlr.org/papers/v17/15-553.html A new algorithm and theory for penalized regression-based clustering]. /Journal of Machine Learning Research/, 17(18):1-25 (Co-first author).
-. *Wu, C.*, Chen, J., Kim, J., and Pan, W. (2016).\n  [https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-016-0302-3 An adaptive association test for microbiome data]. /Genome Medicine/, 8(1):1-12. \n  (This paper won the 2016 JSM Distinguished Student Paper Award on Statistics in Genomics and Genetics Section)
-. *Wu, C.*, Demerath, E. W., Pankow, J. S., Bressler, J., Fornage, M., Grove, M. L., Chen, W., and Guan, W. (2016). \n [http://www.tandfonline.com/doi/full/10.1080/15592294.2016.1145328 Imputation of missing covariate values in epigenome-wide analysis of DNA methylation data]. /Epigenetics/, 11(2):132-139. \n (The official journal of the DNA Methylation Society.)
+(Presented as a poster talk at ASHG 2017 Annual Meeting.)
 
 
 == [software.html Selected Software]
@@ -56,16 +53,20 @@ I am seeking two highly self-motivated students to join my research group. If yo
 - [TWAS.html TWAS]: Integrating eQTL and GWAS data;
 - [aSPUpath2.html aSPUpath2]: Integrating eQTL data with GWAS summary statistics in pathway-based analysis.
 
+== Students
+Currently, I am working with a few PhD students.
+
 == Teaching
 For me, teaching can be described as a rewarding and fulfilling experience. I am the instructor for the following courses.
 
-- Spring 2019: STAT 4321/4323 Introduction of Math Stat
-- Fall 2018: STAT 4321/4323 Introduction of Math Stat
+- 2018 Fall to 2020 Spring: STAT 4321/4323 Introduction of Math Stat
 - [exampleforhighd.R Codes for Statistical Learning and Data Mining]
 
 
 == [talks.html Selected Presentations]
-I enjoy sharing ideas and presenting my works. I usually attend JSM, ENAR, and ASHG each year.
+I enjoy sharing ideas and presenting my works. I attend JSM, ENAR, and ASHG regularly.
+- [aMAT.pdf Multi-trait genome-wide analyses of the brain imaging phenotypes in UK Biobank]
+-- Platform presentation at ASHG 2019
 - [ChongWu_IGES2018.pdf Integration of methylation QTL and enhancer-target gene maps with schizophrenia GWAS summary results identifies novel genes]
 -- Oral presentation at IGES 2018
 - [Chong_Wu_JSM.pdf An adaptive association test for microbiome data]
