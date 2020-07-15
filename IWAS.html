@@ -50,6 +50,14 @@ install.packages('optparse','RColorBrewer','data.table','matlib','Rcpp','RcppArm
 devtools::install_github("ChongWu-Biostat/aSPU2")
 devtools::install_github("gabraham/plink2R/plink2R")
 </pre></div></div>
+<p>If we want to install github package locally in a server, we can use the following lines:</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+library(devtools)
+library(withr)
+withr::with_libpaths(new = "/gpfs/home/cwu3/R/x86_64-redhat-linux-gnu-library/3.5/", install_github("ChongWu-Biostat/aSPU2"))
+</pre></div></div>
+<p><i>gpfs</i>home<i>cwu3</i>R<i>x86_64-redhat-linux-gnu-library</i>3.5/ is the local R directory.</p>
 <h2>Typical analysis and output</h2>
 <p>The IWAS analysis takes imaging endophenotype based external weights and disease GWAS summary statistics as inputs to identify significant genes.</p>
 <p>We will use the <a href="http://web.pasteur-lille.fr/en/recherche/u744/igap/igap_download.php" target=&ldquo;blank&rdquo;>IGAP Alzheimer's summary data</a> (Lambert et al. 2013) as an example to illustrate how to use our methods. This example assumes you have setup the required environment and data as illustrated in the previous section.</p>
@@ -169,7 +177,7 @@ ADNI (Department of Defense award number W81XWH-12-2-0012). ADNI is funded by th
 <p>Copyright (c) 2013-present, Chong Wu (wuxx0845@umn.edu), Zhiyuan Xu (xuxx0284@umn.edu) &amp; Wei Pan(weip@biostat.umn.edu).</p>
 <div id="footer">
 <div id="footer-text">
-Page generated 2020-07-15 12:43:41 CDT, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
+Page generated 2020-07-15 12:50:54 CDT, by <a href="https://github.com/wsshin/jemdoc_mathjax" target="blank">jemdoc+MathJax</a>.
 </div>
 </div>
 </div>

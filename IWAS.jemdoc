@@ -41,6 +41,16 @@ devtools::install_github("ChongWu-Biostat/aSPU2")
 devtools::install_github("gabraham/plink2R/plink2R")
 ~~~
 
+If we want to install github package locally in a server, we can use the following lines:
+~~~
+{}{}
+library(devtools)
+library(withr)
+withr::with_libpaths(new = "/gpfs/home/cwu3/R/x86_64-redhat-linux-gnu-library/3.5/", install_github("ChongWu-Biostat/aSPU2"))
+~~~
+
+/gpfs/home/cwu3/R/x86_64-redhat-linux-gnu-library/3.5/ is the local R directory.
+
 == Typical analysis and output
 
 The IWAS analysis takes imaging endophenotype based external weights and disease GWAS summary statistics as inputs to identify significant genes.
