@@ -1,8 +1,30 @@
 # jemdoc: menu{MENU}{talks.html}, nofooter
 = Presentations
 
+== [ChongWu_Washinton_University.pdf A regularization-based adaptive test for high- dimensional generalized linear models]
+- Department seminar at Shanghai University of Finance and Economics Statistics. Dec. 2020. Virtual.
+- Department seminar at Washington University Biostatistics. Dec. 2020. Virtual
+
+== [IISA_ChongWu_New.pdf Novel strategy for disease risk prediction incorporating predicted gene expression and DNA methylation: a multi-phased study of prostate cancer]
+- Department seminar at Florida State University School of Medicine. September 2020. Virtual.
+- Invited Presentation at International Indian Statistical Association (IISA) 2021. May, 2021. Virtual.
+
+== An adaptive test for high-dimensional generalized linear models with application to detect gene-environment interactions
+- Presentation at ENAR 2019 Spring Meeting. March, 2019. Philadelphia, PA
+
+== [ChongWu_JSM2020.pdf A powerful fine-mapping method for transcriptome-wide association studies]
+- *Invited presentation* at JSM 2020. August 2020. Virtual.
+
+
+== [ChongWu_ASHG2019.pdf Multi-trait genome-wide analyses of the brain imaging phenotypes in UK Biobank]
+- *Platform presentation* at ASHG 2019. October 2019. Huston, TX
+
+== Complex Disease Risk Prediction via a Deep Learning Method
+- Presentation at JSM 2019. July, 2019. Denver, CO
+
+
 == [ChongWu_IGES2018.pdf Integration of methylation QTL and enhancer-target gene maps with schizophrenia GWAS summary results identifies novel genes]
-- Oral presentation at IGES 27th Annual Meeting. October 13-16, 2018. San Diego, CA, USA. 
+- Oral presentation at IGES 27th Annual Meeting. October 13-16, 2018. San Diego, CA, USA.
 
 == [poster_ASHG2017.pdf Integrating eQTL data with GWAS summary statistics identifies novel genes and pathways associated with schizophrenia]
 - [Chong_Wu_ASHG_2017_poster_talk.pptx Poster talk] at [http://www.ashg.org/2017meeting/ ASHG 2017 Annual Meeting], Orlando, FL.

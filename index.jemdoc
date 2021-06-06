@@ -10,9 +10,9 @@ Assistant Professor \n
 [https://www.fsu.edu Florida State University]\n
 
 
-Research interest: high-dimensional data, statistical genetics, integrative analysis, big data, and machine learning
+Research interest:  Statistical genetics/genomics, integrative analysis, big data,  machine learning, causal inference, and high-dimensional inference.
 
-[CV_ChongWu.pdf Curriculum Vitae (July, 2020)]
+[CV_ChongWu.pdf Curriculum Vitae (Feb, 2021)]
 \n
 
 [https://github.com/ChongWu-Biostat GitHub] \n
@@ -22,30 +22,32 @@ Research interest: high-dimensional data, statistical genetics, integrative anal
 
 
 == Short Bio
-Currently, I am an Assistant Professor in the [https://www.stat.fsu.edu Department of Statistics] at [https://www.fsu.edu Florida State University]. Prior to FSU, I was a biostatistics Ph.D. student at the [http://twin-cities.umn.edu University of Minnesota], co-advised by Profs. Weihua Guan and [http://www.biostat.umn.edu/~weip/  Wei Pan]. I received my bachelor's degree in Applied Math from [http://english.hust.edu.cn Huazhong University of Science and Technology] in 2013.
+I am an Assistant Professor in the [https://www.stat.fsu.edu Department of Statistics] at [https://www.fsu.edu Florida State University]. Prior to FSU, I was a biostatistics Ph.D. student at the [http://twin-cities.umn.edu University of Minnesota], co-advised by Profs. Weihua Guan and [http://www.biostat.umn.edu/~weip/  Wei Pan]. I received my bachelor's degree in Applied Math from [http://english.hust.edu.cn Huazhong University of Science and Technology] in 2013.
 
-My research interests are in statistical genetics and genomics, statistical learning, and machine learning. In the past a few years, I have obtained a diverse training in developing statistical methods and algorithms for analyzing multiple types of genetic and genomic data, including genome-wide association study (GWAS) data, DNA methylation data, and human microbiome data. My work includes gene- and pathway-based association testing and a new algorithm for clustering. To practice and facilitate reproducible research, I have developed and currently maintain several software and their online manuals ([software.html see Software page]). My recent work involves integrative analysis of GWAS with multiple sources of omics data.
+My research interests are in statistical genetics and genomics, statistical learning, and machine learning. I have obtained diverse training and experiences in developing statistical methods and algorithms for analyzing multiple types of genetic and genomic data, including genome-wide association study (GWAS) data, DNA methylation data, and human microbiome data. My work includes gene- and pathway-based association testing, integrative -omics analysis, new algorithms in clustering, Mendelian randomization, and polygenic risk scores. To practice and facilitate reproducible research, I have developed and currently maintain several software (most in R packages) and their online manuals. My recent work involves integrative analysis of GWAS with multiple sources of omics data.
 
 ~~~
-I have extensive experience in analyzing genetics and genomics datasets (e.g., UK Biobank data, GTEx data, ARIC data, etc.). If you want to conduct GWAS or related research, you can contact me.
-
-I am seeking highly self-motivated students to join my research group. If you are interested, feel free to email me or stop by my office. 
+I am seeking highly self-motivated students to join my research group. If you are interested, feel free to send me an email or stop by my office.
 ~~~
 
-== Recent Publications \[[research.html by topic]\]
+== News
+- 2021-05: Our COVID-19 integrative analysis has been accepted by /Genetics in Medicine/.
+- 2021-01: Our [https://reporter.nih.gov/search/5WM4YWn1-UigU5OZ25HJ0w/project-details/10104707 R03 proposal] (Novel Statistical Methods for Multi-omics Data Integration in Alzheimer's Disease) has been funded by NIA.
+
+== Selected Publications \[[research.html by topic]\]
 \* Corresponding author
-. He, Y., Xu, G., *Wu, C.*, Pan, W. (2020)\n [https://arxiv.org/abs/1809.00411 Asymptotically Independent U-Statistics in High-Dimensional Testing]. Accepted by /Annals of Statistics/.
-. *Wu, C.*\* and Pan, W.\* (2020)\n [https://link.springer.com/article/10.1007/s00439-019-02098-2 A powerful fine-mapping method for transcriptome-wide association studies]. /Human Genetics/ 139, 199–213.
-. *Wu, C.*\*, Xu, G., Shen, X., and Pan, W.\* (2020)\n A regularization-based adaptive test for high-dimensional generalized linear models. Accepted by /Journal of Machine Learning Research/.
-. *Wu, C.* (2020) \n [https://www.biorxiv.org/content/10.1101/758326v2.abstract Multi-trait genome-wide analyses of the brain imaging phenotypes in UK Biobank]. Accepted by /Genetics/. \n(Highlight in Genetics August issue; presented as a platform presentation at ASHG 2019 Annual Meeting)
+. He, Y., Xu, G., *Wu, C.*, and Pan, W. (2021)\n [https://arxiv.org/abs/1809.00411 Asymptotically Independent U-Statistics in High-Dimensional Testing].  /Annals of Statistics/, 49(1), 154-181.
+. *Wu, C.*\*, Bradley J., Li, Y., Wu, L., and Deng, HW. (2021)\n [https://academic.oup.com/bioinformatics/advance-article-abstract/doi/10.1093/bioinformatics/btab045/6125360?redirectedFrom=fulltext A gene-level methylome-wide association analysis identifies novel Alzheimer’s disease genes]. /Bioinformatics/.
+. *Wu, C.*\*, Xu, G., Shen, X., and Pan, W.\* (2020)\n [https://jmlr.org/papers/v21/18-807.html A regularization-based adaptive test for high-dimensional generalized linear models]. /Journal of Machine Learning Research/, 21(128), 1-67.
+. *Wu, C.* (2020) \n [https://www.biorxiv.org/content/10.1101/758326v2.abstract Multi-trait genome-wide analyses of the brain imaging phenotypes in UK Biobank]. /Genetics/, 215(4), 947-958. \n(Highlight in Genetics August issue; presented as a platform presentation at ASHG 2019 Annual Meeting)
 . *Wu, C.*\* and Pan, W.\* (2019)\n [https://doi.org/10.1093/bioinformatics/btz161 Integration  of methylation QTL and enhancer-target gene maps with schizophrenia GWAS summary results identifies novel genes].  /Bioinformatics/, 35(19), 3576-3583.
-. *Wu, C.*\*, Xu, G., and Pan, W.\* (2019).\n [http://www3.stat.sinica.edu.tw/statistica/J29N4/J29N429/J29N429.html An adaptive test on high dimensional parameters in generalized linear models]. /Statistica Sinica/, 29, 2163-2186.
-. *Wu, C.* and Pan, W. (2018). \n
-[https://www.ncbi.nlm.nih.gov/pubmed/29411426 Integrating eQTL data with GWAS summary statistics in pathwaybased analysis]. /Genetic Epidemiology/, 42.3: 303-316.\n
-(Presented as a poster talk at ASHG 2017 Annual Meeting.)
+. *Wu, C.*, Chen, J., Kim, J., and Pan, W. (2016) [https://link.springer.com/article/10.1186/s13073-016-0302-3 An adaptive association test for microbiome data]. /Genome Medicine/, 8(1), 1-12.
+. *Wu, C.*\#, Kwon, S.\#, Shen, X., and Pan, W. (2016). [https://www.jmlr.org/papers/volume17/15-553/15-553.pdf A new algorithm and theory for penalized regression-based clustering]. /Journal of Machine Learning Research/, 17(1), 6479-6503. \#, co-first author
 
 
 == [software.html Selected Software]
+We put all recent developed software into a [https://github.com/ChongWuLab lab github page].
+
 - [https://cran.r-project.org/web/packages/prclust/index.html /prclust/]: Penalized Regression-Based Clustering Methods;
 - [https://cran.r-project.org/web/packages/MiSPU/index.html /MiSPU/]: Microbiome Based Sum of Powered Score (MiSPU) Tests;
 - [https://github.com/ChongWu-Biostat/GLMaSPU /GLMaSPU/]: Adaptive Tests on High Dimensional Parameters in Generalized Linear Models;
@@ -53,13 +55,25 @@ I am seeking highly self-motivated students to join my research group. If you ar
 - [TWAS.html TWAS]: Integrating eQTL and GWAS data;
 - [aSPUpath2.html aSPUpath2]: Integrating eQTL data with GWAS summary statistics in pathway-based analysis.
 
-== Students
-Currently, I am working with a few PhD students.
+
+== Grants
+
+- R03 AG070669, NIA \n Contact PI, (Wu and Bradley), 01-01-21 – 12-31-22\n
+Novel Statistical Methods for Multi-omics Data Integration in Alzheimer's Disease
+
+- The Committee on Faculty Research Support, FSU\n PI, 05-07-20 – 06-30-20\n
+Novel Machine Learning Methods for Alzheimer’s Disease
+
+- First Year Assistant Professor Grant, FSU\n PI, 05-08-19 - 08-06-19\n
+Novel Statistical Methods for Transcriptome-wide Association Studies
+
 
 == Teaching
-For me, teaching can be described as a rewarding and fulfilling experience. I am the instructor for the following courses.
+The opportunity for teaching is one of the key reasons I love academia. For me, teaching
+can be described as a rewarding and fulfilling experience. I am the instructor for the following courses.
 
-- 2018 Fall to 2020 Spring: STAT 4321/4323 Introduction of Math Stat
+- 2020 Fall: STA5934 Statistical Genetics. [https://www.stat.fsu.edu/sites/g/files/upcbnu1811/files/STA5934-02-Fall20.pdf ]Syllabus]
+- 2018 Fall to 2020 Spring, 2021 Spring: STAT 4321/4323 Introduction of Math Stat
 - [exampleforhighd.R Codes for Statistical Learning and Data Mining]
 
 
@@ -76,6 +90,7 @@ I enjoy sharing ideas and presenting my works. I attend JSM, ENAR, and ASHG regu
 
 
 == Awards
+- Dean's Faculty Travel Award, Florida State University, 2020
 - *ENAR Distinguished Student Paper Award*, 2019
 - James R. Boen Student Achievement Award, Division of Biostatistics, University of Minnesota, 2018
 - Pre-Doctoral Trainee Award, Association of Chinese Geneticists in America (ACGA), 2017
@@ -91,6 +106,6 @@ I enjoy sharing ideas and presenting my works. I attend JSM, ENAR, and ASHG regu
 == Contact
 
 Chong Wu\n
-201C OSB, 117 N. Woodward Ave.\n
+314 OSB, 117 N. Woodward Ave.\n
 P.O. Box 3064330, Tallahassee, FL, 32306-4330\n
 E-mail: cwu3@fsu.edu

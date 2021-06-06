@@ -14,6 +14,7 @@
 <div class="menu-category">Chong Wu</div>
 <div class="menu-item"><a href="index.html">Home</a></div>
 <div class="menu-item"><a href="research.html" class="current">Research</a></div>
+<div class="menu-item"><a href="grants.html">Grants</a></div>
 <div class="menu-item"><a href="teaching.html">Teaching</a></div>
 <div class="menu-item"><a href="software.html">Software</a></div>
 <div class="menu-item"><a href="talks.html">Presentations</a></div>
@@ -22,40 +23,57 @@
 <div id="toptitle">
 <h1>Research</h1>
 </div>
-<h2>Machine learning</h2>
-<p>I develop new algorithms and theory for some machine learning methods and solve some genetic and genomic problems by machine learning methods. Specifically, I did some research on penalized regression and clustering.</p>
+<p>See <a href="https://scholar.google.com/citations?hl=en&amp;user=rF6BnvsAAAAJ&amp;view_op=list_works" target=&ldquo;blank&rdquo;>Google Scholar</a> for all my publications. *: corresponding authors.</p>
+<h2>Machine learning and high-dimensional inference</h2>
+<p>We develop new algorithms and theories for machine learning methods (penalized regression and clustering) and high-dimensional inference. We further apply them to genetic and genomic datasets.</p>
 <table class="imgtable"><tr><td>
 <img src="machine_learning.png" alt="machine" width="200px" height="170px" />&nbsp;</td>
 <td align="left"><ul>
-<li><p><b>Wu, C.</b>*,Kwon, S.*,Shen X., and Pan W. (2016) (*: equal contribution)<br />
-<a href="http://jmlr.org/papers/volume17/15-553/15-553.pdf" target=&ldquo;blank&rdquo;>A New Algorithm and Theory for Penalized Regression-based Clustering.</a> <i><a href="http://jmlr.org" target=&ldquo;blank&rdquo;>Journal of Machine Learning Research</a></i>, 17, 1-25</p>
+<li><p>He, Y., Xu, G., <b>Wu, C.</b>, and Pan, W. (2021)<br /> <a href="https://arxiv.org/abs/1809.00411" target=&ldquo;blank&rdquo;>Asymptotically Independent U-Statistics in High-Dimensional Testing</a>.  <i>Annals of Statistics</i>, 49(1), 154-181.</p>
 </li>
-</ul>
-<ul>
+<li><p><b>Wu, C.</b>*, Xu, G., Shen, X., and Pan, W.* (2020)<br /> <a href="https://jmlr.org/papers/v21/18-807.html" target=&ldquo;blank&rdquo;>A regularization-based adaptive test for high-dimensional generalized linear models</a>. <i>Journal of Machine Learning Research</i>, 21(128), 1-67.<br />
+(This paper won the 2019 ENAR Distinguished Student Paper Award)</p>
+</li>
+<li><p><b>Wu, C.</b>*, Xu, G., and Pan, W.* (2019).<br /> <a href="https://www.jstor.org/stable/26787522" target=&ldquo;blank&rdquo;>An adaptive test on high dimensional parameters in generalized linear models</a>.  <i>Statistica Sinica</i>, 29(4), 2163-2186.</p>
+</li>
 <li><p>Liu, B., <b>Wu, C.</b>, Shen, X., and Pan, W. (2017). <br /> <a href="https://www.biorxiv.org/content/early/2017/03/17/117473" target=&ldquo;blank&rdquo;>A novel and efficient algorithm for de novo discovery of mutated driver pathways</a>. <i>Annals of Applied Statistics</i>, 17(3):1481–1512.</p>
 </li>
-<li><p><b>Wu C.</b> and Pan W.<br />
-Network-based support vector machine with a new penalty. In preparation.</p>
+<li><p><b>Wu, C.</b>#, Kwon, S.#, Shen X., and Pan W. (2016) (#: equal contribution)<br />
+<a href="http://jmlr.org/papers/volume17/15-553/15-553.pdf" target=&ldquo;blank&rdquo;>A New Algorithm and Theory for Penalized Regression-based Clustering.</a> <i>Journal of Machine Learning Research</i>, 17, 1-25</p>
 </li>
 </ul>
 </td></tr></table>
-<h2>Methods and applications in genetics and genomics</h2>
-<h3>Integrative analysis of GWAS and other omic data</h3>
-<p>Recently, new gene-based GWAS tests were proposed to impute gene expression and then test its association with a trait in a GWAS dataset. We propose some more powerful tests by incorporating external information.</p>
+<div class="infoblock">
+<div class="blockcontent">
+<p>Related software:</p>
+<ul>
+<li><p><a href="https://cran.r-project.org/web/packages/prclust/index.html" target=&ldquo;blank&rdquo;>prclust</a>: Penalized Regression-Based Clustering Method;</p>
+</li>
+<li><p><a href="https://github.com/ChongWu-Biostat/aispu" target=&ldquo;blank&rdquo;>aispu</a>: adaptive interaction sum of powered score (aiSPU) test for testing high-dimensional parameters under generalized linear models (GLMs) with high-dimensional nuisance parameters.</p>
+</li>
+<li><p><a href="GLMaSPU.html" target=&ldquo;blank&rdquo;>GLMaSPU</a>: An adaptive test for testing high-dimensional parameters under generalized linear models (GLMs) with low-dimensional nuisance parameters.</p>
+</li>
+</ul>
+</div></div>
+<h2>Statistical Genetics/Genomics</h2>
+<h3>Integrative analysis of GWAS and multi-omics data</h3>
+<p>To improve statistical power and enhance biological interpretation, several integrative association tests have been proposed to aggregate potential regulatory effects of individual genetic variants (i.e., single nucleotide polymorphisms <a href="SNPs" target=&ldquo;blank&rdquo;>SNPs</a>) across a gene of interest. We propose several novel methods in this field to integrate gene expression, enhancer-promoter interactions, and brain imaging with GWAS results.</p>
 <table class="imgtable"><tr><td>
 <img src="GWAS.jpg" alt="methylation" width="200px" height="170px" />&nbsp;</td>
 <td align="left"><ul>
-<li><p>Xu, Z., <b>Wu, C.</b>, Wei, P., and Pan, W. (2017+).<br /> <a href="http://www.genetics.org/content/genetics/early/2017/09/11/genetics.117.300270.full.pdf" target=&ldquo;blank&rdquo;>A powerful framework for integrating eQTL and GWAS summary data</a>. Accepted by <i>Genetics</i>, early online. (IF: 4.6)</p>
+<li><p><b>Wu, C.</b>*, &amp; Pan, W.* (2020).<br /> <a href="https://link.springer.com/article/10.1007/s00439-019-02098-2" target=&ldquo;blank&rdquo;>A powerful fine-mapping method for transcriptome-wide association studies</a>. <i>Human Genetics</i>, 139(2), 199-213.</p>
 </li>
-<li><p>Xu, Z., <b>Wu, C.</b>, Pan, W., and Alzheimer’s Disease Neuroimaging Initiative (ADNI). (2017). <br /> <a href="https://www.ncbi.nlm.nih.gov/pubmed/28736311" target=&ldquo;blank&rdquo;>Imaging-wide association study: integrating imaging endophenotypes in GWAS</a>. <i>NeuroImage</i>, 159:159–169. <br /> (IF: 5.8.  is paper won a platform presentation at the American Society of Human Genetics (ASHG) 2017 Annual Meeting.)</p>
+<li><p>Yang, T., <b>Wu, C.</b>, Wei, P., &amp; Pan, W. (2020). <a href="https://academic.oup.com/hmg/article-abstract/29/3/515/5698693" target=&ldquo;blank&rdquo;>Integrating DNA sequencing and transcriptomic data for association analyses of low-frequency variants and lipid traits</a>. <i>Human Molecular Genetics</i>, 29(3), 515-526.</p>
+</li>
+<li><p><b>Wu, C.</b> and Pan, W. (2018).<br /> <a href="https://academic.oup.com/genetics/article/209/3/699/5930933?login=true" target=&ldquo;blank&rdquo;>Integration of enhancer-promoter interactions with GWAS summary results identifies novel schizophrenia-associated genes and pathways</a>. <i>Genetics</i>, 209(3), 699-709.</p>
 </li>
 <li><p><b>Wu, C.</b> and Pan, W. (2018). <br />
-<a href="https://www.ncbi.nlm.nih.gov/pubmed/29411426" target=&ldquo;blank&rdquo;>Integrating eQTL data with GWAS summary statistics in pathwaybased analysis</a>. Accepted by <i>Genetic Epidemiology</i>, early online.<br />
-(This paper won a poster talk (top 24 posters among about 3000 posters) at ASHG 2017 Annual
-Meeting.)</p>
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/29411426" target=&ldquo;blank&rdquo;>Integrating eQTL data with GWAS summary statistics in pathway-based analysis</a>. <i>Genetic Epidemiology</i>, 42(3), 303-316.<br />
+(This paper won a poster talk at ASHG 2017 Annual Meeting.)</p>
 </li>
-<li><p><b>Wu, C.</b> and Pan, W. (2018+).<br /> Integration of enhancer-promoter interactions with GWAS summary
-results identifies novel schizophrenia-associated genes and pathways. Submitted.</p>
+<li><p>Xu, Z., <b>Wu, C.</b>, Wei, P., and Pan, W. (2017).<br /> <a href="http://www.genetics.org/content/genetics/early/2017/09/11/genetics.117.300270.full.pdf" target=&ldquo;blank&rdquo;>A powerful framework for integrating eQTL and GWAS summary data</a>. <i>Genetics</i>, 207(3), 893-902.</p>
+</li>
+<li><p>Xu, Z., <b>Wu, C.</b>, Pan, W., and Alzheimer’s Disease Neuroimaging Initiative (ADNI). (2017). <br /> <a href="https://www.ncbi.nlm.nih.gov/pubmed/28736311" target=&ldquo;blank&rdquo;>Imaging-wide association study: integrating imaging endophenotypes in GWAS</a>. <i>NeuroImage</i>, 159:159–169. <br /> (This is paper won a platform presentation at the American Society of Human Genetics (ASHG) 2017 Annual Meeting)</p>
 </li>
 </ul>
 </td></tr></table>
@@ -65,75 +83,83 @@ results identifies novel schizophrenia-associated genes and pathways. Submitted.
 <ul>
 <li><p><a href="IWAS.html" target=&ldquo;blank&rdquo;>IWAS</a>: Imaging-Wide Association Study;</p>
 </li>
-<li><p><a href="TWAS.html" target=&ldquo;blank&rdquo;>TWAS</a>: Integrating eQTL and GWAS data;</p>
+<li><p><a href="TWAS.html" target=&ldquo;blank&rdquo;>TWAS-aSPU</a>: Integrating eQTL and GWAS data;</p>
 </li>
 <li><p><a href="aspupath2.html" target=&ldquo;blank&rdquo;>aSPUpath2</a>: Integrating eQTL data with GWAS summary statistics in pathway-based analysis.</p>
 </li>
+<li><p><a href="https://github.com/ChongWuLab/FOGS" target=&ldquo;blank&rdquo;>FOGS</a>: FOGS is  a powerful fine-mapping method that prioritizes putative causal genes by accounting for local LD in TWAS results</p>
+</li>
 </ul>
 </div></div>
-<h3>DNA methylation data analysis</h3>
+<h3>DNA methylation data integration</h3>
 <p>DNA methylation is a widely studied epigenetic mechanism. The Athero-sclerosis Risk in Communities (ARIC) study measures DNA methylation over 480,000 methylation markers obtained from about 3,000 subjects. I develop new methods to solve challenges arising from the ARIC DNA methylation data.</p>
 <table class="imgtable"><tr><td>
 <img src="dna-methylation-figure.png" alt="methylation" width="200px" height="170px" />&nbsp;</td>
 <td align="left"><ul>
-<li><p><b>Wu, C.</b>, Demerath, E. W., Pankow, J. S., Bressler, J., Fornage, M., Grove, M. L., Chen, W., and Guan, W. (2016). <br />  I<a href="http://www.tandfonline.com/doi/full/10.1080/15592294.2016.1145328" target=&ldquo;blank&rdquo;>Imputation of missing covariate values in epigenome-wide analysis of DNA methylation data</a>. <i>Epigenetics</i>, 11(2):132–139. <br /> (IF: 4.4, the official journal of the DNA Methylation Society.)</p>
+<li><p><b>Wu, C.</b>*, Bradley J., Li, Y., Wu, L., and Deng, HW. (2021)<br /> <a href="https://academic.oup.com/bioinformatics/advance-article-abstract/doi/10.1093/bioinformatics/btab045/6125360?redirectedFrom=fulltext" target=&ldquo;blank&rdquo;>A gene-level methylome-wide association analysis identifies novel Alzheimer’s disease genes</a>. <i>Bioinformatics</i>.</p>
 </li>
-<li><p>Bose, M., <b>Wu, C.</b>, Pankow, J. S., Demerath, E. W., Bressler, J., Fornage, M., Grove, M. L., Mosley, T. H., Hicks, C., North, K., Kao, W. H., Zhang, Y., Boerwinkle, E., and Guan, W. (2014).<br />  <a href="http://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-15-312" target=&ldquo;blank&rdquo;>Evaluation of microarray-based DNA methylation measurement using technical replicates: the Atherosclerosis Risk In Communities (ARIC) Study</a>. <i>BMC Bioinformatics</i>, 15(1):1–10. (IF: 2.4)</p>
+<li><p><b>Wu, C.</b>*, &amp; Pan, W.* (2019).<br /> <a href="https://academic.oup.com/bioinformatics/article/35/19/3576/5372342?login=true" target=&ldquo;blank&rdquo;>Integration of methylation QTL and enhancer–target gene maps with schizophrenia GWAS summary results identifies novel genes</a>. <i>Bioinformatics</i>, 35(19), 3576-3583.</p>
 </li>
-<li><p><b>Wu, C.</b>, Park, J.Y., Guan, W., and Pan, W. (2017+). <br /> A powerful gene-based test for methylation
-data. Accepted by <i>BMC Proceedings</i>, a special issue for the Genetic Analysis Workshop (GAW 20).</p>
+<li><p><b>Wu, C.</b>, Demerath, E. W., Pankow, J. S., Bressler, J., Fornage, M., Grove, M. L., Chen, W., and Guan, W. (2016). <br />  I<a href="http://www.tandfonline.com/doi/full/10.1080/15592294.2016.1145328" target=&ldquo;blank&rdquo;>Imputation of missing covariate values in epigenome-wide analysis of DNA methylation data</a>. <i>Epigenetics</i>, 11(2):132–139. <br /> (the official journal of the DNA Methylation Society.)</p>
+</li>
+<li><p>Bose, M., <b>Wu, C.</b>, Pankow, J. S., Demerath, E. W., Bressler, J., Fornage, M., Grove, M. L., Mosley, T. H., Hicks, C., North, K., Kao, W. H., Zhang, Y., Boerwinkle, E., and Guan, W. (2014).<br />  <a href="http://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-15-312" target=&ldquo;blank&rdquo;>Evaluation of microarray-based DNA methylation measurement using technical replicates: the Atherosclerosis Risk In Communities (ARIC) Study</a>. <i>BMC Bioinformatics</i>, 15(1):1–10.</p>
 </li>
 </ul>
 </td></tr></table>
+<div class="infoblock">
+<div class="blockcontent">
+<p>Related software:</p>
+<ul>
+<li><p><a href="https://github.com/ChongWuLab/CMO" target=&ldquo;blank&rdquo;>CMO</a>: Cross Methylome Omnibus (CMO) integrates genetically regulated DNAm in enhancers, promoters, and the gene body to identify additional disease-associated genes.</p>
+</li>
+</ul>
+</div></div>
 <h3>Human microbiome data analysis</h3>
-<p>A human body has more than 10 times as many microbes living in it as cells. These microorganisms
-play an important part in our overall health, such as protecting us from diseases and digesting food. I develop new methods to detect an association of human microbiome diversity with a trait.</p>
+<p>A human body has more than ten times as many microbes living in it as cells. These microorganisms play an important part in our overall health, such as protecting us from diseases and digesting food. We develop new methods to test an association of human microbiome diversity with a trait of interest.</p>
 <table class="imgtable"><tr><td>
 <img src="microbiome_sm.jpg" alt="methylation" width="200px" height="170px" />&nbsp;</td>
 <td align="left"><ul>
-<li><p><b>Wu, C.</b>, Chen, J., Kim, J., and Pan, W. (2016).<br />  <a href="https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-016-0302-3" target=&ldquo;blank&rdquo;>An adaptive association test for microbiome data</a>. <i>Genome Medicine</i>, 8(1):1–12.<br />  (IF: 7.1.  This paper won the 2016 Joint Statistical Meetings (JSM) Distinguished Student Paper Award on Statistics in Genomics and Genetics Section.)</p>
+<li><p><b>Wu, C.</b>, Chen, J., Kim, J., and Pan, W. (2016).<br />  <a href="https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-016-0302-3" target=&ldquo;blank&rdquo;>An adaptive association test for microbiome data</a>. <i>Genome Medicine</i>, 8(1):1–12.<br />  (This paper won the 2016 Joint Statistical Meetings (JSM) Distinguished Student Paper Award on Statistics in Genomics and Genetics Section.)</p>
 </li>
 </ul>
 </td></tr></table>
+<div class="infoblock">
+<div class="blockcontent">
+<p>Related software:</p>
+<ul>
+<li><p><a href="https://github.com/ChongWu-Biostat/MiSPU" target=&ldquo;blank&rdquo;>MiSPU</a>: Microbiome Based Sum of Powered Score (MiSPU) Tests.</p>
+</li>
+</ul>
+</div></div>
 <h3>Other works</h3>
 <ul>
-<li><p>Park, J. Y., <b>Wu, C.</b>, and Pan, W. (2017+).<br /> An adaptive gene-level association test for pedigree data.
-Accepted by <i>BMC Proceedings</i>, a special issue for the Genetic Analysis Workshop (GAW 20).</p>
+<li><p><b>Wu, C.</b> (2020) <br /> <a href="https://www.biorxiv.org/content/10.1101/758326v2.abstract" target=&ldquo;blank&rdquo;>Multi-trait genome-wide analyses of the brain imaging phenotypes in UK Biobank</a>. <i>Genetics</i>, 215(4), 947-958. <br />(Highlight in Genetics August issue; presented as a platform presentation at ASHG 2019 Annual Meeting)</p>
+</li>
+<li><p>Xue, H., <b>Wu, C.</b>, &amp; Pan, W. (2020). <a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/gepi.22333" target=&ldquo;blank&rdquo;>Leveraging existing GWAS summary data of genetically correlated and uncorrelated traits to improve power for a new GWAS</a>. <i>Genetic Epidemiology</i>, 44(7), 717-732.</p>
 </li>
 <li><p>Park, J.Y., <b>Wu, C.</b>, Basu, S., McGue, M., and Pan, W. (2018).<br /> <a href="https://link.springer.com/article/10.1007/s10519-017-9883-x" target=&ldquo;blank&rdquo;>Adaptive SNP set association
-testing in generalized linear mixed models with application to family studies</a>. <i>Behavior Genetics</i>,
-48(1):55–66. (IF: 2.4)</p>
+testing in generalized linear mixed models with application to family studies</a>. <i>Behavior Genetics</i>, 48(1):55–66.</p>
 </li>
 </ul>
-<h2>Hypothesis tests on high-dimensional parameters in generalized linear models (GLMs)</h2>
-<p>Regarding hypothesis testing, I have developed a new adaptive test for testing high-dimensional parameters under GLMs with low-dimensional nuisance parameters or with high-dimensional nuisance parameters.</p>
-<table class="imgtable"><tr><td>
-<img src="high_dimensional.jpg" alt="methylation" width="200px" height="170px" />&nbsp;</td>
-<td align="left"><ul>
-<li><p><b>Wu, C.</b>*, Xu, G., and Pan, W.* (2017+).<br /> An adaptive test on high dimensional parameters in
-generalized linear models. Accepted by <i>Statistica Sinica</i>. (* Corresponding author)</p>
-</li>
-<li><p><b>Wu, C.</b>, Xu, G., Shen, X., and Pan, W. (2017+).<br />
-An adaptive test on a high-dimensional parameter in the presence of a high-dimensional nuisance parameter in GLM with application to detect gene-environment interactions. Manuscript.<br /> (Job talk manuscript, to be submitted to <i>Journal of the American Statistical Association</i>.)</p>
-</li>
-</ul>
-</td></tr></table>
 <h2>Collaborative research</h2>
-<p>For me, collaborative research is very fun and fulfilling experience. I enjoy collaborative research and if you have any interesting applied projects and need some help for analyzing the data, please feel free to contact me.</p>
+<p>I am involved in many applied studies and enjoy collaborative research. Specifically, I have collaborated with epidemiologists and developed a series of papers studying the genetic basis of prostate cancer, pancreatic cancer, Alzheimer's disease, and COVID-19.</p>
 <table class="imgtable"><tr><td>
 <img src="Collaboration-Mindset.jpg" alt="methylation" width="200px" height="170px" />&nbsp;</td>
 <td align="left"><ul>
-<li><p>Zhu, L., Li, Y., Chen, Y., Carrera, C., <b>Wu, C.</b>, and Fork, A. (2018).<br /> <a href="https://www.nature.com/articles/s41598-018-20891-3" target=&ldquo;blank&rdquo;>Comparison between two post-dentin bond strength measurement methods</a>. <i>Scientific Reports</i>, 8(1):2350. (IF: 4.3)</p>
+<li><p>Wang, K. S., Yu, G., Xu, C., Meng, X. H., Zhou, J., Zheng, C., &hellip; &amp; Deng, H. W. (2021). <a href="https://bmcmedicine.biomedcentral.com/articles/10.1186/s12916-021-01942-5" target=&ldquo;blank&rdquo;>Accurate diagnosis of colorectal cancer based on histopathology images using artificial intelligence</a>. <i>BMC Medicine</i>, 19(1), 1-12.</p>
 </li>
-<li><p>Steven Nguyen, S., Guan, W., <b>Wu, C.</b>, Grove, M.L., Xia, R., Roetker, N., Holliday, K., Hibler,
-E., Zheng, Y., Whitsel, E., Bressler, J., North, K.E., Fornage, M., Boerwinkle, E., Pankow, J.S.,
-Demerath, and E.W. (2017+)<br /> Epigenome-wide association study of moderate-vigorous physical
-activity in African-American adults. Submitted.</p>
+<li><p><b>Wu, C.</b>*, Wu, L., Wang, J., Lin, L., Li, Y., Lu, Q., &amp; Deng, H. W. (2021). <a href="https://alz-journals.onlinelibrary.wiley.com/doi/full/10.1002/trc2.12148" target=&ldquo;blank&rdquo;>Systematic identification of risk factors and drug repurposing options for Alzheimer's disease</a>. <i>Alzheimer's &amp; Dementia: Translational Research &amp; Clinical Interventions</i>, 7(1), e12148.</p>
+</li>
+<li><p>Zhu, J., <b>Wu, C.</b>, &amp; Wu, L. (2021). <a href="https://academic.oup.com/jid/article-abstract/223/1/19/5933817" target=&ldquo;blank&rdquo;>Associations between genetically predicted protein levels and COVID-19 severity</a>. <i>The Journal of Infectious Diseases</i>, 223(1), 19-22.</p>
+</li>
+<li><p>Liu, D., Zhou, D., Sun, Y., Zhu, J., Ghoneim, D., <b>Wu, C.</b>, &hellip; &amp; Wu, L. (2020). <a href="https://cancerres.aacrjournals.org/content/80/20/4346.short" target=&ldquo;blank&rdquo;>A Transcriptome-Wide Association Study Identifies Candidate Susceptibility Genes for Pancreatic Cancer Risk</a>. <i>Cancer Research</i>, 80(20), 4346-4354.</p>
+</li>
+<li><p>Wu, L., Yang, Y., Guo, X., Shu, X. O., Cai, Q., Shu, X., &hellip; &amp; Long, J. (2020). <a href="https://www.nature.com/articles/s41467-020-17673-9" target=&ldquo;blank&rdquo;>An integrative multi-omics analysis to identify candidate DNA methylation biomarkers related to prostate cancer risk</a>. <i>Nature Communications</i>, 11(1), 1-11.</p>
 </li>
 </ul>
 </td></tr></table>
 <p><br /></p>
-<p>Acknowledgment: research is/was supported by NSF, NIH, and University of Minnesota Doctoral Dissertation Fellowship</p>
+<p>Acknowledgment: research is/was supported by NSF, NIH, and University of Minnesota Doctoral Dissertation Fellowship, and seeds grants at Florida State University</p>
 <p><i>All Photos from <a href="https://images.google.com" target=&ldquo;blank&rdquo;>Google Images</a></i></p>
 </td>
 </tr>
