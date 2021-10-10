@@ -12,7 +12,7 @@ Assistant Professor \n
 
 Research interest:  Statistical genetics/genomics, integrative analysis, big data,  machine learning, causal inference, and high-dimensional inference.
 
-[CV_ChongWu.pdf Curriculum Vitae (Feb, 2021)]
+[CV_ChongWu.pdf Curriculum Vitae (Oct 2021)]
 \n
 
 [https://github.com/ChongWu-Biostat GitHub] \n
@@ -26,12 +26,11 @@ I am an Assistant Professor in the [https://www.stat.fsu.edu Department of Stati
 
 My research interests are in statistical genetics and genomics, statistical learning, and machine learning. I have obtained diverse training and experiences in developing statistical methods and algorithms for analyzing multiple types of genetic and genomic data, including genome-wide association study (GWAS) data, DNA methylation data, and human microbiome data. My work includes gene- and pathway-based association testing, integrative -omics analysis, new algorithms in clustering, Mendelian randomization, and polygenic risk scores. To practice and facilitate reproducible research, I have developed and currently maintain several software (most in R packages) and their online manuals. My recent work involves integrative analysis of GWAS with multiple sources of omics data.
 
-~~~
-I am seeking highly self-motivated students to join my research group. If you are interested, feel free to send me an email or stop by my office.
-~~~
 
 == News
-- 2021-05: Our COVID-19 integrative analysis paper has been accepted by /Genetics in Medicine/.
+- 2021-09: Our SUMMIT paper won a poster talk (top 10% among all posters) at [https://www.ashg.org/meetings/2021meeting/ ASHG 2021]. Congraulations, Zichen!
+- 2021-09: Our [https://onlinelibrary.wiley.com/doi/full/10.1002/cac2.12205 polygenic risk score in prostate cancer] paper has been published in /Cancer Communications/.
+- 2021-05: Our [https://www.nature.com/articles/s41436-021-01243-5 COVID-19 integrative analysis] paper has been accepted by /Genetics in Medicine/.
 - 2021-01: Our [https://reporter.nih.gov/search/5WM4YWn1-UigU5OZ25HJ0w/project-details/10104707 R03 proposal] (Novel Statistical Methods for Multi-omics Data Integration in Alzheimer's Disease) has been funded by NIA.
 
 == Selected Publications \[[research.html by topic]\]

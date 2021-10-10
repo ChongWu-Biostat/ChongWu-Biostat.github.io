@@ -12,10 +12,10 @@ We develop new algorithms and theories for machine learning methods (penalized r
 {}{img_left}{machine_learning.png}{machine}{200}{170}
 
 
-- He, Y., Xu, G., *Wu, C.*, and Pan, W. (2021)\n [https://arxiv.org/abs/1809.00411 Asymptotically Independent U-Statistics in High-Dimensional Testing].  /Annals of Statistics/, 49(1), 154-181.
+- He, Y., Xu, G., *Wu, C.*, and Pan, W. (2021)\n [https://arxiv.org/abs/1809.00411 Asymptotically Independent U-Statistics in High-Dimensional Testing]. /Annals of Statistics/, 49(1), 154-181.
 - *Wu, C.*\*, Xu, G., Shen, X., and Pan, W.\* (2020)\n [https://jmlr.org/papers/v21/18-807.html A regularization-based adaptive test for high-dimensional generalized linear models]. /Journal of Machine Learning Research/, 21(128), 1-67.\n
 (This paper won the 2019 ENAR Distinguished Student Paper Award)
-- *Wu, C.*\*, Xu, G., and Pan, W.\* (2019).\n [https://www.jstor.org/stable/26787522 An adaptive test on high dimensional parameters in generalized linear models].  /Statistica Sinica/, 29(4), 2163-2186.
+- *Wu, C.*\*, Xu, G., and Pan, W.\* (2019).\n [https://www.jstor.org/stable/26787522 An adaptive test on high dimensional parameters in generalized linear models]. /Statistica Sinica/, 29(4), 2163-2186.
 - Liu, B., *Wu, C.*, Shen, X., and Pan, W. (2017). \n [https://www.biorxiv.org/content/early/2017/03/17/117473 A novel and efficient algorithm for de novo discovery of mutated driver pathways]. /Annals of Applied Statistics/, 17(3):1481–1512.
 - *Wu, C.*\#, Kwon, S.\#, Shen X., and Pan W. (2016) (\#: equal contribution)\n
 [http://jmlr.org/papers/volume17/15-553/15-553.pdf A New Algorithm and Theory for Penalized Regression-based Clustering.] /Journal of Machine Learning Research/, 17, 1-25
@@ -34,7 +34,8 @@ Related software:
 
 === Integrative analysis of GWAS and multi-omics data
 
-To improve statistical power and enhance biological interpretation, several integrative association tests have been proposed to aggregate potential regulatory effects of individual genetic variants (i.e., single nucleotide polymorphisms [SNPs]) across a gene of interest. We propose several novel methods in this field to integrate gene expression, enhancer-promoter interactions, and brain imaging with GWAS results.
+Transcriptome-wide association studies (TWAS) integrate expression
+quantitative trait loci (eQTL) data with disease genome-wide association study (GWAS) results to discover gene-trait associations.   TWAS has garnered substantial interest and has been used widely to identify many novel trait-associated genes. Following TWAS, we propose several novel methods in this field to integrate gene expression, enhancer-promoter interactions, and brain imaging with GWAS results.
 ~~~
 {}{img_left}{GWAS.jpg}{methylation}{200}{170}
 
@@ -45,7 +46,7 @@ To improve statistical power and enhance biological interpretation, several inte
 [https://www.ncbi.nlm.nih.gov/pubmed/29411426 Integrating eQTL data with GWAS summary statistics in pathway-based analysis]. /Genetic Epidemiology/, 42(3), 303-316.\n
 (This paper won a poster talk at ASHG 2017 Annual Meeting.)
 - Xu, Z., *Wu, C.*, Wei, P., and Pan, W. (2017).\n [http://www.genetics.org/content/genetics/early/2017/09/11/genetics.117.300270.full.pdf A powerful framework for integrating eQTL and GWAS summary data]. /Genetics/, 207(3), 893-902.
-- Xu, Z., *Wu, C.*, Pan, W., and Alzheimer’s Disease Neuroimaging Initiative (ADNI). (2017). \n [https://www.ncbi.nlm.nih.gov/pubmed/28736311 Imaging-wide association study: integrating imaging endophenotypes in GWAS]. /NeuroImage/, 159:159–169. \n (This is paper won a platform presentation at the American Society of Human Genetics (ASHG) 2017 Annual Meeting)
+- Xu, Z., *Wu, C.*, Pan, W., and Alzheimer's Disease Neuroimaging Initiative (ADNI). (2017). \n [https://www.ncbi.nlm.nih.gov/pubmed/28736311 Imaging-wide association study: integrating imaging endophenotypes in GWAS]. /NeuroImage/, 159:159–169. \n (This is paper won a platform presentation at the American Society of Human Genetics (ASHG) 2017 Annual Meeting)
 ~~~
 
 ~~~
@@ -53,7 +54,7 @@ Related software:
 - [IWAS.html IWAS]: Imaging-Wide Association Study;
 - [TWAS.html TWAS-aSPU]: Integrating eQTL and GWAS data;
 - [aspupath2.html aSPUpath2]: Integrating eQTL data with GWAS summary statistics in pathway-based analysis.
-- [https://github.com/ChongWuLab/FOGS FOGS]: FOGS is  a powerful fine-mapping method that prioritizes putative causal genes by accounting for local LD in TWAS results
+- [https://github.com/ChongWuLab/FOGS FOGS]: FOGS is a powerful fine-mapping method that prioritizes putative causal genes by accounting for local LD in TWAS results
 ~~~
 
 === DNA methylation data integration
@@ -63,10 +64,10 @@ DNA methylation is a widely studied epigenetic mechanism. The Athero-sclerosis R
 ~~~
 {}{img_left}{dna-methylation-figure.png}{methylation}{200}{170}
 
-- *Wu, C.*\*, Bradley J., Li, Y., Wu, L., and Deng, HW. (2021)\n [https://academic.oup.com/bioinformatics/advance-article-abstract/doi/10.1093/bioinformatics/btab045/6125360?redirectedFrom=fulltext A gene-level methylome-wide association analysis identifies novel Alzheimer’s disease genes]. /Bioinformatics/.
+- *Wu, C.*\*, Bradley J., Li, Y., Wu, L., and Deng, HW. (2021).\n [https://academic.oup.com/bioinformatics/advance-article-abstract/doi/10.1093/bioinformatics/btab045/6125360?redirectedFrom=fulltext A gene-level methylome-wide association analysis identifies novel Alzheimer's disease genes]. /Bioinformatics/.
 - *Wu, C.*\*, & Pan, W.\* (2019).\n [https://academic.oup.com/bioinformatics/article/35/19/3576/5372342?login=true Integration of methylation QTL and enhancer–target gene maps with schizophrenia GWAS summary results identifies novel genes]. /Bioinformatics/, 35(19), 3576-3583.
-- *Wu, C.*, Demerath, E. W., Pankow, J. S., Bressler, J., Fornage, M., Grove, M. L., Chen, W., and Guan, W. (2016). \n  I[http://www.tandfonline.com/doi/full/10.1080/15592294.2016.1145328 Imputation of missing covariate values in epigenome-wide analysis of DNA methylation data]. /Epigenetics/, 11(2):132–139. \n (the official journal of the DNA Methylation Society.)
-- Bose, M., *Wu, C.*, Pankow, J. S., Demerath, E. W., Bressler, J., Fornage, M., Grove, M. L., Mosley, T. H., Hicks, C., North, K., Kao, W. H., Zhang, Y., Boerwinkle, E., and Guan, W. (2014).\n  [http://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-15-312 Evaluation of microarray-based DNA methylation measurement using technical replicates: the Atherosclerosis Risk In Communities (ARIC) Study]. /BMC Bioinformatics/, 15(1):1–10.
+- *Wu, C.*, Demerath, E. W., Pankow, J. S., Bressler, J., Fornage, M., Grove, M. L., Chen, W., and Guan, W. (2016). \n I[http://www.tandfonline.com/doi/full/10.1080/15592294.2016.1145328 Imputation of missing covariate values in epigenome-wide analysis of DNA methylation data]. /Epigenetics/, 11(2):132–139.
+- Bose, M., *Wu, C.*, Pankow, J. S., Demerath, E. W., Bressler, J., Fornage, M., Grove, M. L., Mosley, T. H., Hicks, C., North, K., Kao, W. H., Zhang, Y., Boerwinkle, E., and Guan, W. (2014).\n [http://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-15-312 Evaluation of microarray-based DNA methylation measurement using technical replicates: the Atherosclerosis Risk In Communities (ARIC) Study]. /BMC Bioinformatics/, 15(1):1–10.
 ~~~
 
 ~~~
@@ -80,7 +81,7 @@ A human body has more than ten times as many microbes living in it as cells. The
 ~~~
 {}{img_left}{microbiome_sm.jpg}{methylation}{200}{170}
 
-- *Wu, C.*, Chen, J., Kim, J., and Pan, W. (2016).\n  [https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-016-0302-3 An adaptive association test for microbiome data]. /Genome Medicine/, 8(1):1–12.\n  (This paper won the 2016 Joint Statistical Meetings (JSM) Distinguished Student Paper Award on Statistics in Genomics and Genetics Section.)
+- *Wu, C.*, Chen, J., Kim, J., and Pan, W. (2016).\n [https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-016-0302-3 An adaptive association test for microbiome data]. /Genome Medicine/, 8(1):1–12.\n (This paper won the 2016 Joint Statistical Meetings (JSM) Distinguished Student Paper Award on Statistics in Genomics and Genetics Section.)
 ~~~
 
 ~~~
@@ -88,10 +89,20 @@ Related software:
 - [https://github.com/ChongWu-Biostat/MiSPU MiSPU]: Microbiome Based Sum of Powered Score (MiSPU) Tests.
 ~~~
 
+== Applied studies
+
+~~~
+{}{img_left}{appliedStudy.png}{methylation}{200}{150}
+
+- *Wu, C.*\*, Wu, L., Wang, J., Lin, L., Li, Y., Lu, Q., & Deng, H. W. (2021).\n [https://alz-journals.onlinelibrary.wiley.com/doi/full/10.1002/trc2.12148 Systematic identification of risk factors and drug repurposing options for Alzheimer's disease]. /Alzheimer's & Dementia/, 7(1), e12148.
+- *Wu, C.*\*, Zhu, J., King, A., Tong, X., Lu, Q., Park, J. Y., ... & Wu, L.* (2021).\n [https://onlinelibrary.wiley.com/doi/full/10.1002/cac2.12205 Novel strategy for disease risk prediction incorporating predicted gene expression and DNA methylation data: a multi-phased study of prostate cancer]. /Cancer Communications/, 1-11.
+- Wu, L.\*, Zhu, J., Liu, D., Sun, Y., & *Wu, C.*\* (2021).\n [https://www.nature.com/articles/s41436-021-01243-5 An integrative multiomics analysis identifies putative causal genes for COVID-19 severity]. /Genetics in Medicine/, 1-11.
+~~~
+
 === Other works
-- *Wu, C.* (2020) \n [https://www.biorxiv.org/content/10.1101/758326v2.abstract Multi-trait genome-wide analyses of the brain imaging phenotypes in UK Biobank]. /Genetics/, 215(4), 947-958. \n(Highlight in Genetics August issue; presented as a platform presentation at ASHG 2019 Annual Meeting)
+- *Wu, C.* (2020) [https://www.biorxiv.org/content/10.1101/758326v2.abstract Multi-trait genome-wide analyses of the brain imaging phenotypes in UK Biobank]. /Genetics/, 215(4), 947-958. \n(Highlight in Genetics August issue; presented as a platform presentation at ASHG 2019 Annual Meeting)
 - Xue, H., *Wu, C.*, & Pan, W. (2020). [https://onlinelibrary.wiley.com/doi/abs/10.1002/gepi.22333 Leveraging existing GWAS summary data of genetically correlated and uncorrelated traits to improve power for a new GWAS]. /Genetic Epidemiology/, 44(7), 717-732.
-- Park, J.Y., *Wu, C.*, Basu, S., McGue, M., and Pan, W. (2018).\n [https://link.springer.com/article/10.1007/s10519-017-9883-x Adaptive SNP set association
+- Park, J.Y., *Wu, C.*, Basu, S., McGue, M., and Pan, W. (2018). [https://link.springer.com/article/10.1007/s10519-017-9883-x Adaptive SNP set association
 testing in generalized linear mixed models with application to family studies]. /Behavior Genetics/, 48(1):55–66.
 
 
@@ -103,8 +114,8 @@ I am involved in many applied studies and enjoy collaborative research. Specific
 ~~~
 {}{img_left}{Collaboration-Mindset.jpg}{methylation}{200}{170}
 
+- Sun, Y., Zhu, J., Zhou, D., Canchi, S., *Wu, C.*, Cox NJ., Rissman, RA. Gamazon, ER., & Wu, L. (2021). [https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-021-00959-y A transcriptome-wide association study of Alzheimer's disease using prediction models of related tissues identifies novel candidate susceptibility genes]. /Genome Medicine/, 13(1), 1-11.
 - Wang, K. S., Yu, G., Xu, C., Meng, X. H., Zhou, J., Zheng, C., ... & Deng, H. W. (2021). [https://bmcmedicine.biomedcentral.com/articles/10.1186/s12916-021-01942-5 Accurate diagnosis of colorectal cancer based on histopathology images using artificial intelligence]. /BMC Medicine/, 19(1), 1-12.
-- *Wu, C.*\*, Wu, L., Wang, J., Lin, L., Li, Y., Lu, Q., & Deng, H. W. (2021). [https://alz-journals.onlinelibrary.wiley.com/doi/full/10.1002/trc2.12148 Systematic identification of risk factors and drug repurposing options for Alzheimer's disease]. /Alzheimer's & Dementia: Translational Research & Clinical Interventions/, 7(1), e12148.
 - Zhu, J., *Wu, C.*, & Wu, L. (2021). [https://academic.oup.com/jid/article-abstract/223/1/19/5933817 Associations between genetically predicted protein levels and COVID-19 severity]. /The Journal of Infectious Diseases/, 223(1), 19-22.
 - Liu, D., Zhou, D., Sun, Y., Zhu, J., Ghoneim, D., *Wu, C.*, ... & Wu, L. (2020). [https://cancerres.aacrjournals.org/content/80/20/4346.short A Transcriptome-Wide Association Study Identifies Candidate Susceptibility Genes for Pancreatic Cancer Risk]. /Cancer Research/, 80(20), 4346-4354.
 - Wu, L., Yang, Y., Guo, X., Shu, X. O., Cai, Q., Shu, X., ... & Long, J. (2020). [https://www.nature.com/articles/s41467-020-17673-9 An integrative multi-omics analysis to identify candidate DNA methylation biomarkers related to prostate cancer risk]. /Nature Communications/, 11(1), 1-11.
@@ -114,6 +125,7 @@ I am involved in many applied studies and enjoy collaborative research. Specific
 \n
 
 
-Acknowledgment: research is/was supported by NSF, NIH, and University of Minnesota Doctoral Dissertation Fellowship, and seeds grants at Florida State University
+*Acknowledgment*: My research is/was supported by NIH, seeds grants at Florida State University, and the University of Minnesota Doctoral Dissertation Fellowship.
 
 /All Photos from [https://images.google.com Google Images]/
+
