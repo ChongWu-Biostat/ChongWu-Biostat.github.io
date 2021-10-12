@@ -1,12 +1,106 @@
-# jemdoc: menu{MENU}{talks.html}, nofooter
+# jemdoc: menu{MENU}{students.html}, nofooter
 = Students/alumni
 
 == Current Students
 
-- Hunter Melton
-- Zichen Zhang
-- Austin King
-- Meng Zhuo
-- Ye Eun Bae
-- Shengjie Jiang
+
+~~~
+{}{img_left}{portrait-placeholder.jpg}{machine}{230}{230}
+
+*Madison Layfield*\n
+
+Second-year Ph.D. in Biostatistics\n
+BS in Statistics with a minor in Mathematics, Florida State University, 2020
+
+
+Research interest: Integrative analysis
+~~~
+
+~~~
+{}{img_left}{zzc.jpg}{machine}{230}{230}
+
+
+*Zichen Zhang*\n
+
+Second-year PhD in Statistics\n
+BS in Financial Engineering, Shanghai University of International Business and Economics, 2014\n
+MS in Statistics, Florida State University, 2019\n
+
+Research interest: TWAS, integrative analysis
+
+Won a poster talk at ASHG 2021
+~~~
+
+
+~~~
+{}{img_left}{portrait-placeholder.jpg}{machine}{230}{230}
+
+
+*Ye Eun Bae*\n
+
+Third-year Ph.D. in Biostatistics\n
+Bachelor of Economics and BS in Statistics, FEwha Womans University, Seoul, Korea, 2018 \n
+ 
+
+Research interest: TWAS, integrative analysis
+
+Received the Clara Kibler Davis Scholarship, an award for excellent woman graduate student in FSU Stat Department
+~~~
+
+~~~
+{}{img_left}{Headshot.jpg}{machine}{230}{230}
+
+
+*Hunter Melton*\n
+
+Third-year PhD in Biostatistics\n
+BS in Mathematics, University of Oklahoma, 2019\n
+
+Research interest: DNA methylation, integrative analysis
+~~~
+
+
+~~~
+{}{img_left}{IMG_8242.jpg}{machine}{230}{230}
+
+
+*Meng Zhuo*\n
+
+Third-year Ph.D. in Statistics\n
+M.S. in Statistics, Florida State University, 2019 \n
+BS in Economic Statistics, Beijing Technology and Business University\n
+ 
+
+Research interest: Meta-analysis
+
+~~~
+
+~~~
+{}{img_left}{portrait-placeholder.jpg}{machine}{230}{230}
+
+*Austin King*\n
+
+Fifth-year Ph.D. in Biostatistics\n
+BS in Bioengineering, Clemson University, 2012\n
+MS in Bioengineering, Clemson University, 2014\n
+
+Research interest: Polygenic risk score
+
+~~~
+
+
+~~~
+{}{img_left}{portrait-placeholder.jpg}{machine}{230}{230}
+
+
+*Shengjie Jiang*\n
+
+Fifth-year Ph.D. in Biostatistics\n
+BS in Physics, Shanghai Normal University \n
+MS in Mathematics, University of North Florida \n
+ 
+Research interest: IWAS
+~~~
+
+
 
