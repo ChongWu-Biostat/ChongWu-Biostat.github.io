@@ -3,16 +3,19 @@
 
 ~~~
 {}{img_left}{chongwu.jpg}{Portrait of Chong Wu}{230}{280}
-Chong Wu \n
 
 Assistant Professor \n
 [https://www.stat.fsu.edu Department of Statistics]\n
 [https://www.fsu.edu Florida State University]\n
 
 
-Research interest:  Statistical genetics/genomics, integrative analysis, big data,  machine learning, causal inference, and high-dimensional inference.
+Research interest:  Statistical genetics/genomics, machine learning, and causal inference
 
+<<<<<<< HEAD
 [CV_Chong_Wu_for_website.pdf Curriculum Vitae (Oct 2021)]
+=======
+[CV_ChongWu.pdf Curriculum Vitae (Oct 2021)]
+>>>>>>> 65c40380ace4a68b002397f0e3832d6634fd39b0
 \n
 
 [https://github.com/ChongWu-Biostat GitHub] \n
@@ -28,18 +31,22 @@ My research interests are in statistical genetics and genomics, statistical lear
 
 
 == News
+<<<<<<< HEAD
 - 2021-09: Our SUMMIT paper won a poster talk (top 10% among all posters) at [https://www.ashg.org/meetings/2021meeting/ ASHG 2021]. Congraulations, Zichen!
+=======
+- 2021-09: Our SUMMIT manuscript won a poster talk (top 10% among all posters) at [https://www.ashg.org/meetings/2021meeting/ ASHG 2021]. Congraulations, Zichen!
+>>>>>>> 65c40380ace4a68b002397f0e3832d6634fd39b0
 - 2021-09: Our [https://onlinelibrary.wiley.com/doi/full/10.1002/cac2.12205 polygenic risk score in prostate cancer] paper has been published in /Cancer Communications/.
 - 2021-05: Our [https://www.nature.com/articles/s41436-021-01243-5 COVID-19 integrative analysis] paper has been accepted by /Genetics in Medicine/.
 - 2021-01: Our [https://reporter.nih.gov/search/5WM4YWn1-UigU5OZ25HJ0w/project-details/10104707 R03 proposal] (Novel Statistical Methods for Multi-omics Data Integration in Alzheimer's Disease) has been funded by NIA.
 
 == Selected Publications \[[research.html by topic]\]
 \* Corresponding author
-. He, Y., Xu, G., *Wu, C.*, and Pan, W. (2021)\n [https://arxiv.org/abs/1809.00411 Asymptotically Independent U-Statistics in High-Dimensional Testing].  /Annals of Statistics/, 49(1), 154-181.
-. *Wu, C.*\*, Bradley J., Li, Y., Wu, L., and Deng, HW. (2021)\n [https://academic.oup.com/bioinformatics/advance-article-abstract/doi/10.1093/bioinformatics/btab045/6125360?redirectedFrom=fulltext A gene-level methylome-wide association analysis identifies novel Alzheimer’s disease genes]. /Bioinformatics/.
-. *Wu, C.*\*, Xu, G., Shen, X., and Pan, W.\* (2020)\n [https://jmlr.org/papers/v21/18-807.html A regularization-based adaptive test for high-dimensional generalized linear models]. /Journal of Machine Learning Research/, 21(128), 1-67.
-. *Wu, C.* (2020) \n [https://www.biorxiv.org/content/10.1101/758326v2.abstract Multi-trait genome-wide analyses of the brain imaging phenotypes in UK Biobank]. /Genetics/, 215(4), 947-958. \n(Highlight in Genetics August issue; presented as a platform presentation at ASHG 2019 Annual Meeting)
-. *Wu, C.*\* and Pan, W.\* (2019)\n [https://doi.org/10.1093/bioinformatics/btz161 Integration  of methylation QTL and enhancer-target gene maps with schizophrenia GWAS summary results identifies novel genes].  /Bioinformatics/, 35(19), 3576-3583.
+. He, Y., Xu, G., *Wu, C.*, and Pan, W. (2021) [https://arxiv.org/abs/1809.00411 Asymptotically Independent U-Statistics in High-Dimensional Testing].  /Annals of Statistics/, 49(1), 154-181.
+. *Wu, C.*\*, Bradley J., Li, Y., Wu, L., and Deng, HW. (2021) [https://academic.oup.com/bioinformatics/advance-article-abstract/doi/10.1093/bioinformatics/btab045/6125360?redirectedFrom=fulltext A gene-level methylome-wide association analysis identifies novel Alzheimer’s disease genes]. /Bioinformatics/.
+. *Wu, C.*\*, Xu, G., Shen, X., and Pan, W.\* (2020) [https://jmlr.org/papers/v21/18-807.html A regularization-based adaptive test for high-dimensional generalized linear models]. /Journal of Machine Learning Research/, 21(128), 1-67.
+. *Wu, C.* (2020)  [https://www.biorxiv.org/content/10.1101/758326v2.abstract Multi-trait genome-wide analyses of the brain imaging phenotypes in UK Biobank]. /Genetics/, 215(4), 947-958. \n(Highlight in Genetics August issue; presented as a platform presentation at ASHG 2019 Annual Meeting)
+. *Wu, C.*\* and Pan, W.\* (2019) [https://doi.org/10.1093/bioinformatics/btz161 Integration  of methylation QTL and enhancer-target gene maps with schizophrenia GWAS summary results identifies novel genes].  /Bioinformatics/, 35(19), 3576-3583.
 . *Wu, C.*, Chen, J., Kim, J., and Pan, W. (2016) [https://link.springer.com/article/10.1186/s13073-016-0302-3 An adaptive association test for microbiome data]. /Genome Medicine/, 8(1), 1-12.
 . *Wu, C.*\#, Kwon, S.\#, Shen, X., and Pan, W. (2016). [https://www.jmlr.org/papers/volume17/15-553/15-553.pdf A new algorithm and theory for penalized regression-based clustering]. /Journal of Machine Learning Research/, 17(1), 6479-6503. \#, co-first author
 
@@ -71,7 +78,7 @@ Novel Statistical Methods for Transcriptome-wide Association Studies
 The opportunity for teaching is one of the key reasons I love academia. For me, teaching
 can be described as a rewarding and fulfilling experience. I am the instructor for the following courses.
 
-- 2020 Fall: STA5934 Statistical Genetics. [https://www.stat.fsu.edu/sites/g/files/upcbnu1811/files/STA5934-02-Fall20.pdf ]Syllabus]
+- 2020 Fall: STA5934 Statistical Genetics. [https://www.stat.fsu.edu/sites/g/files/upcbnu1811/files/STA5934-02-Fall20.pdf Syllabus]
 - 2018 Fall to 2020 Spring, 2021 Spring: STAT 4321/4323 Introduction of Math Stat
 - [exampleforhighd.R Codes for Statistical Learning and Data Mining]
 
