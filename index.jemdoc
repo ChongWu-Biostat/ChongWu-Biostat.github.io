@@ -25,8 +25,10 @@ I am an Assistant Professor in the [https://www.stat.fsu.edu Department of Stati
 
 My research interests are in statistical genetics and genomics, statistical learning, and machine learning. I have obtained diverse training and experiences in developing statistical methods and algorithms for analyzing multiple types of genetic and genomic data, including genome-wide association study (GWAS) data, DNA methylation data, and human microbiome data. My work includes gene- and pathway-based association testing, integrative -omics analysis, new algorithms in clustering, Mendelian randomization, and polygenic risk scores. To practice and facilitate reproducible research, I have developed and currently maintain several software (most in R packages) and their online manuals. My recent work involves integrative analysis of GWAS with multiple sources of omics data.
 
-
 == News
+
+- 2022-08: We will join MD Anderson Biostatistics this September. We have enjoyed our time at Tallahassee and appreciate the support from the department! We will continue to collaborate with colleagues at FSU, and we look forward to our new journey at MD Anderson.
+- 2022-07: Our [https://reporter.nih.gov/search/fEzRBX-ZZk6Y7HE_Eo462A/project-details/10446594 Prostate Cncer R01 (PI: Lang Wu and Chong Wu)] has been funded by NCI! This grant aims to identify likely causal proteins and improve the risk prediction for prostate cancer across Africans and Europeans. We are honored to lead this big project with Lang together.
 - 2021-09: Our SUMMIT paper won a poster talk (top 10% among all posters) at [https://www.ashg.org/meetings/2021meeting/ ASHG 2021]. Congraulations, Zichen!
 - 2021-09: Our [https://onlinelibrary.wiley.com/doi/full/10.1002/cac2.12205 polygenic risk score in prostate cancer] paper has been published in /Cancer Communications/.
 - 2021-05: Our [https://www.nature.com/articles/s41436-021-01243-5 COVID-19 integrative analysis] paper has been accepted by /Genetics in Medicine/.
