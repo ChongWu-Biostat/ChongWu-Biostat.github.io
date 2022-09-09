@@ -1,32 +1,21 @@
 # jemdoc: menu{MENU}{index.html},analytics{UA-88798670-1}
-= Chong Wu
-
-~~~
-{}{img_left}{chongwu.jpg}{Portrait of Chong Wu}{230}{280}
-Chong Wu \n
-
-Assistant Professor \n
-[https://www.stat.fsu.edu Department of Statistics]\n
-[https://www.fsu.edu Florida State University]\n
+= Chong Wu Lab
 
 
-Research interest:  Statistical genetics/genomics, integrative analysis, big data,  machine learning, causal inference, and high-dimensional inference.
+== Intro
+Chong Wu is an Assistant Professor in the [https://www.mdanderson.org/research/departments-labs-institutes/departments-divisions/biostatistics.html Department of Biostatistics] at [https://www.mdanderson.org The University of Texas MD Anderson]. His research focuses on developing a new generation of data-driven methods and software to address challenges imposed by big and messy genomics data. Briefly, his research aims at 1) identifying putative causal biomarkers to gain insights into the genetic basis of complex diseases, particularly prostate cancer, pancreatic cancer, and Alzheimer's, and 2) enhancing risk predictions to advance precision medicine.
 
-[CV_Chong_Wu_for_website.pdf Curriculum Vitae (Oct 2021)] \n
-
-[https://github.com/ChongWu-Biostat GitHub] \n
+[https://github.com/ChongWuLab GitHub] \n
 
 [https://scholar.google.com/citations?user=rF6BnvsAAAAJ&hl=en Google Scholar]
+
+~~~
+We have two open Research Assistant positions and potentially one Postdoc position. The Research Assistant positions can be offered to students in MD Anderson, Rice, and UTHealth. Feel free to reach contact me (cwu18@mdanderson.org) if you are interested in joining our group.
 ~~~
 
-
-== Short Bio
-I am an Assistant Professor in the [https://www.stat.fsu.edu Department of Statistics] at [https://www.fsu.edu Florida State University]. Prior to FSU, I was a biostatistics Ph.D. student at the [http://twin-cities.umn.edu University of Minnesota], co-advised by Profs. Weihua Guan and [http://www.biostat.umn.edu/~weip/  Wei Pan]. I received my bachelor's degree in Applied Math from [http://english.hust.edu.cn Huazhong University of Science and Technology] in 2013.
-
-My research interests are in statistical genetics and genomics, statistical learning, and machine learning. I have obtained diverse training and experiences in developing statistical methods and algorithms for analyzing multiple types of genetic and genomic data, including genome-wide association study (GWAS) data, DNA methylation data, and human microbiome data. My work includes gene- and pathway-based association testing, integrative -omics analysis, new algorithms in clustering, Mendelian randomization, and polygenic risk scores. To practice and facilitate reproducible research, I have developed and currently maintain several software (most in R packages) and their online manuals. My recent work involves integrative analysis of GWAS with multiple sources of omics data.
-
 == News
-
+- 2022-09: Zhuo Meng received a travel award to attend Southern Regional Council on Statistics. Congratulations, Zhuo!
+- 2022-08: Our alumna Dr. Shengjie Jiang will join The University of Texas at Dallas as an Assistant Professor of Instruction. Congratulations, Shengjie!
 - 2022-08: We will join MD Anderson Biostatistics this September. We have enjoyed our time at Tallahassee and appreciate the support from the department! We will continue to collaborate with colleagues at FSU, and we look forward to our new journey at MD Anderson.
 - 2022-07: Our [https://reporter.nih.gov/search/fEzRBX-ZZk6Y7HE_Eo462A/project-details/10446594 Prostate Cncer R01 (PI: Lang Wu and Chong Wu)] has been funded by NCI! This grant aims to identify likely causal proteins and improve the risk prediction for prostate cancer across Africans and Europeans. We are honored to lead this big project with Lang together.
 - 2021-09: Our SUMMIT paper won a poster talk (top 10% among all posters) at [https://www.ashg.org/meetings/2021meeting/ ASHG 2021]. Congraulations, Zichen!
@@ -57,55 +46,25 @@ We put all recent developed software into a [https://github.com/ChongWuLab lab g
 
 
 == Grants
+Our research is generously supported by the following grants:
 
-- R03 AG070669, NIA \n Contact PI, (Wu and Bradley), 01-01-21 – 12-31-22\n
-Novel Statistical Methods for Multi-omics Data Integration in Alzheimer's Disease
+- R01 1R01CA263494-01A1, NCI \n
+PI, (Lang Wu and Chong Wu), 07-01-2022 to 06-30-2027\n
+[https://reporter.nih.gov/search/_ngM5BoAiUKEDlNjCKqYAA/project-details/10446594 Uncovering causal protein markers to improve prostate cancer etiology understanding and risk prediction in Africans and Europeans]
 
-- The Committee on Faculty Research Support, FSU\n PI, 05-07-20 – 06-30-20\n
+- R03 AG070669, NIA \n Contact PI, (Wu and Bradley), 01-01-21 to 12-31-22\n
+[https://reporter.nih.gov/search/_ngM5BoAiUKEDlNjCKqYAA/project-details/10321679 Novel Statistical Methods for Multi-omics Data Integration in Alzheimer's Disease]
+
+- The Committee on Faculty Research Support, FSU\n PI, 05-07-20 to 06-30-20\n
 Novel Machine Learning Methods for Alzheimer’s Disease
 
-- First Year Assistant Professor Grant, FSU\n PI, 05-08-19 - 08-06-19\n
+- First Year Assistant Professor Grant, FSU\n PI, 05-08-19 to 08-06-19\n
 Novel Statistical Methods for Transcriptome-wide Association Studies
-
-
-== Teaching
-The opportunity for teaching is one of the key reasons I love academia. For me, teaching
-can be described as a rewarding and fulfilling experience. I am the instructor for the following courses.
-
-- 2020 Fall: STA5934 Statistical Genetics. [https://www.stat.fsu.edu/sites/g/files/upcbnu1811/files/STA5934-02-Fall20.pdf ]Syllabus]
-- 2018 Fall to 2020 Spring, 2021 Spring: STAT 4321/4323 Introduction of Math Stat
-- [exampleforhighd.R Codes for Statistical Learning and Data Mining]
-
-
-== [talks.html Selected Presentations]
-I enjoy sharing ideas and presenting my works. I attend JSM, ENAR, and ASHG regularly.
-- [aMAT.pdf Multi-trait genome-wide analyses of the brain imaging phenotypes in UK Biobank]
--- Platform presentation at ASHG 2019
-- [ChongWu_IGES2018.pdf Integration of methylation QTL and enhancer-target gene maps with schizophrenia GWAS summary results identifies novel genes]
--- Oral presentation at IGES 2018
-- [Chong_Wu_JSM.pdf An adaptive association test for microbiome data]
--- Presented at 2016 JSM, ENAR
-- [presentation_aSPU_theory.pdf An adaptive test on high dimensional parameters in GLMs]
--- Presented at 2017 JSM, ENAR
-
-
-== Awards
-- Dean's Faculty Travel Award, Florida State University, 2020
-- *ENAR Distinguished Student Paper Award*, 2019
-- James R. Boen Student Achievement Award, Division of Biostatistics, University of Minnesota, 2018
-- Pre-Doctoral Trainee Award, Association of Chinese Geneticists in America (ACGA), 2017
-- Elected to Delta Omega (Public Health Honorary Society), 2017
-- Elected to Simga Xi (The Scientific Research Society), 2017
-- *JSM Distinguished Student Paper Award* on Statistics in Genomics and Genetics Section, 2016
-- *Doctoral Dissertation Fellowship*, University of Minnesota, 2016
-- Travel Award, Computational Neuroscience Summer School, Statistical and Applied Mathematical Sciences Institute, 2015
-- Dean's Ph.D. Scholarship, University of Minnesota, 2013
-- Honorable Mention in Mathematical Contest in Modeling, Consortium for Mathematics and Its Application, 2012
-- National Scholarship, Ministry of Education, China, 2011
 
 == Contact
 
 Chong Wu\n
-314 OSB, 117 N. Woodward Ave.\n
-P.O. Box 3064330, Tallahassee, FL, 32306-4330\n
-E-mail: cwu3@fsu.edu
+Assistant Professor\n
+Department of Biostatistics\n
+The University of Texas MD Anderson Cancer Center\n
+E-mail: cwu18@mdanderson.org

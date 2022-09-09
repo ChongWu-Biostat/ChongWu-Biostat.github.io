@@ -1,0 +1,28 @@
+# jemdoc: menu{MENU}{index.html},analytics{UA-88798670-1}
+
+= Chong Wu
+
+~~~
+{}{img_left}{chongwu.jpg}{Portrait of Chong Wu}{230}{280}
+Chong Wu \n
+
+Assistant Professor \n
+[https://www.mdanderson.org/research/departments-labs-institutes/departments-divisions/biostatistics.html Department of Biostatistics]\n
+[https://www.mdanderson.org The University of Texas MD Anderson]\n
+
+
+Research interest:  Statistical genetics/genomics, causal inference, integrative analysis, big data, machine learning, and high-dimensional inference.
+
+[CV_Chong_Wu_for_website.pdf Curriculum Vitae (Oct 2021)] \n
+
+[https://github.com/ChongWu-Biostat GitHub] \n
+
+[https://scholar.google.com/citations?user=rF6BnvsAAAAJ&hl=en Google Scholar]
+~~~
+
+== Short Bio
+I am an Assistant Professor in the [https://www.mdanderson.org/research/departments-labs-institutes/departments-divisions/biostatistics.html Department of Biostatistics] at [https://www.mdanderson.org The University of Texas MD Anderson]. Before that, I was an Assistant Professor in the [https://stat.fsu.edu Department of Statistics] at [https://www.fsu.edu Florida State University]. Prior to FSU, I was a biostatistics Ph.D. student at the [http://twin-cities.umn.edu University of Minnesota], co-advised by Profs. Weihua Guan and [http://www.biostat.umn.edu/~weip/  Wei Pan]. I received my bachelor's degree in Applied Math from [http://english.hust.edu.cn Huazhong University of Science and Technology] in 2013.
+
+I have obtained diverse training and experiences in developing statistical methods and algorithms for analyzing multiple types of genetic and genomic data, including genome-wide association study (GWAS) data, DNA methylation data, and human microbiome data. My work includes gene- and pathway-based association testing, integrative -omics analysis (especially TWAS), new algorithms in clustering, Mendelian randomization, and polygenic risk scores. To practice and facilitate reproducible research, I have developed and currently maintain several software (most in R packages) and their online manuals.
+
+My recent research focuses on developing a new generation of data-driven methods and software to address challenges imposed by big and messy genomics data. Briefly, my research aim at 1) identifying putative causal biomarkers to gain insights into the genetic basis of complex diseases, particularly prostate cancer, pancreatic cancer, and Alzheimer's, and 2) enhancing risk predictions to advance precision medicine.
